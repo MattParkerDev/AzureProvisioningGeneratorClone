@@ -197,53 +197,53 @@ public abstract partial class Specification : ModelBase
 
                 </Project>
                 """);
-        Directory.CreateDirectory(Path.Combine(path, "src", "Properties"));
-        File.WriteAllText(Path.Combine(path, "src", "Properties", "AssemblyInfo.cs"),
-            """
-                // Copyright (c) Microsoft Corporation. All rights reserved.
-                // Licensed under the MIT License.
-
-                using System.Diagnostics.CodeAnalysis;
-
-                [assembly: Experimental("AZPROVISION001")]
-                """);
+//         Directory.CreateDirectory(Path.Combine(path, "src", "Properties"));
+//         File.WriteAllText(Path.Combine(path, "src", "Properties", "AssemblyInfo.cs"),
+//             """
+//                 // Copyright (c) Microsoft Corporation. All rights reserved.
+//                 // Licensed under the MIT License.
+//
+//                 using System.Diagnostics.CodeAnalysis;
+//
+//                 [assembly: Experimental("AZPROVISION001")]
+//                 """);
 
         // Generate the tests
-        Directory.CreateDirectory(Path.Combine(path, "tests"));
-        File.WriteAllText(Path.Combine(path, "tests", $"{Namespace}.Tests.csproj"),
-            $"""
-                <Project Sdk="Microsoft.NET.Sdk">
-                  <PropertyGroup>
-                    <LangVersion>12</LangVersion>
-                  </PropertyGroup>
-                  <ItemGroup>
-                    <ProjectReference Include="..\..\..\core\Azure.Core.TestFramework\src\Azure.Core.TestFramework.csproj" />
-                    <ProjectReference Include="..\src\{Namespace}.csproj" />
-                  </ItemGroup>
-                </Project>
-                """);
-        File.WriteAllText(Path.Combine(path, "tests", $"BasicTests.cs"),
-            $$"""
-                // Copyright (c) Microsoft Corporation. All rights reserved.
-                // Licensed under the MIT License.
-
-                using System;
-                using Azure.Core;
-                using Azure.Provisioning;
-                using {{Namespace}};
-                using Azure.Provisioning.Tests;
-                using NUnit.Framework;
-
-                namespace {{Namespace}}.Tests;
-
-                public class BasicTests(bool async) : ProvisioningTestBase(async)
-                {
-                    [Test]
-                    public void GetStarted()
-                    {
-                        Assert.Inconclusive("Implement me!");
-                    }
-                }
-                """);
+//         Directory.CreateDirectory(Path.Combine(path, "tests"));
+//         File.WriteAllText(Path.Combine(path, "tests", $"{Namespace}.Tests.csproj"),
+//             $"""
+//                 <Project Sdk="Microsoft.NET.Sdk">
+//                   <PropertyGroup>
+//                     <LangVersion>12</LangVersion>
+//                   </PropertyGroup>
+//                   <ItemGroup>
+//                     <ProjectReference Include="..\..\..\core\Azure.Core.TestFramework\src\Azure.Core.TestFramework.csproj" />
+//                     <ProjectReference Include="..\src\{Namespace}.csproj" />
+//                   </ItemGroup>
+//                 </Project>
+//                 """);
+//         File.WriteAllText(Path.Combine(path, "tests", $"BasicTests.cs"),
+//             $$"""
+//                 // Copyright (c) Microsoft Corporation. All rights reserved.
+//                 // Licensed under the MIT License.
+//
+//                 using System;
+//                 using Azure.Core;
+//                 using Azure.Provisioning;
+//                 using {{Namespace}};
+//                 using Azure.Provisioning.Tests;
+//                 using NUnit.Framework;
+//
+//                 namespace {{Namespace}}.Tests;
+//
+//                 public class BasicTests(bool async) : ProvisioningTestBase(async)
+//                 {
+//                     [Test]
+//                     public void GetStarted()
+//                     {
+//                         Assert.Inconclusive("Implement me!");
+//                     }
+//                 }
+//                 """);
     }
 }
