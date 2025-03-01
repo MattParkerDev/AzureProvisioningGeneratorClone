@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
-    <PackageId>All.Azure.Provisioning</PackageId>
+    <PackageId>Meta.Azure.Provisioning</PackageId>
     <Authors>MattParkerDev</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>

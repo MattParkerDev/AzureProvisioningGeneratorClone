@@ -31,7 +31,7 @@ public abstract partial class Specification : ModelBase
         path ??= Environment.CurrentDirectory;
 
         // Walk from the root of the repo into the provisioning folder
-        path = Path.Combine(path, "src", "All.Azure.Provisioning", "Generated");
+        path = Path.Combine(path, "src", "Meta.Azure.Provisioning", "Generated");
         if (!Directory.Exists(path))
         {
             throw new InvalidOperationException($"Directory {path} must exist to write {Namespace}!");

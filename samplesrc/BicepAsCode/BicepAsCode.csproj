@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\All.Azure.Provisioning\All.Azure.Provisioning.csproj" />
+    <ProjectReference Include="..\..\src\Meta.Azure.Provisioning\Meta.Azure.Provisioning.csproj" />
   </ItemGroup>
 
 </Project>

@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "All.Azure.Provisioning", "src\All.Azure.Provisioning\All.Azure.Provisioning.csproj", "{DF7041C4-00A5-4427-89FA-973C7B9F373B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meta.Azure.Provisioning", "src\Meta.Azure.Provisioning\Meta.Azure.Provisioning.csproj", "{DF7041C4-00A5-4427-89FA-973C7B9F373B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samplesrc", "samplesrc", "{D92500F6-FC3D-493A-9D76-7C0363AFA703}"
 EndProject
