@@ -18,17 +18,17 @@ public partial class OperationalInsightsWorkspaceCapping : ProvisionableConstruc
     /// <summary>
     /// The workspace daily quota for ingestion.
     /// </summary>
-    public BicepValue<double> DailyQuotaInGB 
+    public BicepValue<int> DailyQuotaInGB
     {
         get { Initialize(); return _dailyQuotaInGB!; }
         set { Initialize(); _dailyQuotaInGB!.Assign(value); }
     }
-    private BicepValue<double>? _dailyQuotaInGB;
+    private BicepValue<int>? _dailyQuotaInGB;
 
     /// <summary>
     /// The time when the quota will be rest.
     /// </summary>
-    public BicepValue<string> QuotaNextResetTime 
+    public BicepValue<string> QuotaNextResetTime
     {
         get { Initialize(); return _quotaNextResetTime!; }
     }
@@ -37,7 +37,7 @@ public partial class OperationalInsightsWorkspaceCapping : ProvisionableConstruc
     /// <summary>
     /// The status of data ingestion for this workspace.
     /// </summary>
-    public BicepValue<OperationalInsightsDataIngestionStatus> DataIngestionStatus 
+    public BicepValue<OperationalInsightsDataIngestionStatus> DataIngestionStatus
     {
         get { Initialize(); return _dataIngestionStatus!; }
     }
@@ -57,7 +57,7 @@ public partial class OperationalInsightsWorkspaceCapping : ProvisionableConstruc
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _dailyQuotaInGB = DefineProperty<double>("DailyQuotaInGB", ["dailyQuotaGb"]);
+        _dailyQuotaInGB = DefineProperty<int>("DailyQuotaInGB", ["dailyQuotaGb"]);
         _quotaNextResetTime = DefineProperty<string>("QuotaNextResetTime", ["quotaNextResetTime"], isOutput: true);
         _dataIngestionStatus = DefineProperty<OperationalInsightsDataIngestionStatus>("DataIngestionStatus", ["dataIngestionStatus"], isOutput: true);
     }
