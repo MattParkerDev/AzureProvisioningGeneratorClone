@@ -7,13 +7,10 @@
     <LangVersion>12</LangVersion>
     <NoWarn>IDE0130;$(NoWarn)</NoWarn> <!-- Ignore namespace not matching folder structure -->
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Azure.Identity" />
-  </ItemGroup>
-
+	
   <!-- Packages we're generating from -->
   <ItemGroup>
+	<PackageReference Include="Azure.Identity" />
     <!-- Baseline -->
     <PackageReference Include="Azure.ResourceManager" />
     <PackageReference Include="Azure.ResourceManager.AppContainers" />
@@ -52,7 +49,7 @@
 <!--    <ProjectReference Include="..\..\..\eventgrid\Azure.ResourceManager.EventGrid\src\Azure.ResourceManager.EventGrid.csproj" />-->
 <!--    <ProjectReference Include="..\..\..\hybridkubernetes\Azure.ResourceManager.Kubernetes\src\Azure.ResourceManager.Kubernetes.csproj" />-->
 <!--    <ProjectReference Include="..\..\..\kubernetesconfiguration\Azure.ResourceManager.KubernetesConfiguration\src\Azure.ResourceManager.KubernetesConfiguration.csproj" />-->
-    <PackageReference Include="Azure.ResourceManager.AppService" Version="1.2.0" />
+    <PackageReference Include="Azure.ResourceManager.AppService" />
   </ItemGroup>
 
   <!-- Copy XML generated docs into our bin dir -->
