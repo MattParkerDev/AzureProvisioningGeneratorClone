@@ -38,23 +38,15 @@
     <PackageReference Include="Azure.ResourceManager.WebPubSub" />
 
     <!-- Others -->
-    <ProjectReference Include="..\..\..\communication\Azure.ResourceManager.Communication\src\Azure.ResourceManager.Communication.csproj" />
-    <ProjectReference Include="..\..\..\containerapps\Azure.ResourceManager.AppContainers\src\Azure.ResourceManager.AppContainers.csproj" />
-    <ProjectReference Include="..\..\..\containerregistry\Azure.ResourceManager.ContainerRegistry\src\Azure.ResourceManager.ContainerRegistry.csproj" />
-    <ProjectReference Include="..\..\..\containerservice\Azure.ResourceManager.ContainerService\src\Azure.ResourceManager.ContainerService.csproj" />
-    <ProjectReference Include="..\..\..\eventgrid\Azure.ResourceManager.EventGrid\src\Azure.ResourceManager.EventGrid.csproj" />
-    <ProjectReference Include="..\..\..\hybridkubernetes\Azure.ResourceManager.Kubernetes\src\Azure.ResourceManager.Kubernetes.csproj" />
-    <ProjectReference Include="..\..\..\kubernetesconfiguration\Azure.ResourceManager.KubernetesConfiguration\src\Azure.ResourceManager.KubernetesConfiguration.csproj" />
+<!--    <ProjectReference Include="..\..\..\communication\Azure.ResourceManager.Communication\src\Azure.ResourceManager.Communication.csproj" />-->
+<!--    <ProjectReference Include="..\..\..\containerapps\Azure.ResourceManager.AppContainers\src\Azure.ResourceManager.AppContainers.csproj" />-->
+<!--    <ProjectReference Include="..\..\..\containerregistry\Azure.ResourceManager.ContainerRegistry\src\Azure.ResourceManager.ContainerRegistry.csproj" />-->
+<!--    <ProjectReference Include="..\..\..\containerservice\Azure.ResourceManager.ContainerService\src\Azure.ResourceManager.ContainerService.csproj" />-->
+<!--    <ProjectReference Include="..\..\..\eventgrid\Azure.ResourceManager.EventGrid\src\Azure.ResourceManager.EventGrid.csproj" />-->
+<!--    <ProjectReference Include="..\..\..\hybridkubernetes\Azure.ResourceManager.Kubernetes\src\Azure.ResourceManager.Kubernetes.csproj" />-->
+<!--    <ProjectReference Include="..\..\..\kubernetesconfiguration\Azure.ResourceManager.KubernetesConfiguration\src\Azure.ResourceManager.KubernetesConfiguration.csproj" />-->
     <PackageReference Include="Azure.ResourceManager.AppService" Version="1.2.0" />
   </ItemGroup>
-
-  <!-- We're not using all of our standard infrastructure, but we want to
-       at least force everything to the "blessed" versions of each package -->
-  <PropertyGroup>
-    <!-- We're not a client library, but I want the same versions used by client libraries -->
-    <IsClientLibrary>true</IsClientLibrary>
-  </PropertyGroup>
-  <Import Project="$([MSBuild]::GetPathOfFileAbove(.gitignore))\..\eng\Packages.Data.props" />
 
   <!-- Copy XML generated docs into our bin dir -->
   <Target Name="_ResolveCopyLocalNuGetPkgXmls" AfterTargets="ResolveReferences">
