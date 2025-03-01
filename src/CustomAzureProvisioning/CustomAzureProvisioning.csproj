@@ -6,8 +6,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup><!--    <PackageReference Include="Azure.Provisioning" />-->
-  
+  <ItemGroup>
     <PackageReference Include="Azure.Core" />
   </ItemGroup>
 
