@@ -23,6 +23,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samplesrc", "samplesrc", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BicepAsCode", "samplesrc\BicepAsCode\BicepAsCode.csproj", "{07A16AF4-7212-47E3-B526-D56A9C6F4BC4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{112512FC-2005-47E7-865F-1FC377F5619B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{985DFE51-D23F-456F-97EC-00939467B527}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\publish-nuget-package.yml = .github\workflows\publish-nuget-package.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,5 +84,6 @@ Global
 		{88BF4E61-39B7-4AFF-1C2E-540242D4ABFE} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{DF7041C4-00A5-4427-89FA-973C7B9F373B} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{07A16AF4-7212-47E3-B526-D56A9C6F4BC4} = {D92500F6-FC3D-493A-9D76-7C0363AFA703}
+		{985DFE51-D23F-456F-97EC-00939467B527} = {112512FC-2005-47E7-865F-1FC377F5619B}
 	EndGlobalSection
 EndGlobal
