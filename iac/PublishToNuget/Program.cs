@@ -36,6 +36,8 @@ var publishResult = await Cli.Wrap("dotnet")
 	.WithValidation(CommandResultValidation.None)
 	.ExecuteBufferedAsync();
 
+nugetToken = null;
+
 Console.WriteLine(publishResult.StandardOutput);
 Console.WriteLine(publishResult.StandardError);
 
