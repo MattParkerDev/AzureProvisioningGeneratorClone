@@ -3,9 +3,19 @@ on:
   workflow_dispatch:
 
 jobs:
+  determine-if-publish-necessary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check
+        shell: bash
+        run: |
+          result=$(dotnet run /.iac/CheckIfPublishNecessary/CheckIfPublishNecessary.csproj)
+          echo "::set-output name=publish-necessary::$result"
   nuget-approval:
     runs-on: ubuntu-latest
     environment: "nuget-publish-approval"
+    needs: determine-if-publish-necessary
+    if: needs.determine-if-publish-necessary.outputs.publish-necessary == 'true'
     steps:
       - name: approve
         shell: bash
