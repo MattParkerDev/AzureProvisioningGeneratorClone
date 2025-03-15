@@ -43,6 +43,7 @@ async Task Run()
 	else
 	{
 		Console.WriteLine($"Package {packageId} with version {packageVersion} does not exist on Nuget");
-		Environment.SetEnvironmentVariable("GITHUB_OUTPUT", "publish-necessary=true");
+		var outputFile = Environment.GetEnvironmentVariable("GITHUB_OUTPUT");
+		await File.AppendAllTextAsync(outputFile!, "publish-necessary=true");
 	}
 }
