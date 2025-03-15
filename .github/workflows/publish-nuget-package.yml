@@ -5,13 +5,13 @@ on:
 jobs:
   determine-if-publish-necessary:
     runs-on: ubuntu-latest
+    outputs:
+      publish-necessary: ${{ steps.check.outputs.publish-necessary }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
-      - name: test
-        shell: bash
-        run: dotnet run --project ./iac/DetermineIfPublishNecessary/DetermineIfPublishNecessary.csproj
       - name: check
+        id: check
         shell: bash
         run: |
           result=$(dotnet run --project ./iac/DetermineIfPublishNecessary/DetermineIfPublishNecessary.csproj)
