@@ -9,7 +9,7 @@ jobs:
       - name: check
         shell: bash
         run: |
-          result=$(dotnet run --project /.iac/CheckIfPublishNecessary/CheckIfPublishNecessary.csproj)
+          result=$(dotnet run --project /.iac/DetermineIfPublishNecessary/DetermineIfPublishNecessary.csproj)
           echo "::set-output name=publish-necessary::$result"
   nuget-approval:
     runs-on: ubuntu-latest
