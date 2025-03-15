@@ -5,7 +5,7 @@ on:
 jobs:
   nuget-approval:
     runs-on: ubuntu-latest
-    environment: " nuget-publish-approval"
+    environment: "nuget-publish-approval"
     steps:
       - name: approve
         shell: bash
