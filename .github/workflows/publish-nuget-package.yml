@@ -6,18 +6,18 @@ jobs:
   determine-if-publish-necessary:
     runs-on: ubuntu-latest
     outputs:
-      publish-necessary: ${{ steps.check.outputs.publish-necessary }}
+      publish-necessary: ${{ steps.determine-if-publish-necessary.outputs.publish-necessary }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
-      - name: check
-        id: check
+      - name: dotnet run DetermineIfPublishNecessary
+        id: determine-if-publish-necessary
         shell: bash
         run: |
           dotnet run --project ./iac/DetermineIfPublishNecessary/DetermineIfPublishNecessary.csproj
       - name: Debug Output
         run: |
-          echo Publish necessary: ${{ steps.check.outputs.publish-necessary }}
+          echo Publish necessary: ${{ steps.determine-if-publish-necessary.outputs.publish-necessary }}
   nuget-approval:
     runs-on: ubuntu-latest
     environment: "nuget-publish-approval"
