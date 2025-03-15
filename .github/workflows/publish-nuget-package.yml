@@ -15,7 +15,10 @@ jobs:
         shell: bash
         run: |
           result=$(dotnet run --project ./iac/DetermineIfPublishNecessary/DetermineIfPublishNecessary.csproj)
-          echo "::set-output name=publish-necessary::$result"
+          echo "publish-necessary=$result" >> $GITHUB_OUTPUT
+      - name: Debug Output
+        run: |
+          echo Publish necessary: ${{ steps.check.outputs.publish-necessary }}
   nuget-approval:
     runs-on: ubuntu-latest
     environment: "nuget-publish-approval"
