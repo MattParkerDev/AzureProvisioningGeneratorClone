@@ -42,7 +42,7 @@ async Task Run()
 	}
 	else
 	{
-		//Console.WriteLine($"Package {packageId} with version {packageVersion} does not exist on Nuget");
-		Console.Write("true");
+		Console.WriteLine($"Package {packageId} with version {packageVersion} does not exist on Nuget");
+		Environment.SetEnvironmentVariable("GITHUB_OUTPUT", "publish-necessary=true");
 	}
 }

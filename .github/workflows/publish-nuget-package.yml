@@ -14,8 +14,7 @@ jobs:
         id: check
         shell: bash
         run: |
-          result=$(dotnet run --project ./iac/DetermineIfPublishNecessary/DetermineIfPublishNecessary.csproj)
-          echo "publish-necessary=true" >> $GITHUB_OUTPUT
+          dotnet run --project ./iac/DetermineIfPublishNecessary/DetermineIfPublishNecessary.csproj
       - name: Debug Output
         run: |
           echo Publish necessary: ${{ steps.check.outputs.publish-necessary }}
