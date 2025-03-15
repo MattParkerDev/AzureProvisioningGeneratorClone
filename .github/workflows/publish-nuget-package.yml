@@ -24,6 +24,13 @@ jobs:
     needs: determine-if-publish-necessary
     if: needs.determine-if-publish-necessary.outputs.publish-necessary == 'true'
     steps:
-      - name: approve
+      - name: approval
         shell: bash
         run: echo "Nuget publish approved"
+      - name: Publish to NuGet
+        shell: bash
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
+        run: |
+          dotnet run --project ./iac/PublishToNuget/PublishToNuget.csproj
+
