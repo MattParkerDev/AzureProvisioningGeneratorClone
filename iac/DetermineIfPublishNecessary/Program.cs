@@ -43,6 +43,6 @@ async Task Run()
 	else
 	{
 		//Console.WriteLine($"Package {packageId} with version {packageVersion} does not exist on Nuget");
-		Console.WriteLine("true");
+		Console.Write("true");
 	}
 }
