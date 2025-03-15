@@ -1,6 +1,7 @@
 ﻿using CliWrap;
 using CliWrap.Buffered;
 using DetermineIfPublishNecessary;
+using InterpolatedParsing;
 
 Console.WriteLine("Building NuGet package");
 
@@ -20,6 +21,9 @@ if (folderInfo.Exists is false) throw new DirectoryNotFoundException(publishFold
 
 var packageFiles = folderInfo.EnumerateFiles("*.nupkg").ToList();
 var packageFile = packageFiles.Single();
+var packageVersionString = "";
+InterpolatedParser.Parse(packageFile.Name, $"Meta.Azure.Provisioning.{packageVersionString}.nupkg");
+ArgumentException.ThrowIfNullOrWhiteSpace(packageVersionString);
 
 Console.WriteLine("Package built and located");
 Console.WriteLine("Publishing to Nuget");
@@ -39,3 +43,13 @@ if (publishResult.ExitCode != 0)
 {
 	throw new Exception("Failed to publish package to Nuget");
 }
+
+var githubStepSummaryPath = Environment.GetEnvironmentVariable("GITHUB_STEP_SUMMARY")!;
+var fileInfo = new FileInfo(githubStepSummaryPath);
+if (fileInfo.Exists is false) throw new FileNotFoundException(githubStepSummaryPath);
+
+var textToWrite = $"""
+	[Meta.Azure.Provisioning {packageVersionString}](https://www.nuget.org/packages/Meta.Azure.Provisioning/{packageVersionString}) published
+	""";
+
+await File.WriteAllTextAsync(fileInfo.FullName, textToWrite);

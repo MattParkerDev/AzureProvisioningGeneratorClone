@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <PackageReference Include="CliWrap" />
+      <PackageReference Include="InterpolatedParser" />
     </ItemGroup>
 
 </Project>
