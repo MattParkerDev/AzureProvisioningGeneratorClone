@@ -103,9 +103,9 @@ public partial class QueueInfo : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _receiveLockDurationInSeconds = DefineProperty<int>("ReceiveLockDurationInSeconds", ["ReceiveLockDurationInSeconds"]);
-        _maxDeliveryCount = DefineProperty<int>("MaxDeliveryCount", ["MaxDeliveryCount"]);
-        _deadLetterDestinationWithResourceIdentity = DefineModelProperty<DeadLetterWithResourceIdentity>("DeadLetterDestinationWithResourceIdentity", ["DeadLetterDestinationWithResourceIdentity"]);
-        _eventTimeToLive = DefineProperty<TimeSpan>("EventTimeToLive", ["EventTimeToLive"], format: "P");
+        _receiveLockDurationInSeconds = DefineProperty<int>("ReceiveLockDurationInSeconds", ["receiveLockDurationInSeconds"]);
+        _maxDeliveryCount = DefineProperty<int>("MaxDeliveryCount", ["maxDeliveryCount"]);
+        _deadLetterDestinationWithResourceIdentity = DefineModelProperty<DeadLetterWithResourceIdentity>("DeadLetterDestinationWithResourceIdentity", ["deadLetterDestinationWithResourceIdentity"]);
+        _eventTimeToLive = DefineProperty<TimeSpan>("EventTimeToLive", ["eventTimeToLive"], format: "P");
     }
 }

@@ -111,10 +111,10 @@ public partial class TopicSpace : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _description = DefineProperty<string>("Description", ["Description"]);
-        _topicTemplates = DefineListProperty<string>("TopicTemplates", ["TopicTemplates"]);
+        _description = DefineProperty<string>("Description", ["properties", "description"]);
+        _topicTemplates = DefineListProperty<string>("TopicTemplates", ["properties", "topicTemplates"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<TopicSpaceProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<TopicSpaceProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<EventGridNamespace>("Parent", ["parent"], isRequired: true);
     }

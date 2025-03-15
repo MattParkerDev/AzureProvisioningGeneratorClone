@@ -49,7 +49,7 @@ public partial class IstioComponents : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _ingressGateways = DefineListProperty<IstioIngressGateway>("IngressGateways", ["IngressGateways"]);
-        _egressGateways = DefineListProperty<IstioEgressGateway>("EgressGateways", ["EgressGateways"]);
+        _ingressGateways = DefineListProperty<IstioIngressGateway>("IngressGateways", ["ingressGateways"]);
+        _egressGateways = DefineListProperty<IstioEgressGateway>("EgressGateways", ["egressGateways"]);
     }
 }

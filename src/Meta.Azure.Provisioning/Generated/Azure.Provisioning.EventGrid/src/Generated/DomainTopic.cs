@@ -87,7 +87,7 @@ public partial class DomainTopic : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<DomainTopicProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<DomainTopicProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<EventGridDomain>("Parent", ["parent"], isRequired: true);
     }

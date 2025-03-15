@@ -155,16 +155,16 @@ public partial class KubeletConfig : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _cpuManagerPolicy = DefineProperty<string>("CpuManagerPolicy", ["CpuManagerPolicy"]);
-        _isCpuCfsQuotaEnabled = DefineProperty<bool>("IsCpuCfsQuotaEnabled", ["IsCpuCfsQuotaEnabled"]);
-        _cpuCfsQuotaPeriod = DefineProperty<string>("CpuCfsQuotaPeriod", ["CpuCfsQuotaPeriod"]);
-        _imageGcHighThreshold = DefineProperty<int>("ImageGcHighThreshold", ["ImageGcHighThreshold"]);
-        _imageGcLowThreshold = DefineProperty<int>("ImageGcLowThreshold", ["ImageGcLowThreshold"]);
-        _topologyManagerPolicy = DefineProperty<string>("TopologyManagerPolicy", ["TopologyManagerPolicy"]);
-        _allowedUnsafeSysctls = DefineListProperty<string>("AllowedUnsafeSysctls", ["AllowedUnsafeSysctls"]);
-        _failStartWithSwapOn = DefineProperty<bool>("FailStartWithSwapOn", ["FailStartWithSwapOn"]);
-        _containerLogMaxSizeInMB = DefineProperty<int>("ContainerLogMaxSizeInMB", ["ContainerLogMaxSizeInMB"]);
-        _containerLogMaxFiles = DefineProperty<int>("ContainerLogMaxFiles", ["ContainerLogMaxFiles"]);
-        _podMaxPids = DefineProperty<int>("PodMaxPids", ["PodMaxPids"]);
+        _cpuManagerPolicy = DefineProperty<string>("CpuManagerPolicy", ["cpuManagerPolicy"]);
+        _isCpuCfsQuotaEnabled = DefineProperty<bool>("IsCpuCfsQuotaEnabled", ["cpuCfsQuota"]);
+        _cpuCfsQuotaPeriod = DefineProperty<string>("CpuCfsQuotaPeriod", ["cpuCfsQuotaPeriod"]);
+        _imageGcHighThreshold = DefineProperty<int>("ImageGcHighThreshold", ["imageGcHighThreshold"]);
+        _imageGcLowThreshold = DefineProperty<int>("ImageGcLowThreshold", ["imageGcLowThreshold"]);
+        _topologyManagerPolicy = DefineProperty<string>("TopologyManagerPolicy", ["topologyManagerPolicy"]);
+        _allowedUnsafeSysctls = DefineListProperty<string>("AllowedUnsafeSysctls", ["allowedUnsafeSysctls"]);
+        _failStartWithSwapOn = DefineProperty<bool>("FailStartWithSwapOn", ["failSwapOn"]);
+        _containerLogMaxSizeInMB = DefineProperty<int>("ContainerLogMaxSizeInMB", ["containerLogMaxSizeMB"]);
+        _containerLogMaxFiles = DefineProperty<int>("ContainerLogMaxFiles", ["containerLogMaxFiles"]);
+        _podMaxPids = DefineProperty<int>("PodMaxPids", ["podMaxPids"]);
     }
 }

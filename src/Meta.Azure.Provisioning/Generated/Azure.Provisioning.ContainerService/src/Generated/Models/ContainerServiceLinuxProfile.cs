@@ -50,7 +50,7 @@ public partial class ContainerServiceLinuxProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _adminUsername = DefineProperty<string>("AdminUsername", ["AdminUsername"]);
-        _sshPublicKeys = DefineListProperty<ContainerServiceSshPublicKey>("SshPublicKeys", ["SshPublicKeys"]);
+        _adminUsername = DefineProperty<string>("AdminUsername", ["adminUsername"]);
+        _sshPublicKeys = DefineListProperty<ContainerServiceSshPublicKey>("SshPublicKeys", ["ssh", "publicKeys"]);
     }
 }

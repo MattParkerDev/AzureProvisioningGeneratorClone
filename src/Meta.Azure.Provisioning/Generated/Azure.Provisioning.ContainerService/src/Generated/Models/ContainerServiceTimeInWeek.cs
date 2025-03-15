@@ -52,7 +52,7 @@ public partial class ContainerServiceTimeInWeek : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _day = DefineProperty<ContainerServiceWeekDay>("Day", ["Day"]);
-        _hourSlots = DefineListProperty<int>("HourSlots", ["HourSlots"]);
+        _day = DefineProperty<ContainerServiceWeekDay>("Day", ["day"]);
+        _hourSlots = DefineListProperty<int>("HourSlots", ["hourSlots"]);
     }
 }

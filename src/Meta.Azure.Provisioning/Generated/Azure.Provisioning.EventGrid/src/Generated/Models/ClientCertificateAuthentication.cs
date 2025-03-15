@@ -53,7 +53,7 @@ public partial class ClientCertificateAuthentication : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _validationScheme = DefineProperty<ClientCertificateValidationScheme>("ValidationScheme", ["ValidationScheme"]);
-        _allowedThumbprints = DefineListProperty<string>("AllowedThumbprints", ["AllowedThumbprints"]);
+        _validationScheme = DefineProperty<ClientCertificateValidationScheme>("ValidationScheme", ["validationScheme"]);
+        _allowedThumbprints = DefineListProperty<string>("AllowedThumbprints", ["allowedThumbprints"]);
     }
 }

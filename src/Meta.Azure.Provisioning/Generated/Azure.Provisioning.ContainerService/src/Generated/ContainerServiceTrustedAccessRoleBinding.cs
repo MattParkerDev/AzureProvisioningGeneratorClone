@@ -111,10 +111,10 @@ public partial class ContainerServiceTrustedAccessRoleBinding : ProvisionableRes
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _roles = DefineListProperty<string>("Roles", ["Roles"], isRequired: true);
-        _sourceResourceId = DefineProperty<ResourceIdentifier>("SourceResourceId", ["SourceResourceId"], isRequired: true);
+        _roles = DefineListProperty<string>("Roles", ["properties", "roles"], isRequired: true);
+        _sourceResourceId = DefineProperty<ResourceIdentifier>("SourceResourceId", ["properties", "sourceResourceId"], isRequired: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<ContainerServiceTrustedAccessRoleBindingProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<ContainerServiceTrustedAccessRoleBindingProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<ContainerServiceManagedCluster>("Parent", ["parent"], isRequired: true);
     }

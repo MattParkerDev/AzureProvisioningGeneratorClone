@@ -51,7 +51,7 @@ public partial class CustomJwtAuthenticationManagedIdentity : ProvisionableConst
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _identityType = DefineProperty<CustomJwtAuthenticationManagedIdentityType>("IdentityType", ["IdentityType"]);
-        _userAssignedIdentity = DefineProperty<string>("UserAssignedIdentity", ["UserAssignedIdentity"]);
+        _identityType = DefineProperty<CustomJwtAuthenticationManagedIdentityType>("IdentityType", ["type"]);
+        _userAssignedIdentity = DefineProperty<string>("UserAssignedIdentity", ["userAssignedIdentity"]);
     }
 }

@@ -155,13 +155,13 @@ public partial class EventGridNamespaceClientResource : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _attributes = DefineDictionaryProperty<BinaryData>("Attributes", ["Attributes"]);
-        _authenticationName = DefineProperty<string>("AuthenticationName", ["AuthenticationName"]);
-        _clientCertificateAuthentication = DefineModelProperty<ClientCertificateAuthentication>("ClientCertificateAuthentication", ["ClientCertificateAuthentication"]);
-        _description = DefineProperty<string>("Description", ["Description"]);
-        _state = DefineProperty<EventGridNamespaceClientState>("State", ["State"]);
+        _attributes = DefineDictionaryProperty<BinaryData>("Attributes", ["properties", "attributes"]);
+        _authenticationName = DefineProperty<string>("AuthenticationName", ["properties", "authenticationName"]);
+        _clientCertificateAuthentication = DefineModelProperty<ClientCertificateAuthentication>("ClientCertificateAuthentication", ["properties", "clientCertificateAuthentication"]);
+        _description = DefineProperty<string>("Description", ["properties", "description"]);
+        _state = DefineProperty<EventGridNamespaceClientState>("State", ["properties", "state"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<EventGridNamespaceClientProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<EventGridNamespaceClientProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<EventGridNamespace>("Parent", ["parent"], isRequired: true);
     }

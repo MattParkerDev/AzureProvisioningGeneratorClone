@@ -119,10 +119,10 @@ public partial class EventGridDomainPrivateEndpointConnection : ProvisionableRes
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _connectionState = DefineModelProperty<EventGridPrivateEndpointConnectionState>("ConnectionState", ["ConnectionState"]);
-        _groupIds = DefineListProperty<string>("GroupIds", ["GroupIds"]);
-        _privateEndpointId = DefineProperty<ResourceIdentifier>("PrivateEndpointId", ["PrivateEndpointId"]);
-        _provisioningState = DefineProperty<EventGridResourceProvisioningState>("ProvisioningState", ["ProvisioningState"]);
+        _connectionState = DefineModelProperty<EventGridPrivateEndpointConnectionState>("ConnectionState", ["properties", "privateLinkServiceConnectionState"]);
+        _groupIds = DefineListProperty<string>("GroupIds", ["properties", "groupIds"]);
+        _privateEndpointId = DefineProperty<ResourceIdentifier>("PrivateEndpointId", ["properties", "privateEndpoint", "id"]);
+        _provisioningState = DefineProperty<EventGridResourceProvisioningState>("ProvisioningState", ["properties", "provisioningState"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<EventGridDomain>("Parent", ["parent"], isRequired: true);

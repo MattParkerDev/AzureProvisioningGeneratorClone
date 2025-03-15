@@ -52,7 +52,7 @@ public partial class NamespaceSku : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _name = DefineProperty<EventGridSkuName>("Name", ["Name"]);
-        _capacity = DefineProperty<int>("Capacity", ["Capacity"]);
+        _name = DefineProperty<EventGridSkuName>("Name", ["name"]);
+        _capacity = DefineProperty<int>("Capacity", ["capacity"]);
     }
 }

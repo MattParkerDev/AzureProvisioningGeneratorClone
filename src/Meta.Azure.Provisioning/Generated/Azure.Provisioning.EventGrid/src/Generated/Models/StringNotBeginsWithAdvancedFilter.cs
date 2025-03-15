@@ -40,6 +40,7 @@ public partial class StringNotBeginsWithAdvancedFilter : AdvancedFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _values = DefineListProperty<string>("Values", ["Values"]);
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "StringNotBeginsWith");
+        _values = DefineListProperty<string>("Values", ["values"]);
     }
 }

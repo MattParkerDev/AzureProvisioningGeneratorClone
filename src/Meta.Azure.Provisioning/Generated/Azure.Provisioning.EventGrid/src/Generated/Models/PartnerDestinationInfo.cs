@@ -90,10 +90,10 @@ public partial class PartnerDestinationInfo : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _azureSubscriptionId = DefineProperty<string>("AzureSubscriptionId", ["AzureSubscriptionId"]);
-        _resourceGroupName = DefineProperty<string>("ResourceGroupName", ["ResourceGroupName"]);
+        _azureSubscriptionId = DefineProperty<string>("AzureSubscriptionId", ["azureSubscriptionId"]);
+        _resourceGroupName = DefineProperty<string>("ResourceGroupName", ["resourceGroupName"]);
         _name = DefineProperty<string>("Name", ["name"]);
-        _endpointServiceContext = DefineProperty<string>("EndpointServiceContext", ["EndpointServiceContext"]);
-        _resourceMoveChangeHistory = DefineListProperty<ResourceMoveChangeHistory>("ResourceMoveChangeHistory", ["ResourceMoveChangeHistory"]);
+        _endpointServiceContext = DefineProperty<string>("EndpointServiceContext", ["endpointServiceContext"]);
+        _resourceMoveChangeHistory = DefineListProperty<ResourceMoveChangeHistory>("ResourceMoveChangeHistory", ["resourceMoveChangeHistory"]);
     }
 }

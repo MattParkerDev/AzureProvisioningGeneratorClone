@@ -292,24 +292,24 @@ public partial class EventGridDomain : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _autoCreateTopicWithFirstSubscription = DefineProperty<bool>("AutoCreateTopicWithFirstSubscription", ["AutoCreateTopicWithFirstSubscription"]);
-        _autoDeleteTopicWithLastSubscription = DefineProperty<bool>("AutoDeleteTopicWithLastSubscription", ["AutoDeleteTopicWithLastSubscription"]);
-        _dataResidencyBoundary = DefineProperty<DataResidencyBoundary>("DataResidencyBoundary", ["DataResidencyBoundary"]);
-        _eventTypeInfo = DefineModelProperty<PartnerTopicEventTypeInfo>("EventTypeInfo", ["EventTypeInfo"]);
-        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["Identity"]);
-        _inboundIPRules = DefineListProperty<EventGridInboundIPRule>("InboundIPRules", ["InboundIPRules"]);
-        _inputSchema = DefineProperty<EventGridInputSchema>("InputSchema", ["InputSchema"]);
-        _inputSchemaMapping = DefineModelProperty<EventGridInputSchemaMapping>("InputSchemaMapping", ["InputSchemaMapping"]);
-        _isLocalAuthDisabled = DefineProperty<bool>("IsLocalAuthDisabled", ["IsLocalAuthDisabled"]);
-        _minimumTlsVersionAllowed = DefineProperty<TlsVersion>("MinimumTlsVersionAllowed", ["MinimumTlsVersionAllowed"]);
-        _publicNetworkAccess = DefineProperty<EventGridPublicNetworkAccess>("PublicNetworkAccess", ["PublicNetworkAccess"]);
-        _skuName = DefineProperty<EventGridSku>("SkuName", ["SkuName"]);
+        _autoCreateTopicWithFirstSubscription = DefineProperty<bool>("AutoCreateTopicWithFirstSubscription", ["properties", "autoCreateTopicWithFirstSubscription"]);
+        _autoDeleteTopicWithLastSubscription = DefineProperty<bool>("AutoDeleteTopicWithLastSubscription", ["properties", "autoDeleteTopicWithLastSubscription"]);
+        _dataResidencyBoundary = DefineProperty<DataResidencyBoundary>("DataResidencyBoundary", ["properties", "dataResidencyBoundary"]);
+        _eventTypeInfo = DefineModelProperty<PartnerTopicEventTypeInfo>("EventTypeInfo", ["properties", "eventTypeInfo"]);
+        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["identity"]);
+        _inboundIPRules = DefineListProperty<EventGridInboundIPRule>("InboundIPRules", ["properties", "inboundIpRules"]);
+        _inputSchema = DefineProperty<EventGridInputSchema>("InputSchema", ["properties", "inputSchema"]);
+        _inputSchemaMapping = DefineModelProperty<EventGridInputSchemaMapping>("InputSchemaMapping", ["properties", "inputSchemaMapping"]);
+        _isLocalAuthDisabled = DefineProperty<bool>("IsLocalAuthDisabled", ["properties", "disableLocalAuth"]);
+        _minimumTlsVersionAllowed = DefineProperty<TlsVersion>("MinimumTlsVersionAllowed", ["properties", "minimumTlsVersionAllowed"]);
+        _publicNetworkAccess = DefineProperty<EventGridPublicNetworkAccess>("PublicNetworkAccess", ["properties", "publicNetworkAccess"]);
+        _skuName = DefineProperty<EventGridSku>("SkuName", ["sku", "name"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
-        _endpoint = DefineProperty<Uri>("Endpoint", ["Endpoint"], isOutput: true);
+        _endpoint = DefineProperty<Uri>("Endpoint", ["properties", "endpoint"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _metricResourceId = DefineProperty<string>("MetricResourceId", ["MetricResourceId"], isOutput: true);
-        _privateEndpointConnections = DefineListProperty<EventGridPrivateEndpointConnectionData>("PrivateEndpointConnections", ["PrivateEndpointConnections"], isOutput: true);
-        _provisioningState = DefineProperty<EventGridDomainProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _metricResourceId = DefineProperty<string>("MetricResourceId", ["properties", "metricResourceId"], isOutput: true);
+        _privateEndpointConnections = DefineListProperty<EventGridPrivateEndpointConnectionData>("PrivateEndpointConnections", ["properties", "privateEndpointConnections"], isOutput: true);
+        _provisioningState = DefineProperty<EventGridDomainProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
     }
 

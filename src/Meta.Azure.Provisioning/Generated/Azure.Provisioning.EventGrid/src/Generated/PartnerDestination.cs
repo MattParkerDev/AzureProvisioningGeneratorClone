@@ -159,15 +159,15 @@ public partial class PartnerDestination : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _activationState = DefineProperty<PartnerDestinationActivationState>("ActivationState", ["ActivationState"]);
-        _endpointBaseUri = DefineProperty<Uri>("EndpointBaseUri", ["EndpointBaseUri"]);
-        _endpointServiceContext = DefineProperty<string>("EndpointServiceContext", ["EndpointServiceContext"]);
-        _expirationTimeIfNotActivatedUtc = DefineProperty<DateTimeOffset>("ExpirationTimeIfNotActivatedUtc", ["ExpirationTimeIfNotActivatedUtc"]);
-        _messageForActivation = DefineProperty<string>("MessageForActivation", ["MessageForActivation"]);
-        _partnerRegistrationImmutableId = DefineProperty<Guid>("PartnerRegistrationImmutableId", ["PartnerRegistrationImmutableId"]);
+        _activationState = DefineProperty<PartnerDestinationActivationState>("ActivationState", ["properties", "activationState"]);
+        _endpointBaseUri = DefineProperty<Uri>("EndpointBaseUri", ["properties", "endpointBaseUrl"]);
+        _endpointServiceContext = DefineProperty<string>("EndpointServiceContext", ["properties", "endpointServiceContext"]);
+        _expirationTimeIfNotActivatedUtc = DefineProperty<DateTimeOffset>("ExpirationTimeIfNotActivatedUtc", ["properties", "expirationTimeIfNotActivatedUtc"]);
+        _messageForActivation = DefineProperty<string>("MessageForActivation", ["properties", "messageForActivation"]);
+        _partnerRegistrationImmutableId = DefineProperty<Guid>("PartnerRegistrationImmutableId", ["properties", "partnerRegistrationImmutableId"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<PartnerDestinationProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<PartnerDestinationProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
     }
 

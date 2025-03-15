@@ -58,7 +58,7 @@ public partial class ManagedClusterMonitorProfileKubeStateMetrics : Provisionabl
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _metricLabelsAllowlist = DefineProperty<string>("MetricLabelsAllowlist", ["MetricLabelsAllowlist"]);
-        _metricAnnotationsAllowList = DefineProperty<string>("MetricAnnotationsAllowList", ["MetricAnnotationsAllowList"]);
+        _metricLabelsAllowlist = DefineProperty<string>("MetricLabelsAllowlist", ["metricLabelsAllowlist"]);
+        _metricAnnotationsAllowList = DefineProperty<string>("MetricAnnotationsAllowList", ["metricAnnotationsAllowList"]);
     }
 }

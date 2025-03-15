@@ -93,9 +93,9 @@ public partial class ContainerServicePrivateLinkResourceData : ProvisionableCons
         base.DefineProvisionableProperties();
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"]);
         _name = DefineProperty<string>("Name", ["name"]);
-        _resourceType = DefineProperty<ResourceType>("ResourceType", ["ResourceType"]);
-        _groupId = DefineProperty<string>("GroupId", ["GroupId"]);
-        _requiredMembers = DefineListProperty<string>("RequiredMembers", ["RequiredMembers"]);
-        _privateLinkServiceId = DefineProperty<ResourceIdentifier>("PrivateLinkServiceId", ["PrivateLinkServiceId"], isOutput: true);
+        _resourceType = DefineProperty<ResourceType>("ResourceType", ["type"]);
+        _groupId = DefineProperty<string>("GroupId", ["groupId"]);
+        _requiredMembers = DefineListProperty<string>("RequiredMembers", ["requiredMembers"]);
+        _privateLinkServiceId = DefineProperty<ResourceIdentifier>("PrivateLinkServiceId", ["privateLinkServiceID"], isOutput: true);
     }
 }

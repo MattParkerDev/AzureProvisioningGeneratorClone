@@ -39,6 +39,7 @@ public partial class StringEndsWithFilter : EventGridFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _values = DefineListProperty<string>("Values", ["Values"]);
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "StringEndsWith");
+        _values = DefineListProperty<string>("Values", ["values"]);
     }
 }

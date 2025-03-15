@@ -39,6 +39,7 @@ public partial class DynamicDeliveryAttributeMapping : DeliveryAttributeMapping
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _sourceField = DefineProperty<string>("SourceField", ["SourceField"]);
+        DefineProperty<string>("type", ["type"], defaultValue: "Dynamic");
+        _sourceField = DefineProperty<string>("SourceField", ["properties", "sourceField"]);
     }
 }

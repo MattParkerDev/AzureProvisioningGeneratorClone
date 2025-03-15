@@ -39,6 +39,7 @@ public partial class NumberNotInFilter : EventGridFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _values = DefineListProperty<double>("Values", ["Values"]);
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "NumberNotIn");
+        _values = DefineListProperty<double>("Values", ["values"]);
     }
 }

@@ -48,7 +48,7 @@ public partial class TopicsConfiguration : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _hostname = DefineProperty<string>("Hostname", ["Hostname"], isOutput: true);
-        _customDomains = DefineListProperty<CustomDomainConfiguration>("CustomDomains", ["CustomDomains"]);
+        _hostname = DefineProperty<string>("Hostname", ["hostname"], isOutput: true);
+        _customDomains = DefineListProperty<CustomDomainConfiguration>("CustomDomains", ["customDomains"]);
     }
 }

@@ -76,7 +76,7 @@ public partial class FiltersConfiguration : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _includedEventTypes = DefineListProperty<string>("IncludedEventTypes", ["IncludedEventTypes"]);
-        _filters = DefineListProperty<EventGridFilter>("Filters", ["Filters"]);
+        _includedEventTypes = DefineListProperty<string>("IncludedEventTypes", ["includedEventTypes"]);
+        _filters = DefineListProperty<EventGridFilter>("Filters", ["filters"]);
     }
 }

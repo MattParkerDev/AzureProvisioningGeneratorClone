@@ -225,19 +225,19 @@ public partial class PartnerTopicEventSubscription : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _deadLetterDestination = DefineModelProperty<DeadLetterDestination>("DeadLetterDestination", ["DeadLetterDestination"]);
-        _deadLetterWithResourceIdentity = DefineModelProperty<DeadLetterWithResourceIdentity>("DeadLetterWithResourceIdentity", ["DeadLetterWithResourceIdentity"]);
-        _deliveryWithResourceIdentity = DefineModelProperty<DeliveryWithResourceIdentity>("DeliveryWithResourceIdentity", ["DeliveryWithResourceIdentity"]);
-        _destination = DefineModelProperty<EventSubscriptionDestination>("Destination", ["Destination"]);
-        _eventDeliverySchema = DefineProperty<EventDeliverySchema>("EventDeliverySchema", ["EventDeliverySchema"]);
-        _expireOn = DefineProperty<DateTimeOffset>("ExpireOn", ["ExpireOn"]);
-        _filter = DefineModelProperty<EventSubscriptionFilter>("Filter", ["Filter"]);
-        _labels = DefineListProperty<string>("Labels", ["Labels"]);
-        _retryPolicy = DefineModelProperty<EventSubscriptionRetryPolicy>("RetryPolicy", ["RetryPolicy"]);
+        _deadLetterDestination = DefineModelProperty<DeadLetterDestination>("DeadLetterDestination", ["properties", "deadLetterDestination"]);
+        _deadLetterWithResourceIdentity = DefineModelProperty<DeadLetterWithResourceIdentity>("DeadLetterWithResourceIdentity", ["properties", "deadLetterWithResourceIdentity"]);
+        _deliveryWithResourceIdentity = DefineModelProperty<DeliveryWithResourceIdentity>("DeliveryWithResourceIdentity", ["properties", "deliveryWithResourceIdentity"]);
+        _destination = DefineModelProperty<EventSubscriptionDestination>("Destination", ["properties", "destination"]);
+        _eventDeliverySchema = DefineProperty<EventDeliverySchema>("EventDeliverySchema", ["properties", "eventDeliverySchema"]);
+        _expireOn = DefineProperty<DateTimeOffset>("ExpireOn", ["properties", "expirationTimeUtc"]);
+        _filter = DefineModelProperty<EventSubscriptionFilter>("Filter", ["properties", "filter"]);
+        _labels = DefineListProperty<string>("Labels", ["properties", "labels"]);
+        _retryPolicy = DefineModelProperty<EventSubscriptionRetryPolicy>("RetryPolicy", ["properties", "retryPolicy"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<EventSubscriptionProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<EventSubscriptionProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
-        _topic = DefineProperty<string>("Topic", ["Topic"], isOutput: true);
+        _topic = DefineProperty<string>("Topic", ["properties", "topic"], isOutput: true);
         _parent = DefineResource<PartnerTopic>("Parent", ["parent"], isRequired: true);
     }
 

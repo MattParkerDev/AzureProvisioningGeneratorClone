@@ -184,17 +184,17 @@ public partial class PartnerTopic : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _activationState = DefineProperty<PartnerTopicActivationState>("ActivationState", ["ActivationState"]);
-        _eventTypeInfo = DefineModelProperty<PartnerTopicEventTypeInfo>("EventTypeInfo", ["EventTypeInfo"]);
-        _expireOnIfNotActivated = DefineProperty<DateTimeOffset>("ExpireOnIfNotActivated", ["ExpireOnIfNotActivated"]);
-        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["Identity"]);
-        _messageForActivation = DefineProperty<string>("MessageForActivation", ["MessageForActivation"]);
-        _partnerRegistrationImmutableId = DefineProperty<Guid>("PartnerRegistrationImmutableId", ["PartnerRegistrationImmutableId"]);
-        _partnerTopicFriendlyDescription = DefineProperty<string>("PartnerTopicFriendlyDescription", ["PartnerTopicFriendlyDescription"]);
-        _source = DefineProperty<string>("Source", ["Source"]);
+        _activationState = DefineProperty<PartnerTopicActivationState>("ActivationState", ["properties", "activationState"]);
+        _eventTypeInfo = DefineModelProperty<PartnerTopicEventTypeInfo>("EventTypeInfo", ["properties", "eventTypeInfo"]);
+        _expireOnIfNotActivated = DefineProperty<DateTimeOffset>("ExpireOnIfNotActivated", ["properties", "expirationTimeIfNotActivatedUtc"]);
+        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["identity"]);
+        _messageForActivation = DefineProperty<string>("MessageForActivation", ["properties", "messageForActivation"]);
+        _partnerRegistrationImmutableId = DefineProperty<Guid>("PartnerRegistrationImmutableId", ["properties", "partnerRegistrationImmutableId"]);
+        _partnerTopicFriendlyDescription = DefineProperty<string>("PartnerTopicFriendlyDescription", ["properties", "partnerTopicFriendlyDescription"]);
+        _source = DefineProperty<string>("Source", ["properties", "source"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<PartnerTopicProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<PartnerTopicProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
     }
 

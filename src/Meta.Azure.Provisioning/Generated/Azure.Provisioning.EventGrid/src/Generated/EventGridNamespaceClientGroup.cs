@@ -107,10 +107,10 @@ public partial class EventGridNamespaceClientGroup : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _description = DefineProperty<string>("Description", ["Description"]);
-        _query = DefineProperty<string>("Query", ["Query"]);
+        _description = DefineProperty<string>("Description", ["properties", "description"]);
+        _query = DefineProperty<string>("Query", ["properties", "query"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<ClientGroupProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<ClientGroupProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<EventGridNamespace>("Parent", ["parent"], isRequired: true);
     }

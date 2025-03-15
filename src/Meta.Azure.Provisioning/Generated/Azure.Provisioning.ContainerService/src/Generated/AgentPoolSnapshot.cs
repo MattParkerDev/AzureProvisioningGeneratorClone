@@ -165,17 +165,17 @@ public partial class AgentPoolSnapshot : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _creationDataSourceResourceId = DefineProperty<ResourceIdentifier>("CreationDataSourceResourceId", ["CreationDataSourceResourceId"]);
-        _snapshotType = DefineProperty<SnapshotType>("SnapshotType", ["SnapshotType"]);
+        _creationDataSourceResourceId = DefineProperty<ResourceIdentifier>("CreationDataSourceResourceId", ["properties", "creationData", "sourceResourceId"]);
+        _snapshotType = DefineProperty<SnapshotType>("SnapshotType", ["properties", "snapshotType"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
-        _enableFips = DefineProperty<bool>("EnableFips", ["EnableFips"], isOutput: true);
+        _enableFips = DefineProperty<bool>("EnableFips", ["properties", "enableFIPS"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _kubernetesVersion = DefineProperty<string>("KubernetesVersion", ["KubernetesVersion"], isOutput: true);
-        _nodeImageVersion = DefineProperty<string>("NodeImageVersion", ["NodeImageVersion"], isOutput: true);
-        _oSSku = DefineProperty<ContainerServiceOSSku>("OSSku", ["OSSku"], isOutput: true);
-        _oSType = DefineProperty<ContainerServiceOSType>("OSType", ["OSType"], isOutput: true);
+        _kubernetesVersion = DefineProperty<string>("KubernetesVersion", ["properties", "kubernetesVersion"], isOutput: true);
+        _nodeImageVersion = DefineProperty<string>("NodeImageVersion", ["properties", "nodeImageVersion"], isOutput: true);
+        _oSSku = DefineProperty<ContainerServiceOSSku>("OSSku", ["properties", "osSku"], isOutput: true);
+        _oSType = DefineProperty<ContainerServiceOSType>("OSType", ["properties", "osType"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
-        _vmSize = DefineProperty<string>("VmSize", ["VmSize"], isOutput: true);
+        _vmSize = DefineProperty<string>("VmSize", ["properties", "vmSize"], isOutput: true);
     }
 
     /// <summary>

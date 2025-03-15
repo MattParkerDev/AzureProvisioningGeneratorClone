@@ -39,6 +39,7 @@ public partial class StringInFilter : EventGridFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _values = DefineListProperty<string>("Values", ["Values"]);
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "StringIn");
+        _values = DefineListProperty<string>("Values", ["values"]);
     }
 }

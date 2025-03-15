@@ -48,7 +48,7 @@ public partial class EventGridInboundIPRule : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _iPMask = DefineProperty<string>("IPMask", ["IPMask"]);
-        _action = DefineProperty<EventGridIPActionType>("Action", ["Action"]);
+        _iPMask = DefineProperty<string>("IPMask", ["ipMask"]);
+        _action = DefineProperty<EventGridIPActionType>("Action", ["action"]);
     }
 }

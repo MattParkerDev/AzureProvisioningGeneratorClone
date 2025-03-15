@@ -104,11 +104,11 @@ public partial class ContainerServiceMaintenanceWindow : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _schedule = DefineModelProperty<ContainerServiceMaintenanceSchedule>("Schedule", ["Schedule"]);
-        _durationHours = DefineProperty<int>("DurationHours", ["DurationHours"]);
-        _utcOffset = DefineProperty<string>("UtcOffset", ["UtcOffset"]);
-        _startDate = DefineProperty<string>("StartDate", ["StartDate"]);
-        _startTime = DefineProperty<string>("StartTime", ["StartTime"]);
-        _notAllowedDates = DefineListProperty<ContainerServiceDateSpan>("NotAllowedDates", ["NotAllowedDates"]);
+        _schedule = DefineModelProperty<ContainerServiceMaintenanceSchedule>("Schedule", ["schedule"]);
+        _durationHours = DefineProperty<int>("DurationHours", ["durationHours"]);
+        _utcOffset = DefineProperty<string>("UtcOffset", ["utcOffset"]);
+        _startDate = DefineProperty<string>("StartDate", ["startDate"]);
+        _startTime = DefineProperty<string>("StartTime", ["startTime"]);
+        _notAllowedDates = DefineListProperty<ContainerServiceDateSpan>("NotAllowedDates", ["notAllowedDates"]);
     }
 }

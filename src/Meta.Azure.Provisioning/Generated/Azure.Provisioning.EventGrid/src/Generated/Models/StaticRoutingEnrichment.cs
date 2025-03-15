@@ -44,6 +44,6 @@ public partial class StaticRoutingEnrichment : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _key = DefineProperty<string>("Key", ["Key"]);
+        _key = DefineProperty<string>("Key", ["key"]);
     }
 }

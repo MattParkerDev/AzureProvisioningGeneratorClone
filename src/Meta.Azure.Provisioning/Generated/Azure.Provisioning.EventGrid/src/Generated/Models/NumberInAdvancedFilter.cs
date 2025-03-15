@@ -39,6 +39,7 @@ public partial class NumberInAdvancedFilter : AdvancedFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _values = DefineListProperty<double>("Values", ["Values"]);
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "NumberIn");
+        _values = DefineListProperty<double>("Values", ["values"]);
     }
 }

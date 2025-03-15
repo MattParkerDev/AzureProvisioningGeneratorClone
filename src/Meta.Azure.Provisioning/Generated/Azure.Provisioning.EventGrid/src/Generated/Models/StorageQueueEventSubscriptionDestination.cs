@@ -64,8 +64,9 @@ public partial class StorageQueueEventSubscriptionDestination : EventSubscriptio
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["ResourceId"]);
-        _queueName = DefineProperty<string>("QueueName", ["QueueName"]);
-        _queueMessageTimeToLiveInSeconds = DefineProperty<long>("QueueMessageTimeToLiveInSeconds", ["QueueMessageTimeToLiveInSeconds"]);
+        DefineProperty<string>("endpointType", ["endpointType"], defaultValue: "StorageQueue");
+        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["properties", "resourceId"]);
+        _queueName = DefineProperty<string>("QueueName", ["properties", "queueName"]);
+        _queueMessageTimeToLiveInSeconds = DefineProperty<long>("QueueMessageTimeToLiveInSeconds", ["properties", "queueMessageTimeToLiveInSeconds"]);
     }
 }

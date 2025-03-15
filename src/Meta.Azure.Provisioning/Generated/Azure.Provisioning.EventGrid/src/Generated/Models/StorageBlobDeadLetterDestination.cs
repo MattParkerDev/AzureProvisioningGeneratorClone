@@ -52,7 +52,8 @@ public partial class StorageBlobDeadLetterDestination : DeadLetterDestination
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["ResourceId"]);
-        _blobContainerName = DefineProperty<string>("BlobContainerName", ["BlobContainerName"]);
+        DefineProperty<string>("endpointType", ["endpointType"], defaultValue: "StorageBlob");
+        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["properties", "resourceId"]);
+        _blobContainerName = DefineProperty<string>("BlobContainerName", ["properties", "blobContainerName"]);
     }
 }

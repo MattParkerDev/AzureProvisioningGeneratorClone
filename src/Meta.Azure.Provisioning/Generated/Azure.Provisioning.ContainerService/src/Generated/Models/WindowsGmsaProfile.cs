@@ -62,8 +62,8 @@ public partial class WindowsGmsaProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _isEnabled = DefineProperty<bool>("IsEnabled", ["IsEnabled"]);
-        _dnsServer = DefineProperty<string>("DnsServer", ["DnsServer"]);
-        _rootDomainName = DefineProperty<string>("RootDomainName", ["RootDomainName"]);
+        _isEnabled = DefineProperty<bool>("IsEnabled", ["enabled"]);
+        _dnsServer = DefineProperty<string>("DnsServer", ["dnsServer"]);
+        _rootDomainName = DefineProperty<string>("RootDomainName", ["rootDomainName"]);
     }
 }

@@ -172,17 +172,17 @@ public partial class CommunicationDomain : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _domainManagement = DefineProperty<DomainManagement>("DomainManagement", ["DomainManagement"]);
+        _domainManagement = DefineProperty<DomainManagement>("DomainManagement", ["properties", "domainManagement"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
-        _userEngagementTracking = DefineProperty<UserEngagementTracking>("UserEngagementTracking", ["UserEngagementTracking"]);
-        _dataLocation = DefineProperty<string>("DataLocation", ["DataLocation"], isOutput: true);
-        _fromSenderDomain = DefineProperty<string>("FromSenderDomain", ["FromSenderDomain"], isOutput: true);
+        _userEngagementTracking = DefineProperty<UserEngagementTracking>("UserEngagementTracking", ["properties", "userEngagementTracking"]);
+        _dataLocation = DefineProperty<string>("DataLocation", ["properties", "dataLocation"], isOutput: true);
+        _fromSenderDomain = DefineProperty<string>("FromSenderDomain", ["properties", "fromSenderDomain"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _mailFromSenderDomain = DefineProperty<string>("MailFromSenderDomain", ["MailFromSenderDomain"], isOutput: true);
-        _provisioningState = DefineProperty<DomainProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _mailFromSenderDomain = DefineProperty<string>("MailFromSenderDomain", ["properties", "mailFromSenderDomain"], isOutput: true);
+        _provisioningState = DefineProperty<DomainProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
-        _verificationRecords = DefineModelProperty<DomainPropertiesVerificationRecords>("VerificationRecords", ["VerificationRecords"], isOutput: true);
-        _verificationStates = DefineModelProperty<DomainPropertiesVerificationStates>("VerificationStates", ["VerificationStates"], isOutput: true);
+        _verificationRecords = DefineModelProperty<DomainPropertiesVerificationRecords>("VerificationRecords", ["properties", "verificationRecords"], isOutput: true);
+        _verificationStates = DefineModelProperty<DomainPropertiesVerificationStates>("VerificationStates", ["properties", "verificationStates"], isOutput: true);
         _parent = DefineResource<EmailService>("Parent", ["parent"], isRequired: true);
     }
 

@@ -65,8 +65,8 @@ public partial class ManagedClusterNatGatewayProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _managedOutboundIPCount = DefineProperty<int>("ManagedOutboundIPCount", ["ManagedOutboundIPCount"]);
-        _effectiveOutboundIPs = DefineListProperty<WritableSubResource>("EffectiveOutboundIPs", ["EffectiveOutboundIPs"]);
-        _idleTimeoutInMinutes = DefineProperty<int>("IdleTimeoutInMinutes", ["IdleTimeoutInMinutes"]);
+        _managedOutboundIPCount = DefineProperty<int>("ManagedOutboundIPCount", ["managedOutboundIPProfile", "count"]);
+        _effectiveOutboundIPs = DefineListProperty<WritableSubResource>("EffectiveOutboundIPs", ["effectiveOutboundIPs"]);
+        _idleTimeoutInMinutes = DefineProperty<int>("IdleTimeoutInMinutes", ["idleTimeoutInMinutes"]);
     }
 }

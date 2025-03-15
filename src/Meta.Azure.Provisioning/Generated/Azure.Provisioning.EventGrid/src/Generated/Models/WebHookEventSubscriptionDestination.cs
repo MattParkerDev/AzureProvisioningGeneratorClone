@@ -121,13 +121,14 @@ public partial class WebHookEventSubscriptionDestination : EventSubscriptionDest
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _endpoint = DefineProperty<Uri>("Endpoint", ["Endpoint"]);
-        _baseEndpoint = DefineProperty<Uri>("BaseEndpoint", ["BaseEndpoint"], isOutput: true);
-        _maxEventsPerBatch = DefineProperty<int>("MaxEventsPerBatch", ["MaxEventsPerBatch"]);
-        _preferredBatchSizeInKilobytes = DefineProperty<int>("PreferredBatchSizeInKilobytes", ["PreferredBatchSizeInKilobytes"]);
-        _azureActiveDirectoryTenantId = DefineProperty<Guid>("AzureActiveDirectoryTenantId", ["AzureActiveDirectoryTenantId"]);
-        _uriOrAzureActiveDirectoryApplicationId = DefineProperty<string>("UriOrAzureActiveDirectoryApplicationId", ["UriOrAzureActiveDirectoryApplicationId"]);
-        _deliveryAttributeMappings = DefineListProperty<DeliveryAttributeMapping>("DeliveryAttributeMappings", ["DeliveryAttributeMappings"]);
-        _minimumTlsVersionAllowed = DefineProperty<TlsVersion>("MinimumTlsVersionAllowed", ["MinimumTlsVersionAllowed"]);
+        DefineProperty<string>("endpointType", ["endpointType"], defaultValue: "WebHook");
+        _endpoint = DefineProperty<Uri>("Endpoint", ["properties", "endpointUrl"]);
+        _baseEndpoint = DefineProperty<Uri>("BaseEndpoint", ["properties", "endpointBaseUrl"], isOutput: true);
+        _maxEventsPerBatch = DefineProperty<int>("MaxEventsPerBatch", ["properties", "maxEventsPerBatch"]);
+        _preferredBatchSizeInKilobytes = DefineProperty<int>("PreferredBatchSizeInKilobytes", ["properties", "preferredBatchSizeInKilobytes"]);
+        _azureActiveDirectoryTenantId = DefineProperty<Guid>("AzureActiveDirectoryTenantId", ["properties", "azureActiveDirectoryTenantId"]);
+        _uriOrAzureActiveDirectoryApplicationId = DefineProperty<string>("UriOrAzureActiveDirectoryApplicationId", ["properties", "azureActiveDirectoryApplicationIdOrUri"]);
+        _deliveryAttributeMappings = DefineListProperty<DeliveryAttributeMapping>("DeliveryAttributeMappings", ["properties", "deliveryAttributeMappings"]);
+        _minimumTlsVersionAllowed = DefineProperty<TlsVersion>("MinimumTlsVersionAllowed", ["properties", "minimumTlsVersionAllowed"]);
     }
 }

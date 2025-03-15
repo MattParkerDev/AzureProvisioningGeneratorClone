@@ -48,7 +48,7 @@ public partial class RoutingIdentityInfo : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _identityType = DefineProperty<RoutingIdentityType>("IdentityType", ["IdentityType"]);
-        _userAssignedIdentity = DefineProperty<string>("UserAssignedIdentity", ["UserAssignedIdentity"]);
+        _identityType = DefineProperty<RoutingIdentityType>("IdentityType", ["type"]);
+        _userAssignedIdentity = DefineProperty<string>("UserAssignedIdentity", ["userAssignedIdentity"]);
     }
 }

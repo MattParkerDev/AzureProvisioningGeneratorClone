@@ -49,7 +49,7 @@ public partial class ManagedClusterWorkloadAutoScalerProfile : ProvisionableCons
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _isKedaEnabled = DefineProperty<bool>("IsKedaEnabled", ["IsKedaEnabled"]);
-        _isVpaEnabled = DefineProperty<bool>("IsVpaEnabled", ["IsVpaEnabled"]);
+        _isKedaEnabled = DefineProperty<bool>("IsKedaEnabled", ["keda", "enabled"]);
+        _isVpaEnabled = DefineProperty<bool>("IsVpaEnabled", ["verticalPodAutoscaler", "enabled"]);
     }
 }

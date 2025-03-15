@@ -50,7 +50,7 @@ public partial class ManagedClusterServicePrincipalProfile : ProvisionableConstr
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _clientId = DefineProperty<string>("ClientId", ["ClientId"]);
-        _secret = DefineProperty<string>("Secret", ["Secret"]);
+        _clientId = DefineProperty<string>("ClientId", ["clientId"]);
+        _secret = DefineProperty<string>("Secret", ["secret"]);
     }
 }

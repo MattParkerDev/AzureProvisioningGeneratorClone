@@ -115,11 +115,11 @@ public partial class SenderUsername : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _displayName = DefineProperty<string>("DisplayName", ["DisplayName"]);
-        _username = DefineProperty<string>("Username", ["Username"]);
-        _dataLocation = DefineProperty<string>("DataLocation", ["DataLocation"], isOutput: true);
+        _displayName = DefineProperty<string>("DisplayName", ["properties", "displayName"]);
+        _username = DefineProperty<string>("Username", ["properties", "username"]);
+        _dataLocation = DefineProperty<string>("DataLocation", ["properties", "dataLocation"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<CommunicationServiceProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<CommunicationServiceProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<CommunicationDomain>("Parent", ["parent"], isRequired: true);
     }

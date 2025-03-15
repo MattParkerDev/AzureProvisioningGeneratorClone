@@ -61,7 +61,8 @@ public partial class HybridConnectionEventSubscriptionDestination : EventSubscri
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["ResourceId"]);
-        _deliveryAttributeMappings = DefineListProperty<DeliveryAttributeMapping>("DeliveryAttributeMappings", ["DeliveryAttributeMappings"]);
+        DefineProperty<string>("endpointType", ["endpointType"], defaultValue: "HybridConnection");
+        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["properties", "resourceId"]);
+        _deliveryAttributeMappings = DefineListProperty<DeliveryAttributeMapping>("DeliveryAttributeMappings", ["properties", "deliveryAttributeMappings"]);
     }
 }

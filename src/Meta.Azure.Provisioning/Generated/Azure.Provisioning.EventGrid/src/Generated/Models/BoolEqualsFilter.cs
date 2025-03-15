@@ -38,6 +38,7 @@ public partial class BoolEqualsFilter : EventGridFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _value = DefineProperty<bool>("Value", ["Value"]);
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "BoolEquals");
+        _value = DefineProperty<bool>("Value", ["value"]);
     }
 }

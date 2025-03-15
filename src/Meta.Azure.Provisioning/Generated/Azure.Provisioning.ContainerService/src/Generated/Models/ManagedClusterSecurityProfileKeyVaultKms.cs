@@ -81,9 +81,9 @@ public partial class ManagedClusterSecurityProfileKeyVaultKms : ProvisionableCon
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _isEnabled = DefineProperty<bool>("IsEnabled", ["IsEnabled"]);
-        _keyId = DefineProperty<string>("KeyId", ["KeyId"]);
-        _keyVaultNetworkAccess = DefineProperty<ManagedClusterKeyVaultNetworkAccessType>("KeyVaultNetworkAccess", ["KeyVaultNetworkAccess"]);
-        _keyVaultResourceId = DefineProperty<ResourceIdentifier>("KeyVaultResourceId", ["KeyVaultResourceId"]);
+        _isEnabled = DefineProperty<bool>("IsEnabled", ["enabled"]);
+        _keyId = DefineProperty<string>("KeyId", ["keyId"]);
+        _keyVaultNetworkAccess = DefineProperty<ManagedClusterKeyVaultNetworkAccessType>("KeyVaultNetworkAccess", ["keyVaultNetworkAccess"]);
+        _keyVaultResourceId = DefineProperty<ResourceIdentifier>("KeyVaultResourceId", ["keyVaultResourceId"]);
     }
 }

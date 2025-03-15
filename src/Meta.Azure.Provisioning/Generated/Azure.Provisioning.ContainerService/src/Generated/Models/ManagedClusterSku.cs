@@ -49,7 +49,7 @@ public partial class ManagedClusterSku : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _name = DefineProperty<ManagedClusterSkuName>("Name", ["Name"]);
-        _tier = DefineProperty<ManagedClusterSkuTier>("Tier", ["Tier"]);
+        _name = DefineProperty<ManagedClusterSkuName>("Name", ["name"]);
+        _tier = DefineProperty<ManagedClusterSkuTier>("Tier", ["tier"]);
     }
 }

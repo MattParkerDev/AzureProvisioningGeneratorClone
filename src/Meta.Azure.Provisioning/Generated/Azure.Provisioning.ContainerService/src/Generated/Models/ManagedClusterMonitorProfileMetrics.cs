@@ -57,7 +57,7 @@ public partial class ManagedClusterMonitorProfileMetrics : ProvisionableConstruc
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _isEnabled = DefineProperty<bool>("IsEnabled", ["IsEnabled"]);
-        _kubeStateMetrics = DefineModelProperty<ManagedClusterMonitorProfileKubeStateMetrics>("KubeStateMetrics", ["KubeStateMetrics"]);
+        _isEnabled = DefineProperty<bool>("IsEnabled", ["enabled"]);
+        _kubeStateMetrics = DefineModelProperty<ManagedClusterMonitorProfileKubeStateMetrics>("KubeStateMetrics", ["kubeStateMetrics"]);
     }
 }

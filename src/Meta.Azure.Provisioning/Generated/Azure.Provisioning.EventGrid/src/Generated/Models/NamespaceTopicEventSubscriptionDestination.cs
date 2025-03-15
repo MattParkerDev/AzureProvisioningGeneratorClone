@@ -43,6 +43,7 @@ public partial class NamespaceTopicEventSubscriptionDestination : EventSubscript
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["ResourceId"]);
+        DefineProperty<string>("endpointType", ["endpointType"], defaultValue: "NamespaceTopic");
+        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["properties", "resourceId"]);
     }
 }

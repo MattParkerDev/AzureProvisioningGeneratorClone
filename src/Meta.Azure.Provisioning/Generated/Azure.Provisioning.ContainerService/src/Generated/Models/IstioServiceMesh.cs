@@ -64,8 +64,8 @@ public partial class IstioServiceMesh : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _components = DefineModelProperty<IstioComponents>("Components", ["Components"]);
-        _certificateAuthorityPlugin = DefineModelProperty<IstioPluginCertificateAuthority>("CertificateAuthorityPlugin", ["CertificateAuthorityPlugin"]);
-        _revisions = DefineListProperty<string>("Revisions", ["Revisions"]);
+        _components = DefineModelProperty<IstioComponents>("Components", ["components"]);
+        _certificateAuthorityPlugin = DefineModelProperty<IstioPluginCertificateAuthority>("CertificateAuthorityPlugin", ["certificateAuthority", "plugin"]);
+        _revisions = DefineListProperty<string>("Revisions", ["revisions"]);
     }
 }

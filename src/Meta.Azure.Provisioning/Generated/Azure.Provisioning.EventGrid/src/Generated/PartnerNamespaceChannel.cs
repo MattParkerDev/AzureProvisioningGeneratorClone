@@ -161,13 +161,13 @@ public partial class PartnerNamespaceChannel : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _channelType = DefineProperty<PartnerNamespaceChannelType>("ChannelType", ["ChannelType"]);
-        _expireOnIfNotActivated = DefineProperty<DateTimeOffset>("ExpireOnIfNotActivated", ["ExpireOnIfNotActivated"]);
-        _messageForActivation = DefineProperty<string>("MessageForActivation", ["MessageForActivation"]);
-        _partnerDestinationInfo = DefineModelProperty<PartnerDestinationInfo>("PartnerDestinationInfo", ["PartnerDestinationInfo"]);
-        _partnerTopicInfo = DefineModelProperty<PartnerTopicInfo>("PartnerTopicInfo", ["PartnerTopicInfo"]);
-        _provisioningState = DefineProperty<PartnerNamespaceChannelProvisioningState>("ProvisioningState", ["ProvisioningState"]);
-        _readinessState = DefineProperty<PartnerTopicReadinessState>("ReadinessState", ["ReadinessState"]);
+        _channelType = DefineProperty<PartnerNamespaceChannelType>("ChannelType", ["properties", "channelType"]);
+        _expireOnIfNotActivated = DefineProperty<DateTimeOffset>("ExpireOnIfNotActivated", ["properties", "expirationTimeIfNotActivatedUtc"]);
+        _messageForActivation = DefineProperty<string>("MessageForActivation", ["properties", "messageForActivation"]);
+        _partnerDestinationInfo = DefineModelProperty<PartnerDestinationInfo>("PartnerDestinationInfo", ["properties", "partnerDestinationInfo"]);
+        _partnerTopicInfo = DefineModelProperty<PartnerTopicInfo>("PartnerTopicInfo", ["properties", "partnerTopicInfo"]);
+        _provisioningState = DefineProperty<PartnerNamespaceChannelProvisioningState>("ProvisioningState", ["properties", "provisioningState"]);
+        _readinessState = DefineProperty<PartnerTopicReadinessState>("ReadinessState", ["properties", "readinessState"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<PartnerNamespace>("Parent", ["parent"], isRequired: true);

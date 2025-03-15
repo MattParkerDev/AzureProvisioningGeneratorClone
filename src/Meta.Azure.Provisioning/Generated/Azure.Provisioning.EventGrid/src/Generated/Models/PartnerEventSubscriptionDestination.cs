@@ -40,6 +40,7 @@ public partial class PartnerEventSubscriptionDestination : EventSubscriptionDest
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _resourceId = DefineProperty<string>("ResourceId", ["ResourceId"]);
+        DefineProperty<string>("endpointType", ["endpointType"], defaultValue: "PartnerDestination");
+        _resourceId = DefineProperty<string>("ResourceId", ["properties", "resourceId"]);
     }
 }

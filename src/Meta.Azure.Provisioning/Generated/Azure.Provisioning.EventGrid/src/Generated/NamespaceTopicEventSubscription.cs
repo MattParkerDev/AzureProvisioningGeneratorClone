@@ -129,12 +129,12 @@ public partial class NamespaceTopicEventSubscription : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _deliveryConfiguration = DefineModelProperty<DeliveryConfiguration>("DeliveryConfiguration", ["DeliveryConfiguration"]);
-        _eventDeliverySchema = DefineProperty<DeliverySchema>("EventDeliverySchema", ["EventDeliverySchema"]);
-        _expireOn = DefineProperty<DateTimeOffset>("ExpireOn", ["ExpireOn"]);
-        _filtersConfiguration = DefineModelProperty<FiltersConfiguration>("FiltersConfiguration", ["FiltersConfiguration"]);
+        _deliveryConfiguration = DefineModelProperty<DeliveryConfiguration>("DeliveryConfiguration", ["properties", "deliveryConfiguration"]);
+        _eventDeliverySchema = DefineProperty<DeliverySchema>("EventDeliverySchema", ["properties", "eventDeliverySchema"]);
+        _expireOn = DefineProperty<DateTimeOffset>("ExpireOn", ["properties", "expirationTimeUtc"]);
+        _filtersConfiguration = DefineModelProperty<FiltersConfiguration>("FiltersConfiguration", ["properties", "filtersConfiguration"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<SubscriptionProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<SubscriptionProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<NamespaceTopic>("Parent", ["parent"], isRequired: true);
     }

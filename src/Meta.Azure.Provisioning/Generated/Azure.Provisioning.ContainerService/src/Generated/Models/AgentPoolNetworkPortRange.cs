@@ -60,8 +60,8 @@ public partial class AgentPoolNetworkPortRange : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _portStart = DefineProperty<int>("PortStart", ["PortStart"]);
-        _portEnd = DefineProperty<int>("PortEnd", ["PortEnd"]);
-        _protocol = DefineProperty<AgentPoolNetworkPortProtocol>("Protocol", ["Protocol"]);
+        _portStart = DefineProperty<int>("PortStart", ["portStart"]);
+        _portEnd = DefineProperty<int>("PortEnd", ["portEnd"]);
+        _protocol = DefineProperty<AgentPoolNetworkPortProtocol>("Protocol", ["protocol"]);
     }
 }

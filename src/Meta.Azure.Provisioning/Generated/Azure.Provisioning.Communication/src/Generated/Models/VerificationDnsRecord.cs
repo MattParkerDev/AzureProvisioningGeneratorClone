@@ -65,9 +65,9 @@ public partial class VerificationDnsRecord : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _dnsRecordType = DefineProperty<string>("DnsRecordType", ["DnsRecordType"], isOutput: true);
+        _dnsRecordType = DefineProperty<string>("DnsRecordType", ["type"], isOutput: true);
         _name = DefineProperty<string>("Name", ["name"], isOutput: true);
-        _value = DefineProperty<string>("Value", ["Value"], isOutput: true);
-        _timeToLiveInSeconds = DefineProperty<int>("TimeToLiveInSeconds", ["TimeToLiveInSeconds"], isOutput: true);
+        _value = DefineProperty<string>("Value", ["value"], isOutput: true);
+        _timeToLiveInSeconds = DefineProperty<int>("TimeToLiveInSeconds", ["ttl"], isOutput: true);
     }
 }

@@ -75,9 +75,9 @@ public partial class DomainPropertiesVerificationStates : ProvisionableConstruct
     {
         base.DefineProvisionableProperties();
         _domain = DefineModelProperty<DomainVerificationStatusRecord>("Domain", ["Domain"], isOutput: true);
-        _spf = DefineModelProperty<DomainVerificationStatusRecord>("Spf", ["Spf"], isOutput: true);
-        _dkim = DefineModelProperty<DomainVerificationStatusRecord>("Dkim", ["Dkim"], isOutput: true);
-        _dkim2 = DefineModelProperty<DomainVerificationStatusRecord>("Dkim2", ["Dkim2"], isOutput: true);
-        _dmarc = DefineModelProperty<DomainVerificationStatusRecord>("Dmarc", ["Dmarc"], isOutput: true);
+        _spf = DefineModelProperty<DomainVerificationStatusRecord>("Spf", ["SPF"], isOutput: true);
+        _dkim = DefineModelProperty<DomainVerificationStatusRecord>("Dkim", ["DKIM"], isOutput: true);
+        _dkim2 = DefineModelProperty<DomainVerificationStatusRecord>("Dkim2", ["DKIM2"], isOutput: true);
+        _dmarc = DefineModelProperty<DomainVerificationStatusRecord>("Dmarc", ["DMARC"], isOutput: true);
     }
 }

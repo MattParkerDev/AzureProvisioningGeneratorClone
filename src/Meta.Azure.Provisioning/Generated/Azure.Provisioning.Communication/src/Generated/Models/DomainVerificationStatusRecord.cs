@@ -48,7 +48,7 @@ public partial class DomainVerificationStatusRecord : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _status = DefineProperty<DomainRecordVerificationStatus>("Status", ["Status"], isOutput: true);
-        _errorCode = DefineProperty<string>("ErrorCode", ["ErrorCode"], isOutput: true);
+        _status = DefineProperty<DomainRecordVerificationStatus>("Status", ["status"], isOutput: true);
+        _errorCode = DefineProperty<string>("ErrorCode", ["errorCode"], isOutput: true);
     }
 }

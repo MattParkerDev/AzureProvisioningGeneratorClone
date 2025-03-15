@@ -49,7 +49,7 @@ public partial class IstioEgressGateway : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _isEnabled = DefineProperty<bool>("IsEnabled", ["IsEnabled"]);
-        _nodeSelector = DefineDictionaryProperty<string>("NodeSelector", ["NodeSelector"]);
+        _isEnabled = DefineProperty<bool>("IsEnabled", ["enabled"]);
+        _nodeSelector = DefineDictionaryProperty<string>("NodeSelector", ["nodeSelector"]);
     }
 }

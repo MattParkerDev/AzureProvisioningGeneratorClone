@@ -53,7 +53,7 @@ public partial class ManagedClusterSecurityProfileDefender : ProvisionableConstr
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _logAnalyticsWorkspaceResourceId = DefineProperty<ResourceIdentifier>("LogAnalyticsWorkspaceResourceId", ["LogAnalyticsWorkspaceResourceId"]);
-        _isSecurityMonitoringEnabled = DefineProperty<bool>("IsSecurityMonitoringEnabled", ["IsSecurityMonitoringEnabled"]);
+        _logAnalyticsWorkspaceResourceId = DefineProperty<ResourceIdentifier>("LogAnalyticsWorkspaceResourceId", ["logAnalyticsWorkspaceResourceId"]);
+        _isSecurityMonitoringEnabled = DefineProperty<bool>("IsSecurityMonitoringEnabled", ["securityMonitoring", "enabled"]);
     }
 }

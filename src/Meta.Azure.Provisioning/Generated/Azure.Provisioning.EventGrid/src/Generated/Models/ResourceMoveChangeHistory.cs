@@ -58,8 +58,8 @@ public partial class ResourceMoveChangeHistory : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _azureSubscriptionId = DefineProperty<string>("AzureSubscriptionId", ["AzureSubscriptionId"]);
-        _resourceGroupName = DefineProperty<string>("ResourceGroupName", ["ResourceGroupName"]);
-        _changedTimeUtc = DefineProperty<DateTimeOffset>("ChangedTimeUtc", ["ChangedTimeUtc"]);
+        _azureSubscriptionId = DefineProperty<string>("AzureSubscriptionId", ["azureSubscriptionId"]);
+        _resourceGroupName = DefineProperty<string>("ResourceGroupName", ["resourceGroupName"]);
+        _changedTimeUtc = DefineProperty<DateTimeOffset>("ChangedTimeUtc", ["changedTimeUtc"]);
     }
 }

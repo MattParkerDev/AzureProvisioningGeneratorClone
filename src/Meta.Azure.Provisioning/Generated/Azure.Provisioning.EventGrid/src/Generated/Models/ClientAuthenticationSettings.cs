@@ -50,7 +50,7 @@ public partial class ClientAuthenticationSettings : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _alternativeAuthenticationNameSources = DefineListProperty<AlternativeAuthenticationNameSource>("AlternativeAuthenticationNameSources", ["AlternativeAuthenticationNameSources"]);
-        _customJwtAuthentication = DefineModelProperty<CustomJwtAuthenticationSettings>("CustomJwtAuthentication", ["CustomJwtAuthentication"]);
+        _alternativeAuthenticationNameSources = DefineListProperty<AlternativeAuthenticationNameSource>("AlternativeAuthenticationNameSources", ["alternativeAuthenticationNameSources"]);
+        _customJwtAuthentication = DefineModelProperty<CustomJwtAuthenticationSettings>("CustomJwtAuthentication", ["customJwtAuthentication"]);
     }
 }

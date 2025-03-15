@@ -110,9 +110,9 @@ public partial class ContainerServiceMaintenanceConfiguration : ProvisionableRes
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _maintenanceWindow = DefineModelProperty<ContainerServiceMaintenanceWindow>("MaintenanceWindow", ["MaintenanceWindow"]);
-        _notAllowedTimes = DefineListProperty<ContainerServiceTimeSpan>("NotAllowedTimes", ["NotAllowedTimes"]);
-        _timesInWeek = DefineListProperty<ContainerServiceTimeInWeek>("TimesInWeek", ["TimesInWeek"]);
+        _maintenanceWindow = DefineModelProperty<ContainerServiceMaintenanceWindow>("MaintenanceWindow", ["properties", "maintenanceWindow"]);
+        _notAllowedTimes = DefineListProperty<ContainerServiceTimeSpan>("NotAllowedTimes", ["properties", "notAllowedTime"]);
+        _timesInWeek = DefineListProperty<ContainerServiceTimeInWeek>("TimesInWeek", ["properties", "timeInWeek"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<ContainerServiceManagedCluster>("Parent", ["parent"], isRequired: true);

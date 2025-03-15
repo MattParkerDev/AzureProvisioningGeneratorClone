@@ -48,7 +48,7 @@ public partial class DynamicRoutingEnrichment : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _key = DefineProperty<string>("Key", ["Key"]);
-        _value = DefineProperty<string>("Value", ["Value"]);
+        _key = DefineProperty<string>("Key", ["key"]);
+        _value = DefineProperty<string>("Value", ["value"]);
     }
 }

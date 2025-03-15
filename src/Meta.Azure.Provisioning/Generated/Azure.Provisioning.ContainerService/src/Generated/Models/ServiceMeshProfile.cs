@@ -50,7 +50,7 @@ public partial class ServiceMeshProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _mode = DefineProperty<ServiceMeshMode>("Mode", ["Mode"]);
-        _istio = DefineModelProperty<IstioServiceMesh>("Istio", ["Istio"]);
+        _mode = DefineProperty<ServiceMeshMode>("Mode", ["mode"]);
+        _istio = DefineModelProperty<IstioServiceMesh>("Istio", ["istio"]);
     }
 }

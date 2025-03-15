@@ -39,6 +39,7 @@ public partial class StaticStringRoutingEnrichment : StaticRoutingEnrichment
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _value = DefineProperty<string>("Value", ["Value"]);
+        DefineProperty<string>("valueType", ["valueType"], defaultValue: "String");
+        _value = DefineProperty<string>("Value", ["value"]);
     }
 }

@@ -59,7 +59,7 @@ public partial class DeadLetterWithResourceIdentity : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _identity = DefineModelProperty<EventSubscriptionIdentity>("Identity", ["Identity"]);
-        _deadLetterDestination = DefineModelProperty<DeadLetterDestination>("DeadLetterDestination", ["DeadLetterDestination"]);
+        _identity = DefineModelProperty<EventSubscriptionIdentity>("Identity", ["identity"]);
+        _deadLetterDestination = DefineModelProperty<DeadLetterDestination>("DeadLetterDestination", ["deadLetterDestination"]);
     }
 }

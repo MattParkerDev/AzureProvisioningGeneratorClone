@@ -51,7 +51,8 @@ public partial class AzureADPartnerClientAuthentication : PartnerClientAuthentic
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _azureActiveDirectoryTenantId = DefineProperty<string>("AzureActiveDirectoryTenantId", ["AzureActiveDirectoryTenantId"]);
-        _azureActiveDirectoryApplicationIdOrUri = DefineProperty<Uri>("AzureActiveDirectoryApplicationIdOrUri", ["AzureActiveDirectoryApplicationIdOrUri"]);
+        DefineProperty<string>("clientAuthenticationType", ["clientAuthenticationType"], defaultValue: "AzureAD");
+        _azureActiveDirectoryTenantId = DefineProperty<string>("AzureActiveDirectoryTenantId", ["properties", "azureActiveDirectoryTenantId"]);
+        _azureActiveDirectoryApplicationIdOrUri = DefineProperty<Uri>("AzureActiveDirectoryApplicationIdOrUri", ["properties", "azureActiveDirectoryApplicationIdOrUri"]);
     }
 }

@@ -118,11 +118,11 @@ public partial class NamespaceTopic : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _eventRetentionInDays = DefineProperty<int>("EventRetentionInDays", ["EventRetentionInDays"]);
-        _inputSchema = DefineProperty<EventInputSchema>("InputSchema", ["InputSchema"]);
-        _publisherType = DefineProperty<PublisherType>("PublisherType", ["PublisherType"]);
+        _eventRetentionInDays = DefineProperty<int>("EventRetentionInDays", ["properties", "eventRetentionInDays"]);
+        _inputSchema = DefineProperty<EventInputSchema>("InputSchema", ["properties", "inputSchema"]);
+        _publisherType = DefineProperty<PublisherType>("PublisherType", ["properties", "publisherType"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<NamespaceTopicProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<NamespaceTopicProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<EventGridNamespace>("Parent", ["parent"], isRequired: true);
     }

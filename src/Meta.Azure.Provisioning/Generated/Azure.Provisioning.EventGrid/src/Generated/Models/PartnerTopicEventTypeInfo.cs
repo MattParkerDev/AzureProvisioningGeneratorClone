@@ -54,7 +54,7 @@ public partial class PartnerTopicEventTypeInfo : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _kind = DefineProperty<EventDefinitionKind>("Kind", ["Kind"]);
-        _inlineEventTypes = DefineDictionaryProperty<InlineEventProperties>("InlineEventTypes", ["InlineEventTypes"]);
+        _kind = DefineProperty<EventDefinitionKind>("Kind", ["kind"]);
+        _inlineEventTypes = DefineDictionaryProperty<InlineEventProperties>("InlineEventTypes", ["inlineEventTypes"]);
     }
 }

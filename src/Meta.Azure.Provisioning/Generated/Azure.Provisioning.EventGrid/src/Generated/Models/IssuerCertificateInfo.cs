@@ -50,7 +50,7 @@ public partial class IssuerCertificateInfo : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _certificateUri = DefineProperty<Uri>("CertificateUri", ["CertificateUri"]);
-        _identity = DefineModelProperty<CustomJwtAuthenticationManagedIdentity>("Identity", ["Identity"]);
+        _certificateUri = DefineProperty<Uri>("CertificateUri", ["certificateUrl"]);
+        _identity = DefineModelProperty<CustomJwtAuthenticationManagedIdentity>("Identity", ["identity"]);
     }
 }

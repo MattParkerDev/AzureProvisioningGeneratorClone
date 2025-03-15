@@ -123,11 +123,11 @@ public partial class EventSubscriptionFilter : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _subjectBeginsWith = DefineProperty<string>("SubjectBeginsWith", ["SubjectBeginsWith"]);
-        _subjectEndsWith = DefineProperty<string>("SubjectEndsWith", ["SubjectEndsWith"]);
-        _includedEventTypes = DefineListProperty<string>("IncludedEventTypes", ["IncludedEventTypes"]);
-        _isSubjectCaseSensitive = DefineProperty<bool>("IsSubjectCaseSensitive", ["IsSubjectCaseSensitive"]);
-        _isAdvancedFilteringOnArraysEnabled = DefineProperty<bool>("IsAdvancedFilteringOnArraysEnabled", ["IsAdvancedFilteringOnArraysEnabled"]);
-        _advancedFilters = DefineListProperty<AdvancedFilter>("AdvancedFilters", ["AdvancedFilters"]);
+        _subjectBeginsWith = DefineProperty<string>("SubjectBeginsWith", ["subjectBeginsWith"]);
+        _subjectEndsWith = DefineProperty<string>("SubjectEndsWith", ["subjectEndsWith"]);
+        _includedEventTypes = DefineListProperty<string>("IncludedEventTypes", ["includedEventTypes"]);
+        _isSubjectCaseSensitive = DefineProperty<bool>("IsSubjectCaseSensitive", ["isSubjectCaseSensitive"]);
+        _isAdvancedFilteringOnArraysEnabled = DefineProperty<bool>("IsAdvancedFilteringOnArraysEnabled", ["enableAdvancedFilteringOnArrays"]);
+        _advancedFilters = DefineListProperty<AdvancedFilter>("AdvancedFilters", ["advancedFilters"]);
     }
 }

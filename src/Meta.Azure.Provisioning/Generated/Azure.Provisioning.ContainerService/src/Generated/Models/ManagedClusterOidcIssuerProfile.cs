@@ -48,7 +48,7 @@ public partial class ManagedClusterOidcIssuerProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _issuerUriInfo = DefineProperty<string>("IssuerUriInfo", ["IssuerUriInfo"], isOutput: true);
-        _isEnabled = DefineProperty<bool>("IsEnabled", ["IsEnabled"]);
+        _issuerUriInfo = DefineProperty<string>("IssuerUriInfo", ["issuerURL"], isOutput: true);
+        _isEnabled = DefineProperty<bool>("IsEnabled", ["enabled"]);
     }
 }

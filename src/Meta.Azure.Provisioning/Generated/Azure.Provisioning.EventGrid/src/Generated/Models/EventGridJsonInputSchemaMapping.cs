@@ -97,11 +97,12 @@ public partial class EventGridJsonInputSchemaMapping : EventGridInputSchemaMappi
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _idSourceField = DefineProperty<string>("IdSourceField", ["IdSourceField"]);
-        _topicSourceField = DefineProperty<string>("TopicSourceField", ["TopicSourceField"]);
-        _eventTimeSourceField = DefineProperty<string>("EventTimeSourceField", ["EventTimeSourceField"]);
-        _eventType = DefineModelProperty<JsonFieldWithDefault>("EventType", ["EventType"]);
-        _subject = DefineModelProperty<JsonFieldWithDefault>("Subject", ["Subject"]);
-        _dataVersion = DefineModelProperty<JsonFieldWithDefault>("DataVersion", ["DataVersion"]);
+        DefineProperty<string>("inputSchemaMappingType", ["inputSchemaMappingType"], defaultValue: "Json");
+        _idSourceField = DefineProperty<string>("IdSourceField", ["properties", "id", "sourceField"]);
+        _topicSourceField = DefineProperty<string>("TopicSourceField", ["properties", "topic", "sourceField"]);
+        _eventTimeSourceField = DefineProperty<string>("EventTimeSourceField", ["properties", "eventTime", "sourceField"]);
+        _eventType = DefineModelProperty<JsonFieldWithDefault>("EventType", ["properties", "eventType"]);
+        _subject = DefineModelProperty<JsonFieldWithDefault>("Subject", ["properties", "subject"]);
+        _dataVersion = DefineModelProperty<JsonFieldWithDefault>("DataVersion", ["properties", "dataVersion"]);
     }
 }

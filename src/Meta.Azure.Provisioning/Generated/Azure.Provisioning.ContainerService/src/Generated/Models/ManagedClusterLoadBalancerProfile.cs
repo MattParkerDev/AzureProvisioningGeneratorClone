@@ -115,13 +115,13 @@ public partial class ManagedClusterLoadBalancerProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _managedOutboundIPs = DefineModelProperty<ManagedClusterLoadBalancerProfileManagedOutboundIPs>("ManagedOutboundIPs", ["ManagedOutboundIPs"]);
-        _outboundPublicIPPrefixes = DefineListProperty<WritableSubResource>("OutboundPublicIPPrefixes", ["OutboundPublicIPPrefixes"]);
-        _outboundPublicIPs = DefineListProperty<WritableSubResource>("OutboundPublicIPs", ["OutboundPublicIPs"]);
-        _effectiveOutboundIPs = DefineListProperty<WritableSubResource>("EffectiveOutboundIPs", ["EffectiveOutboundIPs"]);
-        _allocatedOutboundPorts = DefineProperty<int>("AllocatedOutboundPorts", ["AllocatedOutboundPorts"]);
-        _idleTimeoutInMinutes = DefineProperty<int>("IdleTimeoutInMinutes", ["IdleTimeoutInMinutes"]);
-        _enableMultipleStandardLoadBalancers = DefineProperty<bool>("EnableMultipleStandardLoadBalancers", ["EnableMultipleStandardLoadBalancers"]);
-        _backendPoolType = DefineProperty<ManagedClusterLoadBalancerBackendPoolType>("BackendPoolType", ["BackendPoolType"]);
+        _managedOutboundIPs = DefineModelProperty<ManagedClusterLoadBalancerProfileManagedOutboundIPs>("ManagedOutboundIPs", ["managedOutboundIPs"]);
+        _outboundPublicIPPrefixes = DefineListProperty<WritableSubResource>("OutboundPublicIPPrefixes", ["outboundIPPrefixes", "publicIPPrefixes"]);
+        _outboundPublicIPs = DefineListProperty<WritableSubResource>("OutboundPublicIPs", ["outboundIPs", "publicIPs"]);
+        _effectiveOutboundIPs = DefineListProperty<WritableSubResource>("EffectiveOutboundIPs", ["effectiveOutboundIPs"]);
+        _allocatedOutboundPorts = DefineProperty<int>("AllocatedOutboundPorts", ["allocatedOutboundPorts"]);
+        _idleTimeoutInMinutes = DefineProperty<int>("IdleTimeoutInMinutes", ["idleTimeoutInMinutes"]);
+        _enableMultipleStandardLoadBalancers = DefineProperty<bool>("EnableMultipleStandardLoadBalancers", ["enableMultipleStandardLoadBalancers"]);
+        _backendPoolType = DefineProperty<ManagedClusterLoadBalancerBackendPoolType>("BackendPoolType", ["backendPoolType"]);
     }
 }

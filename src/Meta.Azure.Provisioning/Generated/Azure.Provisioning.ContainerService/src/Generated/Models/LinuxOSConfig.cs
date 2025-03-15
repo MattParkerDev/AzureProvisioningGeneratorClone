@@ -77,9 +77,9 @@ public partial class LinuxOSConfig : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _sysctls = DefineModelProperty<SysctlConfig>("Sysctls", ["Sysctls"]);
-        _transparentHugePageEnabled = DefineProperty<string>("TransparentHugePageEnabled", ["TransparentHugePageEnabled"]);
-        _transparentHugePageDefrag = DefineProperty<string>("TransparentHugePageDefrag", ["TransparentHugePageDefrag"]);
-        _swapFileSizeInMB = DefineProperty<int>("SwapFileSizeInMB", ["SwapFileSizeInMB"]);
+        _sysctls = DefineModelProperty<SysctlConfig>("Sysctls", ["sysctls"]);
+        _transparentHugePageEnabled = DefineProperty<string>("TransparentHugePageEnabled", ["transparentHugePageEnabled"]);
+        _transparentHugePageDefrag = DefineProperty<string>("TransparentHugePageDefrag", ["transparentHugePageDefrag"]);
+        _swapFileSizeInMB = DefineProperty<int>("SwapFileSizeInMB", ["swapFileSizeMB"]);
     }
 }

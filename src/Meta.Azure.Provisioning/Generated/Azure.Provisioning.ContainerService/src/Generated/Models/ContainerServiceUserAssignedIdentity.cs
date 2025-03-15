@@ -60,8 +60,8 @@ public partial class ContainerServiceUserAssignedIdentity : ProvisionableConstru
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["ResourceId"]);
-        _clientId = DefineProperty<Guid>("ClientId", ["ClientId"]);
-        _objectId = DefineProperty<Guid>("ObjectId", ["ObjectId"]);
+        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["resourceId"]);
+        _clientId = DefineProperty<Guid>("ClientId", ["clientId"]);
+        _objectId = DefineProperty<Guid>("ObjectId", ["objectId"]);
     }
 }

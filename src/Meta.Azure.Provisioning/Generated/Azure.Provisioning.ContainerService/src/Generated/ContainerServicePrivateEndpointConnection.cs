@@ -108,10 +108,10 @@ public partial class ContainerServicePrivateEndpointConnection : ProvisionableRe
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _connectionState = DefineModelProperty<ContainerServicePrivateLinkServiceConnectionState>("ConnectionState", ["ConnectionState"]);
-        _privateEndpointId = DefineProperty<ResourceIdentifier>("PrivateEndpointId", ["PrivateEndpointId"]);
+        _connectionState = DefineModelProperty<ContainerServicePrivateLinkServiceConnectionState>("ConnectionState", ["properties", "privateLinkServiceConnectionState"]);
+        _privateEndpointId = DefineProperty<ResourceIdentifier>("PrivateEndpointId", ["properties", "privateEndpoint", "id"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<ContainerServicePrivateEndpointConnectionProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<ContainerServicePrivateEndpointConnectionProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<ContainerServiceManagedCluster>("Parent", ["parent"], isRequired: true);
     }

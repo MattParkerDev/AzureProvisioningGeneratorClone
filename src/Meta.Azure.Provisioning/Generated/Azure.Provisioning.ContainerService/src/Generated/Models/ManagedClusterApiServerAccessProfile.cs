@@ -87,10 +87,10 @@ public partial class ManagedClusterApiServerAccessProfile : ProvisionableConstru
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _authorizedIPRanges = DefineListProperty<string>("AuthorizedIPRanges", ["AuthorizedIPRanges"]);
-        _enablePrivateCluster = DefineProperty<bool>("EnablePrivateCluster", ["EnablePrivateCluster"]);
-        _privateDnsZone = DefineProperty<string>("PrivateDnsZone", ["PrivateDnsZone"]);
-        _enablePrivateClusterPublicFqdn = DefineProperty<bool>("EnablePrivateClusterPublicFqdn", ["EnablePrivateClusterPublicFqdn"]);
-        _disableRunCommand = DefineProperty<bool>("DisableRunCommand", ["DisableRunCommand"]);
+        _authorizedIPRanges = DefineListProperty<string>("AuthorizedIPRanges", ["authorizedIPRanges"]);
+        _enablePrivateCluster = DefineProperty<bool>("EnablePrivateCluster", ["enablePrivateCluster"]);
+        _privateDnsZone = DefineProperty<string>("PrivateDnsZone", ["privateDNSZone"]);
+        _enablePrivateClusterPublicFqdn = DefineProperty<bool>("EnablePrivateClusterPublicFqdn", ["enablePrivateClusterPublicFQDN"]);
+        _disableRunCommand = DefineProperty<bool>("DisableRunCommand", ["disableRunCommand"]);
     }
 }

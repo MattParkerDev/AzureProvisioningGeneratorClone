@@ -57,7 +57,7 @@ public partial class AgentPoolUpgradeSettings : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _maxSurge = DefineProperty<string>("MaxSurge", ["MaxSurge"]);
-        _drainTimeoutInMinutes = DefineProperty<int>("DrainTimeoutInMinutes", ["DrainTimeoutInMinutes"]);
+        _maxSurge = DefineProperty<string>("MaxSurge", ["maxSurge"]);
+        _drainTimeoutInMinutes = DefineProperty<int>("DrainTimeoutInMinutes", ["drainTimeoutInMinutes"]);
     }
 }

@@ -38,6 +38,7 @@ public partial class BoolEqualsAdvancedFilter : AdvancedFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _value = DefineProperty<bool>("Value", ["Value"]);
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "BoolEquals");
+        _value = DefineProperty<bool>("Value", ["value"]);
     }
 }

@@ -60,8 +60,8 @@ public partial class ContainerServiceMaintenanceRelativeMonthlySchedule : Provis
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _intervalMonths = DefineProperty<int>("IntervalMonths", ["IntervalMonths"]);
-        _weekIndex = DefineProperty<ContainerServiceMaintenanceRelativeMonthlyScheduleWeekIndex>("WeekIndex", ["WeekIndex"]);
-        _dayOfWeek = DefineProperty<ContainerServiceWeekDay>("DayOfWeek", ["DayOfWeek"]);
+        _intervalMonths = DefineProperty<int>("IntervalMonths", ["intervalMonths"]);
+        _weekIndex = DefineProperty<ContainerServiceMaintenanceRelativeMonthlyScheduleWeekIndex>("WeekIndex", ["weekIndex"]);
+        _dayOfWeek = DefineProperty<ContainerServiceWeekDay>("DayOfWeek", ["dayOfWeek"]);
     }
 }

@@ -200,18 +200,18 @@ public partial class EventGridNamespace : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["Identity"]);
-        _inboundIPRules = DefineListProperty<EventGridInboundIPRule>("InboundIPRules", ["InboundIPRules"]);
-        _isZoneRedundant = DefineProperty<bool>("IsZoneRedundant", ["IsZoneRedundant"]);
-        _minimumTlsVersionAllowed = DefineProperty<TlsVersion>("MinimumTlsVersionAllowed", ["MinimumTlsVersionAllowed"]);
-        _privateEndpointConnections = DefineListProperty<EventGridPrivateEndpointConnectionData>("PrivateEndpointConnections", ["PrivateEndpointConnections"]);
-        _publicNetworkAccess = DefineProperty<EventGridPublicNetworkAccess>("PublicNetworkAccess", ["PublicNetworkAccess"]);
-        _sku = DefineModelProperty<NamespaceSku>("Sku", ["Sku"]);
+        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["identity"]);
+        _inboundIPRules = DefineListProperty<EventGridInboundIPRule>("InboundIPRules", ["properties", "inboundIpRules"]);
+        _isZoneRedundant = DefineProperty<bool>("IsZoneRedundant", ["properties", "isZoneRedundant"]);
+        _minimumTlsVersionAllowed = DefineProperty<TlsVersion>("MinimumTlsVersionAllowed", ["properties", "minimumTlsVersionAllowed"]);
+        _privateEndpointConnections = DefineListProperty<EventGridPrivateEndpointConnectionData>("PrivateEndpointConnections", ["properties", "privateEndpointConnections"]);
+        _publicNetworkAccess = DefineProperty<EventGridPublicNetworkAccess>("PublicNetworkAccess", ["properties", "publicNetworkAccess"]);
+        _sku = DefineModelProperty<NamespaceSku>("Sku", ["sku"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
-        _topicsConfiguration = DefineModelProperty<TopicsConfiguration>("TopicsConfiguration", ["TopicsConfiguration"]);
-        _topicSpacesConfiguration = DefineModelProperty<TopicSpacesConfiguration>("TopicSpacesConfiguration", ["TopicSpacesConfiguration"]);
+        _topicsConfiguration = DefineModelProperty<TopicsConfiguration>("TopicsConfiguration", ["properties", "topicsConfiguration"]);
+        _topicSpacesConfiguration = DefineModelProperty<TopicSpacesConfiguration>("TopicSpacesConfiguration", ["properties", "topicSpacesConfiguration"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<NamespaceProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<NamespaceProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
     }
 

@@ -71,9 +71,9 @@ public partial class ManagedClusterDelegatedIdentity : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["ResourceId"]);
-        _tenantId = DefineProperty<Guid>("TenantId", ["TenantId"]);
-        _referralResource = DefineProperty<string>("ReferralResource", ["ReferralResource"]);
+        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["resourceId"]);
+        _tenantId = DefineProperty<Guid>("TenantId", ["tenantId"]);
+        _referralResource = DefineProperty<string>("ReferralResource", ["referralResource"]);
         _location = DefineProperty<AzureLocation>("Location", ["location"]);
     }
 }

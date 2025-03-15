@@ -48,7 +48,7 @@ public partial class ContainerServiceTimeSpan : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _startOn = DefineProperty<DateTimeOffset>("StartOn", ["StartOn"]);
-        _endOn = DefineProperty<DateTimeOffset>("EndOn", ["EndOn"]);
+        _startOn = DefineProperty<DateTimeOffset>("StartOn", ["start"]);
+        _endOn = DefineProperty<DateTimeOffset>("EndOn", ["end"]);
     }
 }

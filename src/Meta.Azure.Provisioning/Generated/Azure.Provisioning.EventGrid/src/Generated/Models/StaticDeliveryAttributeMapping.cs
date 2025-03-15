@@ -49,7 +49,8 @@ public partial class StaticDeliveryAttributeMapping : DeliveryAttributeMapping
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _value = DefineProperty<string>("Value", ["Value"]);
-        _isSecret = DefineProperty<bool>("IsSecret", ["IsSecret"]);
+        DefineProperty<string>("type", ["type"], defaultValue: "Static");
+        _value = DefineProperty<string>("Value", ["properties", "value"]);
+        _isSecret = DefineProperty<bool>("IsSecret", ["properties", "isSecret"]);
     }
 }

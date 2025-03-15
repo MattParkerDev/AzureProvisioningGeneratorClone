@@ -66,9 +66,9 @@ public partial class CommunicationServiceKeys : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _primaryKey = DefineProperty<string>("PrimaryKey", ["PrimaryKey"], isOutput: true, isSecure: true);
-        _secondaryKey = DefineProperty<string>("SecondaryKey", ["SecondaryKey"], isOutput: true, isSecure: true);
-        _primaryConnectionString = DefineProperty<string>("PrimaryConnectionString", ["PrimaryConnectionString"], isOutput: true, isSecure: true);
-        _secondaryConnectionString = DefineProperty<string>("SecondaryConnectionString", ["SecondaryConnectionString"], isOutput: true, isSecure: true);
+        _primaryKey = DefineProperty<string>("PrimaryKey", ["primaryKey"], isOutput: true, isSecure: true);
+        _secondaryKey = DefineProperty<string>("SecondaryKey", ["secondaryKey"], isOutput: true, isSecure: true);
+        _primaryConnectionString = DefineProperty<string>("PrimaryConnectionString", ["primaryConnectionString"], isOutput: true, isSecure: true);
+        _secondaryConnectionString = DefineProperty<string>("SecondaryConnectionString", ["secondaryConnectionString"], isOutput: true, isSecure: true);
     }
 }

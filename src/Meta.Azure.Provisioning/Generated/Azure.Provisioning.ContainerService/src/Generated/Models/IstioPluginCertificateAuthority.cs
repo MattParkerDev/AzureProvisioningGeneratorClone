@@ -80,10 +80,10 @@ public partial class IstioPluginCertificateAuthority : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _keyVaultId = DefineProperty<ResourceIdentifier>("KeyVaultId", ["KeyVaultId"]);
-        _certObjectName = DefineProperty<string>("CertObjectName", ["CertObjectName"]);
-        _keyObjectName = DefineProperty<string>("KeyObjectName", ["KeyObjectName"]);
-        _rootCertObjectName = DefineProperty<string>("RootCertObjectName", ["RootCertObjectName"]);
-        _certChainObjectName = DefineProperty<string>("CertChainObjectName", ["CertChainObjectName"]);
+        _keyVaultId = DefineProperty<ResourceIdentifier>("KeyVaultId", ["keyVaultId"]);
+        _certObjectName = DefineProperty<string>("CertObjectName", ["certObjectName"]);
+        _keyObjectName = DefineProperty<string>("KeyObjectName", ["keyObjectName"]);
+        _rootCertObjectName = DefineProperty<string>("RootCertObjectName", ["rootCertObjectName"]);
+        _certChainObjectName = DefineProperty<string>("CertChainObjectName", ["certChainObjectName"]);
     }
 }

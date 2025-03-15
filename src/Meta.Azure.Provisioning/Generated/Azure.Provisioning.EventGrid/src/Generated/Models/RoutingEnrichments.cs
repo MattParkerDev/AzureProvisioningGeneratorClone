@@ -55,7 +55,7 @@ public partial class RoutingEnrichments : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _static = DefineListProperty<StaticRoutingEnrichment>("Static", ["Static"]);
-        _dynamic = DefineListProperty<DynamicRoutingEnrichment>("Dynamic", ["Dynamic"]);
+        _static = DefineListProperty<StaticRoutingEnrichment>("Static", ["static"]);
+        _dynamic = DefineListProperty<DynamicRoutingEnrichment>("Dynamic", ["dynamic"]);
     }
 }

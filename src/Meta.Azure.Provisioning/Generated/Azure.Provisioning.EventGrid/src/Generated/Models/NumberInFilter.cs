@@ -39,6 +39,7 @@ public partial class NumberInFilter : EventGridFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _values = DefineListProperty<double>("Values", ["Values"]);
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "NumberIn");
+        _values = DefineListProperty<double>("Values", ["values"]);
     }
 }

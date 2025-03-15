@@ -78,9 +78,9 @@ public partial class ManagedClusterPodIdentityProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _isEnabled = DefineProperty<bool>("IsEnabled", ["IsEnabled"]);
-        _allowNetworkPluginKubenet = DefineProperty<bool>("AllowNetworkPluginKubenet", ["AllowNetworkPluginKubenet"]);
-        _userAssignedIdentities = DefineListProperty<ManagedClusterPodIdentity>("UserAssignedIdentities", ["UserAssignedIdentities"]);
-        _userAssignedIdentityExceptions = DefineListProperty<ManagedClusterPodIdentityException>("UserAssignedIdentityExceptions", ["UserAssignedIdentityExceptions"]);
+        _isEnabled = DefineProperty<bool>("IsEnabled", ["enabled"]);
+        _allowNetworkPluginKubenet = DefineProperty<bool>("AllowNetworkPluginKubenet", ["allowNetworkPluginKubenet"]);
+        _userAssignedIdentities = DefineListProperty<ManagedClusterPodIdentity>("UserAssignedIdentities", ["userAssignedIdentities"]);
+        _userAssignedIdentityExceptions = DefineListProperty<ManagedClusterPodIdentityException>("UserAssignedIdentityExceptions", ["userAssignedIdentityExceptions"]);
     }
 }

@@ -107,8 +107,8 @@ public partial class PartnerConfiguration : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isOutput: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _partnerAuthorization = DefineModelProperty<PartnerAuthorization>("PartnerAuthorization", ["PartnerAuthorization"]);
-        _provisioningState = DefineProperty<PartnerConfigurationProvisioningState>("ProvisioningState", ["ProvisioningState"]);
+        _partnerAuthorization = DefineModelProperty<PartnerAuthorization>("PartnerAuthorization", ["properties", "partnerAuthorization"]);
+        _provisioningState = DefineProperty<PartnerConfigurationProvisioningState>("ProvisioningState", ["properties", "provisioningState"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);

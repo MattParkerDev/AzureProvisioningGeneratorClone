@@ -68,9 +68,9 @@ public partial class InlineEventProperties : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _description = DefineProperty<string>("Description", ["Description"]);
-        _displayName = DefineProperty<string>("DisplayName", ["DisplayName"]);
-        _documentationUri = DefineProperty<Uri>("DocumentationUri", ["DocumentationUri"]);
-        _dataSchemaUri = DefineProperty<Uri>("DataSchemaUri", ["DataSchemaUri"]);
+        _description = DefineProperty<string>("Description", ["description"]);
+        _displayName = DefineProperty<string>("DisplayName", ["displayName"]);
+        _documentationUri = DefineProperty<Uri>("DocumentationUri", ["documentationUrl"]);
+        _dataSchemaUri = DefineProperty<Uri>("DataSchemaUri", ["dataSchemaUrl"]);
     }
 }

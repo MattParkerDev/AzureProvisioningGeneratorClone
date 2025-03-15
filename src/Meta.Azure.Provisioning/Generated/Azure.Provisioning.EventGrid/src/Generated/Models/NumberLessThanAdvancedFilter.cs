@@ -38,6 +38,7 @@ public partial class NumberLessThanAdvancedFilter : AdvancedFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _value = DefineProperty<double>("Value", ["Value"]);
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "NumberLessThan");
+        _value = DefineProperty<double>("Value", ["value"]);
     }
 }

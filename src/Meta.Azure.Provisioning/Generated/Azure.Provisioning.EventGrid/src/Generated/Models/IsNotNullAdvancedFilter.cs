@@ -27,5 +27,6 @@ public partial class IsNotNullAdvancedFilter : AdvancedFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "IsNotNull");
     }
 }

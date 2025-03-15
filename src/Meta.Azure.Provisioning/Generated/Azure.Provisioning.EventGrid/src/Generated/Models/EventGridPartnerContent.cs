@@ -65,8 +65,8 @@ public partial class EventGridPartnerContent : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _partnerRegistrationImmutableId = DefineProperty<Guid>("PartnerRegistrationImmutableId", ["PartnerRegistrationImmutableId"]);
-        _partnerName = DefineProperty<string>("PartnerName", ["PartnerName"]);
-        _authorizationExpireOn = DefineProperty<DateTimeOffset>("AuthorizationExpireOn", ["AuthorizationExpireOn"]);
+        _partnerRegistrationImmutableId = DefineProperty<Guid>("PartnerRegistrationImmutableId", ["partnerRegistrationImmutableId"]);
+        _partnerName = DefineProperty<string>("PartnerName", ["partnerName"]);
+        _authorizationExpireOn = DefineProperty<DateTimeOffset>("AuthorizationExpireOn", ["authorizationExpirationTimeInUtc"]);
     }
 }

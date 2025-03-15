@@ -105,10 +105,10 @@ public partial class ManagedClusterWindowsProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _adminUsername = DefineProperty<string>("AdminUsername", ["AdminUsername"]);
-        _adminPassword = DefineProperty<string>("AdminPassword", ["AdminPassword"]);
-        _licenseType = DefineProperty<WindowsVmLicenseType>("LicenseType", ["LicenseType"]);
-        _isCsiProxyEnabled = DefineProperty<bool>("IsCsiProxyEnabled", ["IsCsiProxyEnabled"]);
-        _gmsaProfile = DefineModelProperty<WindowsGmsaProfile>("GmsaProfile", ["GmsaProfile"]);
+        _adminUsername = DefineProperty<string>("AdminUsername", ["adminUsername"]);
+        _adminPassword = DefineProperty<string>("AdminPassword", ["adminPassword"]);
+        _licenseType = DefineProperty<WindowsVmLicenseType>("LicenseType", ["licenseType"]);
+        _isCsiProxyEnabled = DefineProperty<bool>("IsCsiProxyEnabled", ["enableCSIProxy"]);
+        _gmsaProfile = DefineModelProperty<WindowsGmsaProfile>("GmsaProfile", ["gmsaProfile"]);
     }
 }

@@ -65,8 +65,9 @@ public partial class WebhookPartnerDestinationInfo : PartnerDestinationInfo
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _endpointUri = DefineProperty<Uri>("EndpointUri", ["EndpointUri"]);
-        _endpointBaseUri = DefineProperty<Uri>("EndpointBaseUri", ["EndpointBaseUri"]);
-        _clientAuthentication = DefineModelProperty<PartnerClientAuthentication>("ClientAuthentication", ["ClientAuthentication"]);
+        DefineProperty<string>("endpointType", ["endpointType"], defaultValue: "WebHook");
+        _endpointUri = DefineProperty<Uri>("EndpointUri", ["properties", "endpointUrl"]);
+        _endpointBaseUri = DefineProperty<Uri>("EndpointBaseUri", ["properties", "endpointBaseUrl"]);
+        _clientAuthentication = DefineModelProperty<PartnerClientAuthentication>("ClientAuthentication", ["properties", "clientAuthentication"]);
     }
 }

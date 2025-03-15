@@ -58,8 +58,8 @@ public partial class ManagedClusterAddonProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _isEnabled = DefineProperty<bool>("IsEnabled", ["IsEnabled"]);
-        _config = DefineDictionaryProperty<string>("Config", ["Config"]);
-        _identity = DefineModelProperty<ManagedClusterAddonProfileIdentity>("Identity", ["Identity"], isOutput: true);
+        _isEnabled = DefineProperty<bool>("IsEnabled", ["enabled"]);
+        _config = DefineDictionaryProperty<string>("Config", ["config"]);
+        _identity = DefineModelProperty<ManagedClusterAddonProfileIdentity>("Identity", ["identity"], isOutput: true);
     }
 }

@@ -129,10 +129,10 @@ public partial class PushInfo : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _maxDeliveryCount = DefineProperty<int>("MaxDeliveryCount", ["MaxDeliveryCount"]);
-        _eventTimeToLive = DefineProperty<string>("EventTimeToLive", ["EventTimeToLive"]);
-        _deadLetterDestinationWithResourceIdentity = DefineModelProperty<DeadLetterWithResourceIdentity>("DeadLetterDestinationWithResourceIdentity", ["DeadLetterDestinationWithResourceIdentity"]);
-        _deliveryWithResourceIdentity = DefineModelProperty<DeliveryWithResourceIdentity>("DeliveryWithResourceIdentity", ["DeliveryWithResourceIdentity"]);
-        _destination = DefineModelProperty<EventSubscriptionDestination>("Destination", ["Destination"]);
+        _maxDeliveryCount = DefineProperty<int>("MaxDeliveryCount", ["maxDeliveryCount"]);
+        _eventTimeToLive = DefineProperty<string>("EventTimeToLive", ["eventTimeToLive"]);
+        _deadLetterDestinationWithResourceIdentity = DefineModelProperty<DeadLetterWithResourceIdentity>("DeadLetterDestinationWithResourceIdentity", ["deadLetterDestinationWithResourceIdentity"]);
+        _deliveryWithResourceIdentity = DefineModelProperty<DeliveryWithResourceIdentity>("DeliveryWithResourceIdentity", ["deliveryWithResourceIdentity"]);
+        _destination = DefineModelProperty<EventSubscriptionDestination>("Destination", ["destination"]);
     }
 }

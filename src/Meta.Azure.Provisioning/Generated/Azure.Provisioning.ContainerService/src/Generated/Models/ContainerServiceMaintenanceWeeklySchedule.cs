@@ -50,7 +50,7 @@ public partial class ContainerServiceMaintenanceWeeklySchedule : ProvisionableCo
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _intervalWeeks = DefineProperty<int>("IntervalWeeks", ["IntervalWeeks"]);
-        _dayOfWeek = DefineProperty<ContainerServiceWeekDay>("DayOfWeek", ["DayOfWeek"]);
+        _intervalWeeks = DefineProperty<int>("IntervalWeeks", ["intervalWeeks"]);
+        _dayOfWeek = DefineProperty<ContainerServiceWeekDay>("DayOfWeek", ["dayOfWeek"]);
     }
 }

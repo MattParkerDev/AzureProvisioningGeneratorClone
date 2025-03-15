@@ -62,8 +62,8 @@ public partial class AgentPoolNetworkProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _nodePublicIPTags = DefineListProperty<ContainerServiceIPTag>("NodePublicIPTags", ["NodePublicIPTags"]);
-        _allowedHostPorts = DefineListProperty<AgentPoolNetworkPortRange>("AllowedHostPorts", ["AllowedHostPorts"]);
-        _applicationSecurityGroups = DefineListProperty<ResourceIdentifier>("ApplicationSecurityGroups", ["ApplicationSecurityGroups"]);
+        _nodePublicIPTags = DefineListProperty<ContainerServiceIPTag>("NodePublicIPTags", ["nodePublicIPTags"]);
+        _allowedHostPorts = DefineListProperty<AgentPoolNetworkPortRange>("AllowedHostPorts", ["allowedHostPorts"]);
+        _applicationSecurityGroups = DefineListProperty<ResourceIdentifier>("ApplicationSecurityGroups", ["applicationSecurityGroups"]);
     }
 }

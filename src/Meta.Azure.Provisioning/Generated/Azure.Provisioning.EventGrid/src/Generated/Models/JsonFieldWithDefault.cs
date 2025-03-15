@@ -57,7 +57,7 @@ public partial class JsonFieldWithDefault : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _sourceField = DefineProperty<string>("SourceField", ["SourceField"]);
-        _defaultValue = DefineProperty<string>("DefaultValue", ["DefaultValue"]);
+        _sourceField = DefineProperty<string>("SourceField", ["sourceField"]);
+        _defaultValue = DefineProperty<string>("DefaultValue", ["defaultValue"]);
     }
 }

@@ -50,7 +50,7 @@ public partial class CustomDomainIdentity : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _identityType = DefineProperty<CustomDomainIdentityType>("IdentityType", ["IdentityType"]);
-        _userAssignedIdentity = DefineProperty<string>("UserAssignedIdentity", ["UserAssignedIdentity"]);
+        _identityType = DefineProperty<CustomDomainIdentityType>("IdentityType", ["type"]);
+        _userAssignedIdentity = DefineProperty<string>("UserAssignedIdentity", ["userAssignedIdentity"]);
     }
 }

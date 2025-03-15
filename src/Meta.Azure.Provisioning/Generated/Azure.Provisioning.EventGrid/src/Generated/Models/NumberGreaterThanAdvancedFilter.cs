@@ -39,6 +39,7 @@ public partial class NumberGreaterThanAdvancedFilter : AdvancedFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _value = DefineProperty<double>("Value", ["Value"]);
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "NumberGreaterThan");
+        _value = DefineProperty<double>("Value", ["value"]);
     }
 }

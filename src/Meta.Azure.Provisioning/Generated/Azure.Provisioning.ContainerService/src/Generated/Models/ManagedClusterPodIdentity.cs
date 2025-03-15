@@ -89,10 +89,10 @@ public partial class ManagedClusterPodIdentity : ProvisionableConstruct
     {
         base.DefineProvisionableProperties();
         _name = DefineProperty<string>("Name", ["name"]);
-        _namespace = DefineProperty<string>("Namespace", ["Namespace"]);
-        _bindingSelector = DefineProperty<string>("BindingSelector", ["BindingSelector"]);
-        _identity = DefineModelProperty<ContainerServiceUserAssignedIdentity>("Identity", ["Identity"]);
-        _provisioningState = DefineProperty<ManagedClusterPodIdentityProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
-        _errorDetail = DefineProperty<ResponseError>("ErrorDetail", ["ErrorDetail"], isOutput: true);
+        _namespace = DefineProperty<string>("Namespace", ["namespace"]);
+        _bindingSelector = DefineProperty<string>("BindingSelector", ["bindingSelector"]);
+        _identity = DefineModelProperty<ContainerServiceUserAssignedIdentity>("Identity", ["identity"]);
+        _provisioningState = DefineProperty<ManagedClusterPodIdentityProvisioningState>("ProvisioningState", ["provisioningState"], isOutput: true);
+        _errorDetail = DefineProperty<ResponseError>("ErrorDetail", ["provisioningInfo", "error", "error"], isOutput: true);
     }
 }

@@ -74,9 +74,9 @@ public partial class ContainerServiceMaintenanceSchedule : ProvisionableConstruc
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _dailyIntervalDays = DefineProperty<int>("DailyIntervalDays", ["DailyIntervalDays"]);
-        _weekly = DefineModelProperty<ContainerServiceMaintenanceWeeklySchedule>("Weekly", ["Weekly"]);
-        _absoluteMonthly = DefineModelProperty<ContainerServiceMaintenanceAbsoluteMonthlySchedule>("AbsoluteMonthly", ["AbsoluteMonthly"]);
-        _relativeMonthly = DefineModelProperty<ContainerServiceMaintenanceRelativeMonthlySchedule>("RelativeMonthly", ["RelativeMonthly"]);
+        _dailyIntervalDays = DefineProperty<int>("DailyIntervalDays", ["daily", "intervalDays"]);
+        _weekly = DefineModelProperty<ContainerServiceMaintenanceWeeklySchedule>("Weekly", ["weekly"]);
+        _absoluteMonthly = DefineModelProperty<ContainerServiceMaintenanceAbsoluteMonthlySchedule>("AbsoluteMonthly", ["absoluteMonthly"]);
+        _relativeMonthly = DefineModelProperty<ContainerServiceMaintenanceRelativeMonthlySchedule>("RelativeMonthly", ["relativeMonthly"]);
     }
 }

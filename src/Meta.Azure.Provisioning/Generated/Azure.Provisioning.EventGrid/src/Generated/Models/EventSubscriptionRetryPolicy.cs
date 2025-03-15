@@ -48,7 +48,7 @@ public partial class EventSubscriptionRetryPolicy : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _maxDeliveryAttempts = DefineProperty<int>("MaxDeliveryAttempts", ["MaxDeliveryAttempts"]);
-        _eventTimeToLiveInMinutes = DefineProperty<int>("EventTimeToLiveInMinutes", ["EventTimeToLiveInMinutes"]);
+        _maxDeliveryAttempts = DefineProperty<int>("MaxDeliveryAttempts", ["maxDeliveryAttempts"]);
+        _eventTimeToLiveInMinutes = DefineProperty<int>("EventTimeToLiveInMinutes", ["eventTimeToLiveInMinutes"]);
     }
 }

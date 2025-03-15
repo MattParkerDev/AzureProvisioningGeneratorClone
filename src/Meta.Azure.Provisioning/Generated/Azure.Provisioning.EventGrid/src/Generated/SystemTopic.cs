@@ -136,13 +136,13 @@ public partial class SystemTopic : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["Identity"]);
-        _source = DefineProperty<ResourceIdentifier>("Source", ["Source"]);
+        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["identity"]);
+        _source = DefineProperty<ResourceIdentifier>("Source", ["properties", "source"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
-        _topicType = DefineProperty<string>("TopicType", ["TopicType"]);
+        _topicType = DefineProperty<string>("TopicType", ["properties", "topicType"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _metricResourceId = DefineProperty<Guid>("MetricResourceId", ["MetricResourceId"], isOutput: true);
-        _provisioningState = DefineProperty<EventGridResourceProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _metricResourceId = DefineProperty<Guid>("MetricResourceId", ["properties", "metricResourceId"], isOutput: true);
+        _provisioningState = DefineProperty<EventGridResourceProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
     }
 

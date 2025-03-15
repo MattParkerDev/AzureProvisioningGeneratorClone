@@ -39,6 +39,7 @@ public partial class StringContainsFilter : EventGridFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _values = DefineListProperty<string>("Values", ["Values"]);
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "StringContains");
+        _values = DefineListProperty<string>("Values", ["values"]);
     }
 }

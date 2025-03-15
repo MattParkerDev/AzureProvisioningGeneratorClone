@@ -66,8 +66,9 @@ public partial class MonitorAlertEventSubscriptionDestination : EventSubscriptio
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _severity = DefineProperty<MonitorAlertSeverity>("Severity", ["Severity"]);
-        _description = DefineProperty<string>("Description", ["Description"]);
-        _actionGroups = DefineListProperty<ResourceIdentifier>("ActionGroups", ["ActionGroups"]);
+        DefineProperty<string>("endpointType", ["endpointType"], defaultValue: "MonitorAlert");
+        _severity = DefineProperty<MonitorAlertSeverity>("Severity", ["properties", "severity"]);
+        _description = DefineProperty<string>("Description", ["properties", "description"]);
+        _actionGroups = DefineListProperty<ResourceIdentifier>("ActionGroups", ["properties", "actionGroups"]);
     }
 }

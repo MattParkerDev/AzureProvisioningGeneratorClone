@@ -105,12 +105,12 @@ public partial class ManagedClusterAadProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _isManagedAadEnabled = DefineProperty<bool>("IsManagedAadEnabled", ["IsManagedAadEnabled"]);
-        _isAzureRbacEnabled = DefineProperty<bool>("IsAzureRbacEnabled", ["IsAzureRbacEnabled"]);
-        _adminGroupObjectIds = DefineListProperty<Guid>("AdminGroupObjectIds", ["AdminGroupObjectIds"]);
-        _clientAppId = DefineProperty<Guid>("ClientAppId", ["ClientAppId"]);
-        _serverAppId = DefineProperty<Guid>("ServerAppId", ["ServerAppId"]);
-        _serverAppSecret = DefineProperty<string>("ServerAppSecret", ["ServerAppSecret"]);
-        _tenantId = DefineProperty<Guid>("TenantId", ["TenantId"]);
+        _isManagedAadEnabled = DefineProperty<bool>("IsManagedAadEnabled", ["managed"]);
+        _isAzureRbacEnabled = DefineProperty<bool>("IsAzureRbacEnabled", ["enableAzureRBAC"]);
+        _adminGroupObjectIds = DefineListProperty<Guid>("AdminGroupObjectIds", ["adminGroupObjectIDs"]);
+        _clientAppId = DefineProperty<Guid>("ClientAppId", ["clientAppID"]);
+        _serverAppId = DefineProperty<Guid>("ServerAppId", ["serverAppID"]);
+        _serverAppSecret = DefineProperty<string>("ServerAppSecret", ["serverAppSecret"]);
+        _tenantId = DefineProperty<Guid>("TenantId", ["tenantID"]);
     }
 }

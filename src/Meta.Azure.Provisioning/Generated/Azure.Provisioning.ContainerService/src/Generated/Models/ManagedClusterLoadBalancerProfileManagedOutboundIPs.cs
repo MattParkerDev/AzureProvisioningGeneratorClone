@@ -54,7 +54,7 @@ public partial class ManagedClusterLoadBalancerProfileManagedOutboundIPs : Provi
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _count = DefineProperty<int>("Count", ["Count"]);
-        _countIPv6 = DefineProperty<int>("CountIPv6", ["CountIPv6"]);
+        _count = DefineProperty<int>("Count", ["count"]);
+        _countIPv6 = DefineProperty<int>("CountIPv6", ["countIPv6"]);
     }
 }

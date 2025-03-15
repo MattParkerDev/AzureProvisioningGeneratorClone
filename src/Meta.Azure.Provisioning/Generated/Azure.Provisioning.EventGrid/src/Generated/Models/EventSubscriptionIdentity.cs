@@ -49,7 +49,7 @@ public partial class EventSubscriptionIdentity : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _identityType = DefineProperty<EventSubscriptionIdentityType>("IdentityType", ["IdentityType"]);
-        _userAssignedIdentity = DefineProperty<string>("UserAssignedIdentity", ["UserAssignedIdentity"]);
+        _identityType = DefineProperty<EventSubscriptionIdentityType>("IdentityType", ["type"]);
+        _userAssignedIdentity = DefineProperty<string>("UserAssignedIdentity", ["userAssignedIdentity"]);
     }
 }

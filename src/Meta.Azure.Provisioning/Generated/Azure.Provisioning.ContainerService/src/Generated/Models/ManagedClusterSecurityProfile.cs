@@ -72,9 +72,9 @@ public partial class ManagedClusterSecurityProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _defender = DefineModelProperty<ManagedClusterSecurityProfileDefender>("Defender", ["Defender"]);
-        _azureKeyVaultKms = DefineModelProperty<ManagedClusterSecurityProfileKeyVaultKms>("AzureKeyVaultKms", ["AzureKeyVaultKms"]);
-        _isWorkloadIdentityEnabled = DefineProperty<bool>("IsWorkloadIdentityEnabled", ["IsWorkloadIdentityEnabled"]);
-        _imageCleaner = DefineModelProperty<ManagedClusterSecurityProfileImageCleaner>("ImageCleaner", ["ImageCleaner"]);
+        _defender = DefineModelProperty<ManagedClusterSecurityProfileDefender>("Defender", ["defender"]);
+        _azureKeyVaultKms = DefineModelProperty<ManagedClusterSecurityProfileKeyVaultKms>("AzureKeyVaultKms", ["azureKeyVaultKms"]);
+        _isWorkloadIdentityEnabled = DefineProperty<bool>("IsWorkloadIdentityEnabled", ["workloadIdentity", "enabled"]);
+        _imageCleaner = DefineModelProperty<ManagedClusterSecurityProfileImageCleaner>("ImageCleaner", ["imageCleaner"]);
     }
 }

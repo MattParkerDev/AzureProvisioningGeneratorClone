@@ -52,7 +52,7 @@ public partial class PartnerAuthorization : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _defaultMaximumExpirationTimeInDays = DefineProperty<int>("DefaultMaximumExpirationTimeInDays", ["DefaultMaximumExpirationTimeInDays"]);
-        _authorizedPartnersList = DefineListProperty<EventGridPartnerContent>("AuthorizedPartnersList", ["AuthorizedPartnersList"]);
+        _defaultMaximumExpirationTimeInDays = DefineProperty<int>("DefaultMaximumExpirationTimeInDays", ["defaultMaximumExpirationTimeInDays"]);
+        _authorizedPartnersList = DefineListProperty<EventGridPartnerContent>("AuthorizedPartnersList", ["authorizedPartnersList"]);
     }
 }

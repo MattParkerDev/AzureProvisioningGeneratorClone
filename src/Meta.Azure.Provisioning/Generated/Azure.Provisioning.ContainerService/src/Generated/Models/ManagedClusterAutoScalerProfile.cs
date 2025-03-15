@@ -213,22 +213,22 @@ public partial class ManagedClusterAutoScalerProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _balanceSimilarNodeGroups = DefineProperty<string>("BalanceSimilarNodeGroups", ["BalanceSimilarNodeGroups"]);
-        _expander = DefineProperty<AutoScaleExpander>("Expander", ["Expander"]);
-        _maxEmptyBulkDelete = DefineProperty<string>("MaxEmptyBulkDelete", ["MaxEmptyBulkDelete"]);
-        _maxGracefulTerminationSec = DefineProperty<string>("MaxGracefulTerminationSec", ["MaxGracefulTerminationSec"]);
-        _maxNodeProvisionTime = DefineProperty<string>("MaxNodeProvisionTime", ["MaxNodeProvisionTime"]);
-        _maxTotalUnreadyPercentage = DefineProperty<string>("MaxTotalUnreadyPercentage", ["MaxTotalUnreadyPercentage"]);
-        _newPodScaleUpDelay = DefineProperty<string>("NewPodScaleUpDelay", ["NewPodScaleUpDelay"]);
-        _okTotalUnreadyCount = DefineProperty<string>("OkTotalUnreadyCount", ["OkTotalUnreadyCount"]);
-        _scanIntervalInSeconds = DefineProperty<string>("ScanIntervalInSeconds", ["ScanIntervalInSeconds"]);
-        _scaleDownDelayAfterAdd = DefineProperty<string>("ScaleDownDelayAfterAdd", ["ScaleDownDelayAfterAdd"]);
-        _scaleDownDelayAfterDelete = DefineProperty<string>("ScaleDownDelayAfterDelete", ["ScaleDownDelayAfterDelete"]);
-        _scaleDownDelayAfterFailure = DefineProperty<string>("ScaleDownDelayAfterFailure", ["ScaleDownDelayAfterFailure"]);
-        _scaleDownUnneededTime = DefineProperty<string>("ScaleDownUnneededTime", ["ScaleDownUnneededTime"]);
-        _scaleDownUnreadyTime = DefineProperty<string>("ScaleDownUnreadyTime", ["ScaleDownUnreadyTime"]);
-        _scaleDownUtilizationThreshold = DefineProperty<string>("ScaleDownUtilizationThreshold", ["ScaleDownUtilizationThreshold"]);
-        _skipNodesWithLocalStorage = DefineProperty<string>("SkipNodesWithLocalStorage", ["SkipNodesWithLocalStorage"]);
-        _skipNodesWithSystemPods = DefineProperty<string>("SkipNodesWithSystemPods", ["SkipNodesWithSystemPods"]);
+        _balanceSimilarNodeGroups = DefineProperty<string>("BalanceSimilarNodeGroups", ["balance-similar-node-groups"]);
+        _expander = DefineProperty<AutoScaleExpander>("Expander", ["expander"]);
+        _maxEmptyBulkDelete = DefineProperty<string>("MaxEmptyBulkDelete", ["max-empty-bulk-delete"]);
+        _maxGracefulTerminationSec = DefineProperty<string>("MaxGracefulTerminationSec", ["max-graceful-termination-sec"]);
+        _maxNodeProvisionTime = DefineProperty<string>("MaxNodeProvisionTime", ["max-node-provision-time"]);
+        _maxTotalUnreadyPercentage = DefineProperty<string>("MaxTotalUnreadyPercentage", ["max-total-unready-percentage"]);
+        _newPodScaleUpDelay = DefineProperty<string>("NewPodScaleUpDelay", ["new-pod-scale-up-delay"]);
+        _okTotalUnreadyCount = DefineProperty<string>("OkTotalUnreadyCount", ["ok-total-unready-count"]);
+        _scanIntervalInSeconds = DefineProperty<string>("ScanIntervalInSeconds", ["scan-interval"]);
+        _scaleDownDelayAfterAdd = DefineProperty<string>("ScaleDownDelayAfterAdd", ["scale-down-delay-after-add"]);
+        _scaleDownDelayAfterDelete = DefineProperty<string>("ScaleDownDelayAfterDelete", ["scale-down-delay-after-delete"]);
+        _scaleDownDelayAfterFailure = DefineProperty<string>("ScaleDownDelayAfterFailure", ["scale-down-delay-after-failure"]);
+        _scaleDownUnneededTime = DefineProperty<string>("ScaleDownUnneededTime", ["scale-down-unneeded-time"]);
+        _scaleDownUnreadyTime = DefineProperty<string>("ScaleDownUnreadyTime", ["scale-down-unready-time"]);
+        _scaleDownUtilizationThreshold = DefineProperty<string>("ScaleDownUtilizationThreshold", ["scale-down-utilization-threshold"]);
+        _skipNodesWithLocalStorage = DefineProperty<string>("SkipNodesWithLocalStorage", ["skip-nodes-with-local-storage"]);
+        _skipNodesWithSystemPods = DefineProperty<string>("SkipNodesWithSystemPods", ["skip-nodes-with-system-pods"]);
     }
 }

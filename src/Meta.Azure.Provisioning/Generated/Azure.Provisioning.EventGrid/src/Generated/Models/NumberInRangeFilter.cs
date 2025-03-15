@@ -39,6 +39,7 @@ public partial class NumberInRangeFilter : EventGridFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _values = DefineListProperty<BicepList<double>>("Values", ["Values"]);
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "NumberInRange");
+        _values = DefineListProperty<BicepList<double>>("Values", ["values"]);
     }
 }

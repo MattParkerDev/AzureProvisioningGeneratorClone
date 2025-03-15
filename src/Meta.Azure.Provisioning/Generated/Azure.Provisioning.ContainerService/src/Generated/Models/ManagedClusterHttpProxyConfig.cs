@@ -70,9 +70,9 @@ public partial class ManagedClusterHttpProxyConfig : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _httpProxy = DefineProperty<string>("HttpProxy", ["HttpProxy"]);
-        _httpsProxy = DefineProperty<string>("HttpsProxy", ["HttpsProxy"]);
-        _noProxy = DefineListProperty<string>("NoProxy", ["NoProxy"]);
-        _trustedCA = DefineProperty<string>("TrustedCA", ["TrustedCA"]);
+        _httpProxy = DefineProperty<string>("HttpProxy", ["httpProxy"]);
+        _httpsProxy = DefineProperty<string>("HttpsProxy", ["httpsProxy"]);
+        _noProxy = DefineListProperty<string>("NoProxy", ["noProxy"]);
+        _trustedCA = DefineProperty<string>("TrustedCA", ["trustedCa"]);
     }
 }

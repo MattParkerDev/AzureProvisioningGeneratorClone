@@ -88,10 +88,10 @@ public partial class PartnerTopicInfo : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _azureSubscriptionId = DefineProperty<Guid>("AzureSubscriptionId", ["AzureSubscriptionId"]);
-        _resourceGroupName = DefineProperty<string>("ResourceGroupName", ["ResourceGroupName"]);
+        _azureSubscriptionId = DefineProperty<Guid>("AzureSubscriptionId", ["azureSubscriptionId"]);
+        _resourceGroupName = DefineProperty<string>("ResourceGroupName", ["resourceGroupName"]);
         _name = DefineProperty<string>("Name", ["name"]);
-        _eventTypeInfo = DefineModelProperty<PartnerTopicEventTypeInfo>("EventTypeInfo", ["EventTypeInfo"]);
-        _source = DefineProperty<string>("Source", ["Source"]);
+        _eventTypeInfo = DefineModelProperty<PartnerTopicEventTypeInfo>("EventTypeInfo", ["eventTypeInfo"]);
+        _source = DefineProperty<string>("Source", ["source"]);
     }
 }

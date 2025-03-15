@@ -54,7 +54,7 @@ public partial class UpgradeOverrideSettings : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _forceUpgrade = DefineProperty<bool>("ForceUpgrade", ["ForceUpgrade"]);
-        _until = DefineProperty<DateTimeOffset>("Until", ["Until"]);
+        _forceUpgrade = DefineProperty<bool>("ForceUpgrade", ["forceUpgrade"]);
+        _until = DefineProperty<DateTimeOffset>("Until", ["until"]);
     }
 }

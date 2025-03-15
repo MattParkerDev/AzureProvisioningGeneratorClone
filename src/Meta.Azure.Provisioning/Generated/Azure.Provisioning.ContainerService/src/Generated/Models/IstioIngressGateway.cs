@@ -50,7 +50,7 @@ public partial class IstioIngressGateway : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _mode = DefineProperty<IstioIngressGatewayMode>("Mode", ["Mode"]);
-        _isEnabled = DefineProperty<bool>("IsEnabled", ["IsEnabled"]);
+        _mode = DefineProperty<IstioIngressGatewayMode>("Mode", ["mode"]);
+        _isEnabled = DefineProperty<bool>("IsEnabled", ["enabled"]);
     }
 }

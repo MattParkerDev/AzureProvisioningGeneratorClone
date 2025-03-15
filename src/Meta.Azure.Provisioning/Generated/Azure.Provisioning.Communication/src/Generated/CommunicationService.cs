@@ -167,17 +167,17 @@ public partial class CommunicationService : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _dataLocation = DefineProperty<string>("DataLocation", ["DataLocation"]);
-        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["Identity"]);
-        _linkedDomains = DefineListProperty<string>("LinkedDomains", ["LinkedDomains"]);
+        _dataLocation = DefineProperty<string>("DataLocation", ["properties", "dataLocation"]);
+        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["identity"]);
+        _linkedDomains = DefineListProperty<string>("LinkedDomains", ["properties", "linkedDomains"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
-        _hostName = DefineProperty<string>("HostName", ["HostName"], isOutput: true);
+        _hostName = DefineProperty<string>("HostName", ["properties", "hostName"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _immutableResourceId = DefineProperty<Guid>("ImmutableResourceId", ["ImmutableResourceId"], isOutput: true);
-        _notificationHubId = DefineProperty<ResourceIdentifier>("NotificationHubId", ["NotificationHubId"], isOutput: true);
-        _provisioningState = DefineProperty<CommunicationServicesProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _immutableResourceId = DefineProperty<Guid>("ImmutableResourceId", ["properties", "immutableResourceId"], isOutput: true);
+        _notificationHubId = DefineProperty<ResourceIdentifier>("NotificationHubId", ["properties", "notificationHubId"], isOutput: true);
+        _provisioningState = DefineProperty<CommunicationServicesProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
-        _version = DefineProperty<string>("Version", ["Version"], isOutput: true);
+        _version = DefineProperty<string>("Version", ["properties", "version"], isOutput: true);
     }
 
     /// <summary>

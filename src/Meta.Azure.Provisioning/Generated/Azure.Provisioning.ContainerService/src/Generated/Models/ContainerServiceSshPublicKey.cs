@@ -39,6 +39,6 @@ public partial class ContainerServiceSshPublicKey : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _keyData = DefineProperty<string>("KeyData", ["KeyData"]);
+        _keyData = DefineProperty<string>("KeyData", ["keyData"]);
     }
 }

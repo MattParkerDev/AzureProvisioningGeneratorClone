@@ -107,11 +107,11 @@ public partial class CustomDomainConfiguration : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _fullyQualifiedDomainName = DefineProperty<string>("FullyQualifiedDomainName", ["FullyQualifiedDomainName"]);
-        _validationState = DefineProperty<CustomDomainValidationState>("ValidationState", ["ValidationState"]);
-        _identity = DefineModelProperty<CustomDomainIdentity>("Identity", ["Identity"]);
-        _certificateUri = DefineProperty<Uri>("CertificateUri", ["CertificateUri"]);
-        _expectedTxtRecordName = DefineProperty<string>("ExpectedTxtRecordName", ["ExpectedTxtRecordName"]);
-        _expectedTxtRecordValue = DefineProperty<string>("ExpectedTxtRecordValue", ["ExpectedTxtRecordValue"]);
+        _fullyQualifiedDomainName = DefineProperty<string>("FullyQualifiedDomainName", ["fullyQualifiedDomainName"]);
+        _validationState = DefineProperty<CustomDomainValidationState>("ValidationState", ["validationState"]);
+        _identity = DefineModelProperty<CustomDomainIdentity>("Identity", ["identity"]);
+        _certificateUri = DefineProperty<Uri>("CertificateUri", ["certificateUrl"]);
+        _expectedTxtRecordName = DefineProperty<string>("ExpectedTxtRecordName", ["expectedTxtRecordName"]);
+        _expectedTxtRecordValue = DefineProperty<string>("ExpectedTxtRecordValue", ["expectedTxtRecordValue"]);
     }
 }

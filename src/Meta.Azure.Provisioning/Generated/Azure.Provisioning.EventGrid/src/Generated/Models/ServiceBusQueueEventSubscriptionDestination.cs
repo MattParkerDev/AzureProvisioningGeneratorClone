@@ -60,7 +60,8 @@ public partial class ServiceBusQueueEventSubscriptionDestination : EventSubscrip
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["ResourceId"]);
-        _deliveryAttributeMappings = DefineListProperty<DeliveryAttributeMapping>("DeliveryAttributeMappings", ["DeliveryAttributeMappings"]);
+        DefineProperty<string>("endpointType", ["endpointType"], defaultValue: "ServiceBusQueue");
+        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["properties", "resourceId"]);
+        _deliveryAttributeMappings = DefineListProperty<DeliveryAttributeMapping>("DeliveryAttributeMappings", ["properties", "deliveryAttributeMappings"]);
     }
 }

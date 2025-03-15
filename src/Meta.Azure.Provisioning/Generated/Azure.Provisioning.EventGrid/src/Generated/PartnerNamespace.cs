@@ -190,17 +190,17 @@ public partial class PartnerNamespace : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _inboundIPRules = DefineListProperty<EventGridInboundIPRule>("InboundIPRules", ["InboundIPRules"]);
-        _isLocalAuthDisabled = DefineProperty<bool>("IsLocalAuthDisabled", ["IsLocalAuthDisabled"]);
-        _minimumTlsVersionAllowed = DefineProperty<TlsVersion>("MinimumTlsVersionAllowed", ["MinimumTlsVersionAllowed"]);
-        _partnerRegistrationFullyQualifiedId = DefineProperty<ResourceIdentifier>("PartnerRegistrationFullyQualifiedId", ["PartnerRegistrationFullyQualifiedId"]);
-        _partnerTopicRoutingMode = DefineProperty<PartnerTopicRoutingMode>("PartnerTopicRoutingMode", ["PartnerTopicRoutingMode"]);
-        _publicNetworkAccess = DefineProperty<EventGridPublicNetworkAccess>("PublicNetworkAccess", ["PublicNetworkAccess"]);
+        _inboundIPRules = DefineListProperty<EventGridInboundIPRule>("InboundIPRules", ["properties", "inboundIpRules"]);
+        _isLocalAuthDisabled = DefineProperty<bool>("IsLocalAuthDisabled", ["properties", "disableLocalAuth"]);
+        _minimumTlsVersionAllowed = DefineProperty<TlsVersion>("MinimumTlsVersionAllowed", ["properties", "minimumTlsVersionAllowed"]);
+        _partnerRegistrationFullyQualifiedId = DefineProperty<ResourceIdentifier>("PartnerRegistrationFullyQualifiedId", ["properties", "partnerRegistrationFullyQualifiedId"]);
+        _partnerTopicRoutingMode = DefineProperty<PartnerTopicRoutingMode>("PartnerTopicRoutingMode", ["properties", "partnerTopicRoutingMode"]);
+        _publicNetworkAccess = DefineProperty<EventGridPublicNetworkAccess>("PublicNetworkAccess", ["properties", "publicNetworkAccess"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
-        _endpoint = DefineProperty<Uri>("Endpoint", ["Endpoint"], isOutput: true);
+        _endpoint = DefineProperty<Uri>("Endpoint", ["properties", "endpoint"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _privateEndpointConnections = DefineListProperty<EventGridPrivateEndpointConnectionData>("PrivateEndpointConnections", ["PrivateEndpointConnections"], isOutput: true);
-        _provisioningState = DefineProperty<PartnerNamespaceProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _privateEndpointConnections = DefineListProperty<EventGridPrivateEndpointConnectionData>("PrivateEndpointConnections", ["properties", "privateEndpointConnections"], isOutput: true);
+        _provisioningState = DefineProperty<PartnerNamespaceProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
     }
 

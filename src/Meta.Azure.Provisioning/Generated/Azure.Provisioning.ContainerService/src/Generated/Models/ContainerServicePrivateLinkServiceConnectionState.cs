@@ -49,7 +49,7 @@ public partial class ContainerServicePrivateLinkServiceConnectionState : Provisi
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _status = DefineProperty<ContainerServicePrivateLinkServiceConnectionStatus>("Status", ["Status"]);
-        _description = DefineProperty<string>("Description", ["Description"]);
+        _status = DefineProperty<ContainerServicePrivateLinkServiceConnectionStatus>("Status", ["status"]);
+        _description = DefineProperty<string>("Description", ["description"]);
     }
 }

@@ -63,7 +63,7 @@ public partial class ManagedClusterPodIdentityException : ProvisionableConstruct
     {
         base.DefineProvisionableProperties();
         _name = DefineProperty<string>("Name", ["name"]);
-        _namespace = DefineProperty<string>("Namespace", ["Namespace"]);
-        _podLabels = DefineDictionaryProperty<string>("PodLabels", ["PodLabels"]);
+        _namespace = DefineProperty<string>("Namespace", ["namespace"]);
+        _podLabels = DefineDictionaryProperty<string>("PodLabels", ["podLabels"]);
     }
 }

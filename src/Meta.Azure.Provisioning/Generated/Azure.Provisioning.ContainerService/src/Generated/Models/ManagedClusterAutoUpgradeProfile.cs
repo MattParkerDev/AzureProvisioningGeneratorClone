@@ -50,7 +50,7 @@ public partial class ManagedClusterAutoUpgradeProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _upgradeChannel = DefineProperty<UpgradeChannel>("UpgradeChannel", ["UpgradeChannel"]);
-        _nodeOSUpgradeChannel = DefineProperty<ManagedClusterNodeOSUpgradeChannel>("NodeOSUpgradeChannel", ["NodeOSUpgradeChannel"]);
+        _upgradeChannel = DefineProperty<UpgradeChannel>("UpgradeChannel", ["upgradeChannel"]);
+        _nodeOSUpgradeChannel = DefineProperty<ManagedClusterNodeOSUpgradeChannel>("NodeOSUpgradeChannel", ["nodeOSUpgradeChannel"]);
     }
 }

@@ -91,7 +91,9 @@ public partial class AppServiceCertificateOrder : ProvisionableResource
     private BicepValue<int>? _keySize;
 
     /// <summary>
-    /// Kind of resource.
+    /// Kind of resource. If the resource is an app, you can refer to
+    /// https://github.com/Azure/app-service-linux-docs/blob/master/Things_You_Should_Know/kind_property.md#app-service-resource-kind-reference
+    /// for details supported values for kind.
     /// </summary>
     public BicepValue<string> Kind 
     {

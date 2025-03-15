@@ -80,9 +80,10 @@ public partial class AzureFunctionEventSubscriptionDestination : EventSubscripti
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["ResourceId"]);
-        _maxEventsPerBatch = DefineProperty<int>("MaxEventsPerBatch", ["MaxEventsPerBatch"]);
-        _preferredBatchSizeInKilobytes = DefineProperty<int>("PreferredBatchSizeInKilobytes", ["PreferredBatchSizeInKilobytes"]);
-        _deliveryAttributeMappings = DefineListProperty<DeliveryAttributeMapping>("DeliveryAttributeMappings", ["DeliveryAttributeMappings"]);
+        DefineProperty<string>("endpointType", ["endpointType"], defaultValue: "AzureFunction");
+        _resourceId = DefineProperty<ResourceIdentifier>("ResourceId", ["properties", "resourceId"]);
+        _maxEventsPerBatch = DefineProperty<int>("MaxEventsPerBatch", ["properties", "maxEventsPerBatch"]);
+        _preferredBatchSizeInKilobytes = DefineProperty<int>("PreferredBatchSizeInKilobytes", ["properties", "preferredBatchSizeInKilobytes"]);
+        _deliveryAttributeMappings = DefineListProperty<DeliveryAttributeMapping>("DeliveryAttributeMappings", ["properties", "deliveryAttributeMappings"]);
     }
 }

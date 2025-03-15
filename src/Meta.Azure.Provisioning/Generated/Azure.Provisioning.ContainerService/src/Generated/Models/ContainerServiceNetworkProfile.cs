@@ -196,20 +196,20 @@ public partial class ContainerServiceNetworkProfile : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _networkPlugin = DefineProperty<ContainerServiceNetworkPlugin>("NetworkPlugin", ["NetworkPlugin"]);
-        _networkPluginMode = DefineProperty<ContainerServiceNetworkPluginMode>("NetworkPluginMode", ["NetworkPluginMode"]);
-        _networkPolicy = DefineProperty<ContainerServiceNetworkPolicy>("NetworkPolicy", ["NetworkPolicy"]);
-        _networkMode = DefineProperty<ContainerServiceNetworkMode>("NetworkMode", ["NetworkMode"]);
-        _networkDataplane = DefineProperty<NetworkDataplane>("NetworkDataplane", ["NetworkDataplane"]);
-        _podCidr = DefineProperty<string>("PodCidr", ["PodCidr"]);
-        _serviceCidr = DefineProperty<string>("ServiceCidr", ["ServiceCidr"]);
-        _dnsServiceIP = DefineProperty<string>("DnsServiceIP", ["DnsServiceIP"]);
-        _outboundType = DefineProperty<ContainerServiceOutboundType>("OutboundType", ["OutboundType"]);
-        _loadBalancerSku = DefineProperty<ContainerServiceLoadBalancerSku>("LoadBalancerSku", ["LoadBalancerSku"]);
-        _loadBalancerProfile = DefineModelProperty<ManagedClusterLoadBalancerProfile>("LoadBalancerProfile", ["LoadBalancerProfile"]);
-        _natGatewayProfile = DefineModelProperty<ManagedClusterNatGatewayProfile>("NatGatewayProfile", ["NatGatewayProfile"]);
-        _podCidrs = DefineListProperty<string>("PodCidrs", ["PodCidrs"]);
-        _serviceCidrs = DefineListProperty<string>("ServiceCidrs", ["ServiceCidrs"]);
-        _iPFamilies = DefineListProperty<IPFamily>("IPFamilies", ["IPFamilies"]);
+        _networkPlugin = DefineProperty<ContainerServiceNetworkPlugin>("NetworkPlugin", ["networkPlugin"]);
+        _networkPluginMode = DefineProperty<ContainerServiceNetworkPluginMode>("NetworkPluginMode", ["networkPluginMode"]);
+        _networkPolicy = DefineProperty<ContainerServiceNetworkPolicy>("NetworkPolicy", ["networkPolicy"]);
+        _networkMode = DefineProperty<ContainerServiceNetworkMode>("NetworkMode", ["networkMode"]);
+        _networkDataplane = DefineProperty<NetworkDataplane>("NetworkDataplane", ["networkDataplane"]);
+        _podCidr = DefineProperty<string>("PodCidr", ["podCidr"]);
+        _serviceCidr = DefineProperty<string>("ServiceCidr", ["serviceCidr"]);
+        _dnsServiceIP = DefineProperty<string>("DnsServiceIP", ["dnsServiceIP"]);
+        _outboundType = DefineProperty<ContainerServiceOutboundType>("OutboundType", ["outboundType"]);
+        _loadBalancerSku = DefineProperty<ContainerServiceLoadBalancerSku>("LoadBalancerSku", ["loadBalancerSku"]);
+        _loadBalancerProfile = DefineModelProperty<ManagedClusterLoadBalancerProfile>("LoadBalancerProfile", ["loadBalancerProfile"]);
+        _natGatewayProfile = DefineModelProperty<ManagedClusterNatGatewayProfile>("NatGatewayProfile", ["natGatewayProfile"]);
+        _podCidrs = DefineListProperty<string>("PodCidrs", ["podCidrs"]);
+        _serviceCidrs = DefineListProperty<string>("ServiceCidrs", ["serviceCidrs"]);
+        _iPFamilies = DefineListProperty<IPFamily>("IPFamilies", ["ipFamilies"]);
     }
 }

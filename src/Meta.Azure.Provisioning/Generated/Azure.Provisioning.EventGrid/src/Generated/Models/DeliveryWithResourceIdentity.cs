@@ -69,7 +69,7 @@ public partial class DeliveryWithResourceIdentity : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _identity = DefineModelProperty<EventSubscriptionIdentity>("Identity", ["Identity"]);
-        _destination = DefineModelProperty<EventSubscriptionDestination>("Destination", ["Destination"]);
+        _identity = DefineModelProperty<EventSubscriptionIdentity>("Identity", ["identity"]);
+        _destination = DefineModelProperty<EventSubscriptionDestination>("Destination", ["destination"]);
     }
 }

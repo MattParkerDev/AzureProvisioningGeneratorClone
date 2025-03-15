@@ -59,8 +59,8 @@ public partial class EventGridPrivateEndpointConnectionState : ProvisionableCons
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _status = DefineProperty<EventGridPrivateEndpointPersistedConnectionStatus>("Status", ["Status"]);
-        _description = DefineProperty<string>("Description", ["Description"]);
-        _actionsRequired = DefineProperty<string>("ActionsRequired", ["ActionsRequired"]);
+        _status = DefineProperty<EventGridPrivateEndpointPersistedConnectionStatus>("Status", ["status"]);
+        _description = DefineProperty<string>("Description", ["description"]);
+        _actionsRequired = DefineProperty<string>("ActionsRequired", ["actionsRequired"]);
     }
 }

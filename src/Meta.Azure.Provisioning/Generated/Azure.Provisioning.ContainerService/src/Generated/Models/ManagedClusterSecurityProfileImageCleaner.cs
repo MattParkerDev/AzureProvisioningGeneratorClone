@@ -51,7 +51,7 @@ public partial class ManagedClusterSecurityProfileImageCleaner : ProvisionableCo
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _isEnabled = DefineProperty<bool>("IsEnabled", ["IsEnabled"]);
-        _intervalHours = DefineProperty<int>("IntervalHours", ["IntervalHours"]);
+        _isEnabled = DefineProperty<bool>("IsEnabled", ["enabled"]);
+        _intervalHours = DefineProperty<int>("IntervalHours", ["intervalHours"]);
     }
 }

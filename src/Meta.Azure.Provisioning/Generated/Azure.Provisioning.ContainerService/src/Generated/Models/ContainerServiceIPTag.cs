@@ -49,7 +49,7 @@ public partial class ContainerServiceIPTag : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _iPTagType = DefineProperty<string>("IPTagType", ["IPTagType"]);
-        _tag = DefineProperty<string>("Tag", ["Tag"]);
+        _iPTagType = DefineProperty<string>("IPTagType", ["ipTagType"]);
+        _tag = DefineProperty<string>("Tag", ["tag"]);
     }
 }

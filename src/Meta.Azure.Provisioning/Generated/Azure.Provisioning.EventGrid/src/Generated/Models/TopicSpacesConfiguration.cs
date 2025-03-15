@@ -129,14 +129,14 @@ public partial class TopicSpacesConfiguration : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _state = DefineProperty<TopicSpacesConfigurationState>("State", ["State"]);
-        _routeTopicResourceId = DefineProperty<string>("RouteTopicResourceId", ["RouteTopicResourceId"]);
-        _hostname = DefineProperty<string>("Hostname", ["Hostname"], isOutput: true);
-        _routingEnrichments = DefineModelProperty<RoutingEnrichments>("RoutingEnrichments", ["RoutingEnrichments"]);
-        _clientAuthentication = DefineModelProperty<ClientAuthenticationSettings>("ClientAuthentication", ["ClientAuthentication"]);
-        _maximumSessionExpiryInHours = DefineProperty<int>("MaximumSessionExpiryInHours", ["MaximumSessionExpiryInHours"]);
-        _maximumClientSessionsPerAuthenticationName = DefineProperty<int>("MaximumClientSessionsPerAuthenticationName", ["MaximumClientSessionsPerAuthenticationName"]);
-        _routingIdentityInfo = DefineModelProperty<RoutingIdentityInfo>("RoutingIdentityInfo", ["RoutingIdentityInfo"]);
-        _customDomains = DefineListProperty<CustomDomainConfiguration>("CustomDomains", ["CustomDomains"]);
+        _state = DefineProperty<TopicSpacesConfigurationState>("State", ["state"]);
+        _routeTopicResourceId = DefineProperty<string>("RouteTopicResourceId", ["routeTopicResourceId"]);
+        _hostname = DefineProperty<string>("Hostname", ["hostname"], isOutput: true);
+        _routingEnrichments = DefineModelProperty<RoutingEnrichments>("RoutingEnrichments", ["routingEnrichments"]);
+        _clientAuthentication = DefineModelProperty<ClientAuthenticationSettings>("ClientAuthentication", ["clientAuthentication"]);
+        _maximumSessionExpiryInHours = DefineProperty<int>("MaximumSessionExpiryInHours", ["maximumSessionExpiryInHours"]);
+        _maximumClientSessionsPerAuthenticationName = DefineProperty<int>("MaximumClientSessionsPerAuthenticationName", ["maximumClientSessionsPerAuthenticationName"]);
+        _routingIdentityInfo = DefineModelProperty<RoutingIdentityInfo>("RoutingIdentityInfo", ["routingIdentityInfo"]);
+        _customDomains = DefineListProperty<CustomDomainConfiguration>("CustomDomains", ["customDomains"]);
     }
 }

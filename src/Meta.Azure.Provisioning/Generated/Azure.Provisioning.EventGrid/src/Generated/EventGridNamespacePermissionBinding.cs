@@ -130,12 +130,12 @@ public partial class EventGridNamespacePermissionBinding : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _clientGroupName = DefineProperty<string>("ClientGroupName", ["ClientGroupName"]);
-        _description = DefineProperty<string>("Description", ["Description"]);
-        _permission = DefineProperty<PermissionType>("Permission", ["Permission"]);
-        _topicSpaceName = DefineProperty<string>("TopicSpaceName", ["TopicSpaceName"]);
+        _clientGroupName = DefineProperty<string>("ClientGroupName", ["properties", "clientGroupName"]);
+        _description = DefineProperty<string>("Description", ["properties", "description"]);
+        _permission = DefineProperty<PermissionType>("Permission", ["properties", "permission"]);
+        _topicSpaceName = DefineProperty<string>("TopicSpaceName", ["properties", "topicSpaceName"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<PermissionBindingProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<PermissionBindingProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<EventGridNamespace>("Parent", ["parent"], isRequired: true);
     }

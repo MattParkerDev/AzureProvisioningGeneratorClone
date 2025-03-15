@@ -123,12 +123,12 @@ public partial class CaCertificate : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _description = DefineProperty<string>("Description", ["Description"]);
-        _encodedCertificate = DefineProperty<string>("EncodedCertificate", ["EncodedCertificate"]);
-        _expiryTimeInUtc = DefineProperty<DateTimeOffset>("ExpiryTimeInUtc", ["ExpiryTimeInUtc"], isOutput: true);
+        _description = DefineProperty<string>("Description", ["properties", "description"]);
+        _encodedCertificate = DefineProperty<string>("EncodedCertificate", ["properties", "encodedCertificate"]);
+        _expiryTimeInUtc = DefineProperty<DateTimeOffset>("ExpiryTimeInUtc", ["properties", "expiryTimeInUtc"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _issueTimeInUtc = DefineProperty<DateTimeOffset>("IssueTimeInUtc", ["IssueTimeInUtc"], isOutput: true);
-        _provisioningState = DefineProperty<CaCertificateProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _issueTimeInUtc = DefineProperty<DateTimeOffset>("IssueTimeInUtc", ["properties", "issueTimeInUtc"], isOutput: true);
+        _provisioningState = DefineProperty<CaCertificateProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<EventGridNamespace>("Parent", ["parent"], isRequired: true);
     }

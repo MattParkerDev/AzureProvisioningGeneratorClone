@@ -61,8 +61,8 @@ public partial class DeliveryConfiguration : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _deliveryMode = DefineProperty<DeliveryMode>("DeliveryMode", ["DeliveryMode"]);
-        _queue = DefineModelProperty<QueueInfo>("Queue", ["Queue"]);
-        _push = DefineModelProperty<PushInfo>("Push", ["Push"]);
+        _deliveryMode = DefineProperty<DeliveryMode>("DeliveryMode", ["deliveryMode"]);
+        _queue = DefineModelProperty<QueueInfo>("Queue", ["queue"]);
+        _push = DefineModelProperty<PushInfo>("Push", ["push"]);
     }
 }

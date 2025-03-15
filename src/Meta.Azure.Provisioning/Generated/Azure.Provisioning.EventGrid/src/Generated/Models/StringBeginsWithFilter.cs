@@ -39,6 +39,7 @@ public partial class StringBeginsWithFilter : EventGridFilter
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _values = DefineListProperty<string>("Values", ["Values"]);
+        DefineProperty<string>("operatorType", ["operatorType"], defaultValue: "StringBeginsWith");
+        _values = DefineListProperty<string>("Values", ["values"]);
     }
 }
