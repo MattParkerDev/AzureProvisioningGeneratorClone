@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: echo dir
         shell: bash
-        run: echo ${{ github.workspace }}
+        run: ls -la
       - name: test
         shell: bash
         run: dotnet run --project iac/DetermineIfPublishNecessary/DetermineIfPublishNecessary.csproj
