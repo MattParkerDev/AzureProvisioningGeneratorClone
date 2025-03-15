@@ -32,7 +32,7 @@ var nugetToken = Environment.GetEnvironmentVariable("NUGET_AUTH_TOKEN");
 ArgumentException.ThrowIfNullOrWhiteSpace(nugetToken, nameof(nugetToken));
 
 var publishResult = await Cli.Wrap("dotnet")
-	.WithArguments($"nuget push {packageFile.FullName} --api-key {nugetToken} --source https://apiint.nugettest.org/v3/index.json")
+	.WithArguments($"nuget push {packageFile.FullName} --api-key {nugetToken} --source https://api.nuget.org/v3/index.json")
 	.WithValidation(CommandResultValidation.None)
 	.ExecuteBufferedAsync();
 
