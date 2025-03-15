@@ -24,6 +24,8 @@ jobs:
     needs: determine-if-publish-necessary
     if: needs.determine-if-publish-necessary.outputs.publish-necessary == 'true'
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
       - name: approval
         shell: bash
         run: echo "Nuget publish approved"
