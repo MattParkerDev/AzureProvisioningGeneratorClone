@@ -11,7 +11,7 @@ jobs:
         run: echo ${{ github.workspace }}
       - name: test
         shell: bash
-        run: echo dotnet run --project /.iac/DetermineIfPublishNecessary/DetermineIfPublishNecessary.csproj
+        run: dotnet run --project /.iac/DetermineIfPublishNecessary/DetermineIfPublishNecessary.csproj
       - name: check
         shell: bash
         run: |
