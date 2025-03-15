@@ -6,6 +6,9 @@ jobs:
   determine-if-publish-necessary:
     runs-on: ubuntu-latest
     steps:
+      - name: echo dir
+        shell: bash
+        run: echo ${{ github.workspace }}
       - name: test
         shell: bash
         run: echo dotnet run --project /.iac/DetermineIfPublishNecessary/DetermineIfPublishNecessary.csproj
