@@ -26,9 +26,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-dotnet@v4
-      - name: approval
-        shell: bash
-        run: echo "Nuget publish approved"
       - name: Publish to NuGet
         shell: bash
         env:
