@@ -69,9 +69,9 @@ public partial class ContainerRegistryImageDescriptor : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _registry = DefineProperty<string>("Registry", ["registry"]);
-        _repository = DefineProperty<string>("Repository", ["repository"]);
-        _tag = DefineProperty<string>("Tag", ["tag"]);
-        _digest = DefineProperty<string>("Digest", ["digest"]);
+        _registry = DefineProperty<string>("Registry", ["Registry"]);
+        _repository = DefineProperty<string>("Repository", ["Repository"]);
+        _tag = DefineProperty<string>("Tag", ["Tag"]);
+        _digest = DefineProperty<string>("Digest", ["Digest"]);
     }
 }

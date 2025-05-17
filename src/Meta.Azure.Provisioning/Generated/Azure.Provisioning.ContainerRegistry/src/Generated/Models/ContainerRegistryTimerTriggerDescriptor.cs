@@ -49,7 +49,7 @@ public partial class ContainerRegistryTimerTriggerDescriptor : ProvisionableCons
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _timerTriggerName = DefineProperty<string>("TimerTriggerName", ["timerTriggerName"]);
-        _scheduleOccurrence = DefineProperty<string>("ScheduleOccurrence", ["scheduleOccurrence"]);
+        _timerTriggerName = DefineProperty<string>("TimerTriggerName", ["TimerTriggerName"]);
+        _scheduleOccurrence = DefineProperty<string>("ScheduleOccurrence", ["ScheduleOccurrence"]);
     }
 }

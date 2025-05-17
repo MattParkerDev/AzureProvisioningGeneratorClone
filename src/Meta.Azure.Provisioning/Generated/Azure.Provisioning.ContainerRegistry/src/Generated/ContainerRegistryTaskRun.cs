@@ -146,13 +146,13 @@ public partial class ContainerRegistryTaskRun : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _forceUpdateTag = DefineProperty<string>("ForceUpdateTag", ["properties", "forceUpdateTag"]);
-        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["identity"]);
+        _forceUpdateTag = DefineProperty<string>("ForceUpdateTag", ["ForceUpdateTag"]);
+        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["Identity"]);
         _location = DefineProperty<AzureLocation>("Location", ["location"]);
-        _runRequest = DefineModelProperty<ContainerRegistryRunContent>("RunRequest", ["properties", "runRequest"]);
+        _runRequest = DefineModelProperty<ContainerRegistryRunContent>("RunRequest", ["RunRequest"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
-        _runResult = DefineModelProperty<ContainerRegistryRunData>("RunResult", ["properties", "runResult"], isOutput: true);
+        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _runResult = DefineModelProperty<ContainerRegistryRunData>("RunResult", ["RunResult"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<ContainerRegistryService>("Parent", ["parent"], isRequired: true);
     }

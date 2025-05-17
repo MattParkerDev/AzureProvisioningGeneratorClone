@@ -69,9 +69,9 @@ public partial class ContainerRegistryTokenPassword : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _createdOn = DefineProperty<DateTimeOffset>("CreatedOn", ["creationTime"]);
-        _expireOn = DefineProperty<DateTimeOffset>("ExpireOn", ["expiry"]);
-        _name = DefineProperty<ContainerRegistryTokenPasswordName>("Name", ["name"]);
-        _value = DefineProperty<string>("Value", ["value"], isOutput: true);
+        _createdOn = DefineProperty<DateTimeOffset>("CreatedOn", ["CreatedOn"]);
+        _expireOn = DefineProperty<DateTimeOffset>("ExpireOn", ["ExpireOn"]);
+        _name = DefineProperty<ContainerRegistryTokenPasswordName>("Name", ["Name"]);
+        _value = DefineProperty<string>("Value", ["Value"], isOutput: true);
     }
 }

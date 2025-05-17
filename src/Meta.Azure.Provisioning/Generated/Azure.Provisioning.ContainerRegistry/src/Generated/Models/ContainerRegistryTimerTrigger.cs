@@ -59,8 +59,8 @@ public partial class ContainerRegistryTimerTrigger : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _schedule = DefineProperty<string>("Schedule", ["schedule"]);
-        _status = DefineProperty<ContainerRegistryTriggerStatus>("Status", ["status"]);
+        _schedule = DefineProperty<string>("Schedule", ["Schedule"]);
+        _status = DefineProperty<ContainerRegistryTriggerStatus>("Status", ["Status"]);
         _name = DefineProperty<string>("Name", ["name"]);
     }
 }

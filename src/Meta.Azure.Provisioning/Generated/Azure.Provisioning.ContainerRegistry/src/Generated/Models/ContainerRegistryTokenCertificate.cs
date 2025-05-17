@@ -70,9 +70,9 @@ public partial class ContainerRegistryTokenCertificate : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _name = DefineProperty<ContainerRegistryTokenCertificateName>("Name", ["name"]);
-        _expireOn = DefineProperty<DateTimeOffset>("ExpireOn", ["expiry"]);
-        _thumbprint = DefineProperty<string>("Thumbprint", ["thumbprint"]);
-        _encodedPemCertificate = DefineProperty<string>("EncodedPemCertificate", ["encodedPemCertificate"]);
+        _name = DefineProperty<ContainerRegistryTokenCertificateName>("Name", ["Name"]);
+        _expireOn = DefineProperty<DateTimeOffset>("ExpireOn", ["ExpireOn"]);
+        _thumbprint = DefineProperty<string>("Thumbprint", ["Thumbprint"]);
+        _encodedPemCertificate = DefineProperty<string>("EncodedPemCertificate", ["EncodedPemCertificate"]);
     }
 }

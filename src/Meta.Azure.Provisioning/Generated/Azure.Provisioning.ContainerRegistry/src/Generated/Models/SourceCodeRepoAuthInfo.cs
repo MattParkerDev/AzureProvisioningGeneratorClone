@@ -78,10 +78,10 @@ public partial class SourceCodeRepoAuthInfo : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _tokenType = DefineProperty<SourceCodeRepoAuthTokenType>("TokenType", ["tokenType"]);
-        _token = DefineProperty<string>("Token", ["token"]);
-        _refreshToken = DefineProperty<string>("RefreshToken", ["refreshToken"]);
-        _scope = DefineProperty<string>("Scope", ["scope"]);
-        _expireInSeconds = DefineProperty<int>("ExpireInSeconds", ["expiresIn"]);
+        _tokenType = DefineProperty<SourceCodeRepoAuthTokenType>("TokenType", ["TokenType"]);
+        _token = DefineProperty<string>("Token", ["Token"]);
+        _refreshToken = DefineProperty<string>("RefreshToken", ["RefreshToken"]);
+        _scope = DefineProperty<string>("Scope", ["Scope"]);
+        _expireInSeconds = DefineProperty<int>("ExpireInSeconds", ["ExpireInSeconds"]);
     }
 }

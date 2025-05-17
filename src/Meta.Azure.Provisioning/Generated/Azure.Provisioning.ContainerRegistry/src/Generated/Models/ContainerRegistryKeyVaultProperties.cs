@@ -77,10 +77,10 @@ public partial class ContainerRegistryKeyVaultProperties : ProvisionableConstruc
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _keyIdentifier = DefineProperty<string>("KeyIdentifier", ["keyIdentifier"]);
-        _versionedKeyIdentifier = DefineProperty<string>("VersionedKeyIdentifier", ["versionedKeyIdentifier"], isOutput: true);
-        _identity = DefineProperty<string>("Identity", ["identity"]);
-        _isKeyRotationEnabled = DefineProperty<bool>("IsKeyRotationEnabled", ["keyRotationEnabled"], isOutput: true);
-        _lastKeyRotationTimestamp = DefineProperty<DateTimeOffset>("LastKeyRotationTimestamp", ["lastKeyRotationTimestamp"], isOutput: true);
+        _keyIdentifier = DefineProperty<string>("KeyIdentifier", ["KeyIdentifier"]);
+        _versionedKeyIdentifier = DefineProperty<string>("VersionedKeyIdentifier", ["VersionedKeyIdentifier"], isOutput: true);
+        _identity = DefineProperty<string>("Identity", ["Identity"]);
+        _isKeyRotationEnabled = DefineProperty<bool>("IsKeyRotationEnabled", ["IsKeyRotationEnabled"], isOutput: true);
+        _lastKeyRotationTimestamp = DefineProperty<DateTimeOffset>("LastKeyRotationTimestamp", ["LastKeyRotationTimestamp"], isOutput: true);
     }
 }

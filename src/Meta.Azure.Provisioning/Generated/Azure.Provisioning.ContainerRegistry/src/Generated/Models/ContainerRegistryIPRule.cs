@@ -49,7 +49,7 @@ public partial class ContainerRegistryIPRule : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _action = DefineProperty<ContainerRegistryIPRuleAction>("Action", ["action"]);
-        _iPAddressOrRange = DefineProperty<string>("IPAddressOrRange", ["value"]);
+        _action = DefineProperty<ContainerRegistryIPRuleAction>("Action", ["Action"]);
+        _iPAddressOrRange = DefineProperty<string>("IPAddressOrRange", ["IPAddressOrRange"]);
     }
 }
