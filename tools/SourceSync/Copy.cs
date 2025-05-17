@@ -3,7 +3,7 @@
 public class Copy
 {
 	// https://learn.microsoft.com/en-us/dotnet/standard/io/how-to-copy-directories
-	public static void CopyDirectory(string sourceDir, string destinationDir, bool recursive)
+	public static void CopyDirectory(string sourceDir, string destinationDir, bool recursive, string[]? ignoredDirectoryNames = null)
 	{
 		// Get information about the source directory
 		var dir = new DirectoryInfo(sourceDir);
@@ -14,7 +14,10 @@ public class Copy
 
 		// Cache directories before we start copying
 		DirectoryInfo[] dirs = dir.GetDirectories();
-
+		if (ignoredDirectoryNames is not null)
+		{
+			dirs = dirs.Where(s => ignoredDirectoryNames.Contains(s.Name) is false).ToArray();
+		}
 		// Create the destination directory
 		Directory.CreateDirectory(destinationDir);
 
