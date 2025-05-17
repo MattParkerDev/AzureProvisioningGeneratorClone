@@ -11,7 +11,7 @@ var folderPaths = Directory.EnumerateDirectories(sdkProvisioningPath, "Azure.*",
 	.ToList();
 
 ;
-foreach (var folderPath in folderPaths.GetRange(0, 1))
+foreach (var folderPath in folderPaths)
 {
 	var folderName = Path.GetFileName(folderPath);
 	var destinationPath = Path.Combine(rootDestinationPath, folderName);
