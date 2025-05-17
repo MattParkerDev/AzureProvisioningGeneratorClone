@@ -7,9 +7,11 @@ var sdkProvisioningPath = @"C:\Users\Matthew\Documents\Git\azure-sdk-for-net\sdk
 var destinationPath = @"C:\Users\Matthew\Documents\Git\AzureProvisioningGeneratorClone\src\Meta.Azure.Provisioning\Generated";
 
 // get folder names starting with Azure.
-var folderNames2 = Directory.EnumerateDirectories(sdkProvisioningPath, "TestFolder*", SearchOption.TopDirectoryOnly)
-	//.Select(Path.GetFileName)
+var folderNames = Directory.EnumerateDirectories(sdkProvisioningPath, "Azure.*", SearchOption.TopDirectoryOnly)
 	.ToList();
 
 ;
-Copy.CopyDirectory(folderNames2[0], destinationPath, true);
+foreach (var folderName in folderNames)
+{
+	Copy.CopyDirectory(folderName, destinationPath, true);
+}
