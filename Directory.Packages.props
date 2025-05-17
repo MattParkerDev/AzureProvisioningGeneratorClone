@@ -13,7 +13,7 @@
     <PackageVersion Include="Azure.ResourceManager.ContainerRegistry" Version="1.2.1" />
     <PackageVersion Include="Azure.ResourceManager.ContainerService" Version="1.2.3" />
     <PackageVersion Include="Azure.ResourceManager.EventGrid" Version="1.1.0" />
-    <PackageVersion Include="Azure.ResourceManager.Kubernetes" Version="1.0.0-beta.4" />
+    <PackageVersion Include="Azure.ResourceManager.Kubernetes" Version="1.0.0-beta.5" />
     <PackageVersion Include="Azure.ResourceManager.KubernetesConfiguration" Version="1.2.0" />
     <PackageVersion Include="Azure.ResourceManager.Resources" Version="1.9.1" />
     <PackageVersion Include="Azure.ResourceManager.Authorization" Version="1.1.4" />
@@ -42,11 +42,10 @@
     <PackageVersion Include="Microsoft.Build" Version="17.14.8" />
     <PackageVersion Include="Microsoft.Build.Locator" Version="1.9.1" />
     <PackageVersion Include="NuGet.Protocol" Version="6.14.0" />
-	  
-	<!-- MP Added -->
-	<PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.13.0"/>
-	<PackageVersion Include="Verify.XunitV3" Version="30.1.0" />
-	<PackageVersion Include="xunit.v3" Version="2.0.2" />
-	<PackageVersion Include="xunit.runner.visualstudio" Version="3.1.0"/>
+    <!-- MP Added -->
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+    <PackageVersion Include="Verify.XunitV3" Version="30.1.0" />
+    <PackageVersion Include="xunit.v3" Version="2.0.2" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.0" />
   </ItemGroup>
 </Project>

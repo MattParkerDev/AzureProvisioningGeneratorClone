@@ -239,25 +239,25 @@ public partial class ConnectedCluster : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _agentPublicKeyCertificate = DefineProperty<string>("AgentPublicKeyCertificate", ["AgentPublicKeyCertificate"], isRequired: true);
-        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["Identity"], isRequired: true);
+        _agentPublicKeyCertificate = DefineProperty<string>("AgentPublicKeyCertificate", ["properties", "agentPublicKeyCertificate"], isRequired: true);
+        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["identity"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _distribution = DefineProperty<string>("Distribution", ["Distribution"]);
-        _infrastructure = DefineProperty<string>("Infrastructure", ["Infrastructure"]);
-        _privateLinkScopeResourceId = DefineProperty<string>("PrivateLinkScopeResourceId", ["PrivateLinkScopeResourceId"]);
-        _privateLinkState = DefineProperty<PrivateLinkState>("PrivateLinkState", ["PrivateLinkState"]);
-        _provisioningState = DefineProperty<ProvisioningState>("ProvisioningState", ["ProvisioningState"]);
+        _distribution = DefineProperty<string>("Distribution", ["properties", "distribution"]);
+        _infrastructure = DefineProperty<string>("Infrastructure", ["properties", "infrastructure"]);
+        _privateLinkScopeResourceId = DefineProperty<string>("PrivateLinkScopeResourceId", ["properties", "privateLinkScopeResourceId"]);
+        _privateLinkState = DefineProperty<PrivateLinkState>("PrivateLinkState", ["properties", "privateLinkState"]);
+        _provisioningState = DefineProperty<ProvisioningState>("ProvisioningState", ["properties", "provisioningState"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
-        _agentVersion = DefineProperty<string>("AgentVersion", ["AgentVersion"], isOutput: true);
-        _connectivityStatus = DefineProperty<ConnectivityStatus>("ConnectivityStatus", ["ConnectivityStatus"], isOutput: true);
+        _agentVersion = DefineProperty<string>("AgentVersion", ["properties", "agentVersion"], isOutput: true);
+        _connectivityStatus = DefineProperty<ConnectivityStatus>("ConnectivityStatus", ["properties", "connectivityStatus"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _kubernetesVersion = DefineProperty<string>("KubernetesVersion", ["KubernetesVersion"], isOutput: true);
-        _lastConnectivityOn = DefineProperty<DateTimeOffset>("LastConnectivityOn", ["LastConnectivityOn"], isOutput: true);
-        _managedIdentityCertificateExpirationOn = DefineProperty<DateTimeOffset>("ManagedIdentityCertificateExpirationOn", ["ManagedIdentityCertificateExpirationOn"], isOutput: true);
-        _offering = DefineProperty<string>("Offering", ["Offering"], isOutput: true);
+        _kubernetesVersion = DefineProperty<string>("KubernetesVersion", ["properties", "kubernetesVersion"], isOutput: true);
+        _lastConnectivityOn = DefineProperty<DateTimeOffset>("LastConnectivityOn", ["properties", "lastConnectivityTime"], isOutput: true);
+        _managedIdentityCertificateExpirationOn = DefineProperty<DateTimeOffset>("ManagedIdentityCertificateExpirationOn", ["properties", "managedIdentityCertificateExpirationTime"], isOutput: true);
+        _offering = DefineProperty<string>("Offering", ["properties", "offering"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
-        _totalCoreCount = DefineProperty<int>("TotalCoreCount", ["TotalCoreCount"], isOutput: true);
-        _totalNodeCount = DefineProperty<int>("TotalNodeCount", ["TotalNodeCount"], isOutput: true);
+        _totalCoreCount = DefineProperty<int>("TotalCoreCount", ["properties", "totalCoreCount"], isOutput: true);
+        _totalNodeCount = DefineProperty<int>("TotalNodeCount", ["properties", "totalNodeCount"], isOutput: true);
     }
 
     /// <summary>
