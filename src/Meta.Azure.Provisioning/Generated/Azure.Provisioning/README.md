@@ -1,6 +1,6 @@
-# Azure.Provisioning.Resources client library for .NET
+# Azure Provisioning client library for .NET
 
-Azure.Provisioning.Resources simplifies declarative resource provisioning in .NET.
+Azure.Provisioning makes it easy to declaratively specify Azure infrastructure natively in .NET.
 
 ## Getting started
 
@@ -9,7 +9,7 @@ Azure.Provisioning.Resources simplifies declarative resource provisioning in .NE
 Install the client library for .NET with [NuGet](https://www.nuget.org/ ):
 
 ```dotnetcli
-dotnet add package Azure.Provisioning.Resources
+dotnet add package Azure.Provisioning
 ```
 
 ### Prerequisites
@@ -53,3 +53,4 @@ more information, see the [Code of Conduct FAQ][coc_faq] or contact
 [cg]: https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
 [coc]: https://opensource.microsoft.com/codeofconduct/
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq/
+

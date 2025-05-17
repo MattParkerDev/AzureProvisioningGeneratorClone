@@ -1,6 +1,6 @@
-# Azure.Provisioning.Storage client library for .NET
+# Azure Provisioning client library for .NET
 
-Azure.Provisioning.Storage simplifies declarative resource provisioning in .NET.
+Azure.Provisioning.Storage simplifies declarative resource provisioning in .NET for Azure Storage.
 
 ## Getting started
 
@@ -53,3 +53,4 @@ more information, see the [Code of Conduct FAQ][coc_faq] or contact
 [cg]: https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/resourcemanager/Azure.ResourceManager/docs/CONTRIBUTING.md
 [coc]: https://opensource.microsoft.com/codeofconduct/
 [coc_faq]: https://opensource.microsoft.com/codeofconduct/faq/
+
