@@ -4,12 +4,13 @@ using DetermineIfPublishNecessary;
 using InterpolatedParsing;
 
 Console.WriteLine("Building NuGet package");
+const string nugetPackageId = "Meta.Azure.Provisioning";
 
 var gitRootDirectory = GitRoot.GetGitRootPath();
 
 var result = await Cli.Wrap("dotnet")
 	.WithArguments("build -c Release")
-	.WithWorkingDirectory(Path.Combine(gitRootDirectory, "src", "Meta.Azure.Provisioning"))
+	.WithWorkingDirectory(Path.Combine(gitRootDirectory, "src", nugetPackageId))
 	.ExecuteBufferedAsync();
 
 Console.WriteLine(result.StandardOutput);
@@ -51,7 +52,7 @@ var fileInfo = new FileInfo(githubStepSummaryPath);
 if (fileInfo.Exists is false) throw new FileNotFoundException(githubStepSummaryPath);
 
 var textToWrite = $"""
-	[Meta.Azure.Provisioning {packageVersionString}](https://www.nuget.org/packages/Meta.Azure.Provisioning/{packageVersionString}) published
+	[{nugetPackageId} {packageVersionString}](https://www.nuget.org/packages/{nugetPackageId}/{packageVersionString}) published
 	""";
 
 await File.WriteAllTextAsync(fileInfo.FullName, textToWrite);
