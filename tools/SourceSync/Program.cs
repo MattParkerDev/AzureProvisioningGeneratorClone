@@ -15,5 +15,5 @@ foreach (var folderPath in folderPaths.GetRange(0, 1))
 {
 	var folderName = Path.GetFileName(folderPath);
 	var destinationPath = Path.Combine(rootDestinationPath, folderName);
-	Copy.CopyDirectory(folderPath, destinationPath, true, ["api", "tests"]);
+	Copy.CopyDirectory(folderPath, destinationPath, true, ["api", "tests"], [".csproj"], ["assets.json"]);
 }
