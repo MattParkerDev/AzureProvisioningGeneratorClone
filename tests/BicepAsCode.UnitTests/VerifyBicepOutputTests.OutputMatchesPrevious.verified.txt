@@ -1,4 +1,4 @@
-﻿resource appServicePlan 'Microsoft.Web/serverfarms@2024-04-01' = {
+﻿resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
   name: 'plan-exampleapplication-prod'
   location: 'australiaeast'
   properties: {
@@ -10,7 +10,7 @@
   }
 }
 
-resource appService 'Microsoft.Web/sites@2024-04-01' = {
+resource appService 'Microsoft.Web/sites@2024-11-01' = {
   name: 'app-exampleapplication-prod'
   location: 'australiaeast'
   properties: {
@@ -39,7 +39,7 @@ resource appService 'Microsoft.Web/sites@2024-04-01' = {
   }
 }
 
-resource frontendStaticWebApp 'Microsoft.Web/staticSites@2024-04-01' = {
+resource frontendStaticWebApp 'Microsoft.Web/staticSites@2024-11-01' = {
   name: 'stapp-exampleapplication-prod'
   location: 'eastasia'
   properties: {
