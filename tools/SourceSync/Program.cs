@@ -10,10 +10,15 @@ var rootDestinationPath = @"C:\Users\Matthew\Documents\Git\AzureProvisioningGene
 var folderPaths = Directory.EnumerateDirectories(sdkProvisioningPath, "Azure.*", SearchOption.TopDirectoryOnly)
 	.ToList();
 
-;
+List<string> ignoredFolders = ["Azure.Provisioning.Deployment"];
+
+folderPaths = folderPaths
+	.Where(folderPath => !ignoredFolders.Any(folderPath.EndsWith))
+	.ToList();
+
 foreach (var folderPath in folderPaths)
 {
 	var folderName = Path.GetFileName(folderPath);
 	var destinationPath = Path.Combine(rootDestinationPath, folderName);
-	Copy.CopyDirectory(folderPath, destinationPath, true, ["api", "tests"], [".csproj"], ["assets.json"]);
+	Copy.CopyDirectory(folderPath, destinationPath, true, ["api", "tests"], [".csproj"], ["assets.json", "AssemblyInfo.cs"]);
 }
