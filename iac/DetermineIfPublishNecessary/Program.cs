@@ -14,8 +14,9 @@ return;
 
 async Task Run()
 {
+	const string nugetPackageId = "Meta.Azure.Provisioning";
 	var gitRootDirectory = GitRoot.GetGitRootPath();
-	var packageProjectFilePath = Path.Combine(gitRootDirectory, "src", "Meta.Azure.Provisioning", "Meta.Azure.Provisioning.csproj");
+	var packageProjectFilePath = Path.Combine(gitRootDirectory, "src", nugetPackageId, $"{nugetPackageId}.csproj");
 
 	var fileInfo = new FileInfo(packageProjectFilePath);
 	if (fileInfo.Exists is false)
@@ -33,16 +34,15 @@ async Task Run()
 	var repositories = Repository.Factory.GetCoreV3("https://api.nuget.org/v3/index.json");
 	var logger = NullLogger.Instance;
 
-	const string packageId = "Meta.Azure.Provisioning";
 	var resource = await repositories.GetResourceAsync<FindPackageByIdResource>();
-	var packageAndSpecificVersionExistsOnNuget = await resource.DoesPackageExistAsync(packageId, packageVersion, cache, logger, CancellationToken.None);
+	var packageAndSpecificVersionExistsOnNuget = await resource.DoesPackageExistAsync(nugetPackageId, packageVersion, cache, logger, CancellationToken.None);
 	if (packageAndSpecificVersionExistsOnNuget)
 	{
-		Console.WriteLine($"Package {packageId} with version {packageVersion} exists on Nuget");
+		Console.WriteLine($"Package {nugetPackageId} with version {packageVersion} exists on Nuget");
 	}
 	else
 	{
-		Console.WriteLine($"Package {packageId} with version {packageVersion} does not exist on Nuget");
+		Console.WriteLine($"Package {nugetPackageId} with version {packageVersion} does not exist on Nuget");
 		var outputFile = Environment.GetEnvironmentVariable("GITHUB_OUTPUT");
 		await File.AppendAllTextAsync(outputFile!, "publish-necessary=true");
 	}
