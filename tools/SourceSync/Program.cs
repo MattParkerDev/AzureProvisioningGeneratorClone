@@ -4,14 +4,16 @@ Console.WriteLine("Starting Source Sync...");
 
 // provide a link to the sdk/provisioning folder
 var sdkProvisioningPath = @"C:\Users\Matthew\Documents\Git\azure-sdk-for-net\sdk\provisioning";
-var destinationPath = @"C:\Users\Matthew\Documents\Git\AzureProvisioningGeneratorClone\src\Meta.Azure.Provisioning\Generated";
+var rootDestinationPath = @"C:\Users\Matthew\Documents\Git\AzureProvisioningGeneratorClone\src\Meta.Azure.Provisioning\Generated";
 
 // get folder names starting with Azure.
-var folderNames = Directory.EnumerateDirectories(sdkProvisioningPath, "Azure.*", SearchOption.TopDirectoryOnly)
+var folderPaths = Directory.EnumerateDirectories(sdkProvisioningPath, "Azure.*", SearchOption.TopDirectoryOnly)
 	.ToList();
 
 ;
-foreach (var folderName in folderNames)
+foreach (var folderPath in folderPaths.GetRange(0, 1))
 {
-	Copy.CopyDirectory(folderName, destinationPath, true);
+	var folderName = Path.GetFileName(folderPath);
+	var destinationPath = Path.Combine(rootDestinationPath, folderName);
+	Copy.CopyDirectory(folderPath, destinationPath, true);
 }
