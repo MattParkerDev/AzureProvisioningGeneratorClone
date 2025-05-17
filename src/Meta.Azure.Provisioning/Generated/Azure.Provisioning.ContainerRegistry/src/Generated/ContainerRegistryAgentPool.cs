@@ -136,7 +136,7 @@ public partial class ContainerRegistryAgentPool : ProvisionableResource
     /// </param>
     /// <param name="resourceVersion">Version of the ContainerRegistryAgentPool.</param>
     public ContainerRegistryAgentPool(string bicepIdentifier, string? resourceVersion = default)
-        : base(bicepIdentifier, "Microsoft.ContainerRegistry/registries/agentPools", resourceVersion ?? "2023-07-01")
+        : base(bicepIdentifier, "Microsoft.ContainerRegistry/registries/agentPools", resourceVersion ?? "2025-04-01")
     {
     }
 
@@ -147,13 +147,13 @@ public partial class ContainerRegistryAgentPool : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _count = DefineProperty<int>("Count", ["Count"]);
-        _oS = DefineProperty<ContainerRegistryOS>("OS", ["OS"]);
+        _count = DefineProperty<int>("Count", ["properties", "count"]);
+        _oS = DefineProperty<ContainerRegistryOS>("OS", ["properties", "os"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
-        _tier = DefineProperty<string>("Tier", ["Tier"]);
-        _virtualNetworkSubnetResourceId = DefineProperty<ResourceIdentifier>("VirtualNetworkSubnetResourceId", ["VirtualNetworkSubnetResourceId"]);
+        _tier = DefineProperty<string>("Tier", ["properties", "tier"]);
+        _virtualNetworkSubnetResourceId = DefineProperty<ResourceIdentifier>("VirtualNetworkSubnetResourceId", ["properties", "virtualNetworkSubnetResourceId"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<ContainerRegistryService>("Parent", ["parent"], isRequired: true);
     }
@@ -163,6 +163,11 @@ public partial class ContainerRegistryAgentPool : ProvisionableResource
     /// </summary>
     public static class ResourceVersions
     {
+        /// <summary>
+        /// 2025-04-01.
+        /// </summary>
+        public static readonly string V2025_04_01 = "2025-04-01";
+
         /// <summary>
         /// 2023-07-01.
         /// </summary>

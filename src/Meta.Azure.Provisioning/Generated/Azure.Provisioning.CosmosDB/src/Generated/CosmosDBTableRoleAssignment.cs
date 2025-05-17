@@ -118,7 +118,7 @@ public partial class CosmosDBTableRoleAssignment : ProvisionableResource
     /// </param>
     /// <param name="resourceVersion">Version of the CosmosDBTableRoleAssignment.</param>
     public CosmosDBTableRoleAssignment(string bicepIdentifier, string? resourceVersion = default)
-        : base(bicepIdentifier, "Microsoft.DocumentDB/databaseAccounts/tableRoleAssignments", resourceVersion ?? "2024-11-15")
+        : base(bicepIdentifier, "Microsoft.DocumentDB/databaseAccounts/tableRoleAssignments", resourceVersion ?? "2025-04-15")
     {
     }
 
@@ -143,6 +143,11 @@ public partial class CosmosDBTableRoleAssignment : ProvisionableResource
     /// </summary>
     public static class ResourceVersions
     {
+        /// <summary>
+        /// 2025-04-15.
+        /// </summary>
+        public static readonly string V2025_04_15 = "2025-04-15";
+
         /// <summary>
         /// 2024-11-15.
         /// </summary>

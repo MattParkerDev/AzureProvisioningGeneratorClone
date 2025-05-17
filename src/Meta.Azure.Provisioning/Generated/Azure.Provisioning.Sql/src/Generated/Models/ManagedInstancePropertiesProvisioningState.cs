@@ -6,10 +6,35 @@
 namespace Azure.Provisioning.Sql;
 
 /// <summary>
-/// The ManagedInstancePropertiesProvisioningState.
+/// Provisioning state of managed instance.
 /// </summary>
 public enum ManagedInstancePropertiesProvisioningState
 {
+    /// <summary>
+    /// Created.
+    /// </summary>
+    Created,
+
+    /// <summary>
+    /// InProgress.
+    /// </summary>
+    InProgress,
+
+    /// <summary>
+    /// Succeeded.
+    /// </summary>
+    Succeeded,
+
+    /// <summary>
+    /// Failed.
+    /// </summary>
+    Failed,
+
+    /// <summary>
+    /// Canceled.
+    /// </summary>
+    Canceled,
+
     /// <summary>
     /// Creating.
     /// </summary>
@@ -31,24 +56,9 @@ public enum ManagedInstancePropertiesProvisioningState
     Unknown,
 
     /// <summary>
-    /// Succeeded.
-    /// </summary>
-    Succeeded,
-
-    /// <summary>
-    /// Failed.
-    /// </summary>
-    Failed,
-
-    /// <summary>
     /// Accepted.
     /// </summary>
     Accepted,
-
-    /// <summary>
-    /// Created.
-    /// </summary>
-    Created,
 
     /// <summary>
     /// Deleted.
@@ -64,11 +74,6 @@ public enum ManagedInstancePropertiesProvisioningState
     /// Running.
     /// </summary>
     Running,
-
-    /// <summary>
-    /// Canceled.
-    /// </summary>
-    Canceled,
 
     /// <summary>
     /// NotSpecified.

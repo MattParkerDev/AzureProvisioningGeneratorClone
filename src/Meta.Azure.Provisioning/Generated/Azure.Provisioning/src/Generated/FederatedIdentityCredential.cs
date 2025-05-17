@@ -121,6 +121,11 @@ public partial class FederatedIdentityCredential : ProvisionableResource
     public static class ResourceVersions
     {
         /// <summary>
+        /// 2025-01-31-PREVIEW.
+        /// </summary>
+        public static readonly string V2025_01_31_PREVIEW = "2025-01-31-PREVIEW";
+
+        /// <summary>
         /// 2024-11-30.
         /// </summary>
         public static readonly string V2024_11_30 = "2024-11-30";

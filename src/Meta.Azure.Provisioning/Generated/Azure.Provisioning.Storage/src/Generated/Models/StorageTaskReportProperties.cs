@@ -40,7 +40,7 @@ public partial class StorageTaskReportProperties : ProvisionableConstruct
     /// Start time of the run instance. Filter options such as startTime gt
     /// &apos;2023-06-26T20:51:24.4494016Z&apos; and other comparison
     /// operators can be used as described for DateTime properties in
-    /// https://learn.microsoft.com/en-us/rest/api/storageservices/querying-tables-and-entities#supported-comparison-operators.
+    /// https://learn.microsoft.com/rest/api/storageservices/querying-tables-and-entities#supported-comparison-operators.
     /// </summary>
     public BicepValue<DateTimeOffset> StartedOn 
     {
@@ -52,7 +52,7 @@ public partial class StorageTaskReportProperties : ProvisionableConstruct
     /// End time of the run instance. Filter options such as startTime gt
     /// &apos;2023-06-26T20:51:24.4494016Z&apos; and other comparison
     /// operators can be used as described for DateTime properties in
-    /// https://learn.microsoft.com/en-us/rest/api/storageservices/querying-tables-and-entities#supported-comparison-operators.
+    /// https://learn.microsoft.com/rest/api/storageservices/querying-tables-and-entities#supported-comparison-operators.
     /// </summary>
     public BicepValue<DateTimeOffset> FinishedOn 
     {
@@ -65,7 +65,7 @@ public partial class StorageTaskReportProperties : ProvisionableConstruct
     /// storage task assignment execution context. Filter options such as
     /// objectsTargetedCount gt 50 and other comparison operators can be used
     /// as described for Numerical properties in
-    /// https://learn.microsoft.com/en-us/rest/api/storageservices/querying-tables-and-entities#supported-comparison-operators.
+    /// https://learn.microsoft.com/rest/api/storageservices/querying-tables-and-entities#supported-comparison-operators.
     /// </summary>
     public BicepValue<string> ObjectsTargetedCount 
     {
@@ -78,7 +78,7 @@ public partial class StorageTaskReportProperties : ProvisionableConstruct
     /// operated upon. Filter options such as objectsOperatedOnCount ge 100
     /// and other comparison operators can be used as described for Numerical
     /// properties in
-    /// https://learn.microsoft.com/en-us/rest/api/storageservices/querying-tables-and-entities#supported-comparison-operators.
+    /// https://learn.microsoft.com/rest/api/storageservices/querying-tables-and-entities#supported-comparison-operators.
     /// </summary>
     public BicepValue<string> ObjectsOperatedOnCount 
     {
@@ -90,7 +90,7 @@ public partial class StorageTaskReportProperties : ProvisionableConstruct
     /// Total number of objects where task operation failed when was attempted.
     /// Filter options such as objectFailedCount eq 0 and other comparison
     /// operators can be used as described for Numerical properties in
-    /// https://learn.microsoft.com/en-us/rest/api/storageservices/querying-tables-and-entities#supported-comparison-operators.
+    /// https://learn.microsoft.com/rest/api/storageservices/querying-tables-and-entities#supported-comparison-operators.
     /// </summary>
     public BicepValue<string> ObjectFailedCount 
     {
@@ -103,7 +103,7 @@ public partial class StorageTaskReportProperties : ProvisionableConstruct
     /// attempted.Filter options such as objectsSucceededCount gt 150 and
     /// other comparison operators can be used as described for Numerical
     /// properties in
-    /// https://learn.microsoft.com/en-us/rest/api/storageservices/querying-tables-and-entities#supported-comparison-operators.
+    /// https://learn.microsoft.com/rest/api/storageservices/querying-tables-and-entities#supported-comparison-operators.
     /// </summary>
     public BicepValue<string> ObjectsSucceededCount 
     {

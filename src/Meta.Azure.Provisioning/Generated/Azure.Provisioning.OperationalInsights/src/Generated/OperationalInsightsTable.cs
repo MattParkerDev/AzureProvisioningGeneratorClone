@@ -81,7 +81,7 @@ public partial class OperationalInsightsTable : ProvisionableResource
     private OperationalInsightsTableSearchResults? _searchResults;
 
     /// <summary>
-    /// The table total retention in days, between 4 and 2556. Setting this
+    /// The table total retention in days, between 4 and 4383. Setting this
     /// property to -1 will default to table retention.
     /// </summary>
     public BicepValue<int> TotalRetentionInDays 

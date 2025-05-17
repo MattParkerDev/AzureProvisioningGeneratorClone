@@ -60,8 +60,8 @@ public partial class ContainerRegistryTriggerProperties : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _timerTriggers = DefineListProperty<ContainerRegistryTimerTrigger>("TimerTriggers", ["TimerTriggers"]);
-        _sourceTriggers = DefineListProperty<ContainerRegistrySourceTrigger>("SourceTriggers", ["SourceTriggers"]);
-        _baseImageTrigger = DefineModelProperty<ContainerRegistryBaseImageTrigger>("BaseImageTrigger", ["BaseImageTrigger"]);
+        _timerTriggers = DefineListProperty<ContainerRegistryTimerTrigger>("TimerTriggers", ["timerTriggers"]);
+        _sourceTriggers = DefineListProperty<ContainerRegistrySourceTrigger>("SourceTriggers", ["sourceTriggers"]);
+        _baseImageTrigger = DefineModelProperty<ContainerRegistryBaseImageTrigger>("BaseImageTrigger", ["baseImageTrigger"]);
     }
 }

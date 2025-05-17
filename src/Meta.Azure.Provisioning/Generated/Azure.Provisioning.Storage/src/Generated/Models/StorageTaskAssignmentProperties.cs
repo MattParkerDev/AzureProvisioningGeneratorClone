@@ -18,6 +18,15 @@ namespace Azure.Provisioning.Storage;
 public partial class StorageTaskAssignmentProperties : ProvisionableConstruct
 {
     /// <summary>
+    /// Represents the provisioning state of the storage task assignment.
+    /// </summary>
+    public BicepValue<StorageProvisioningState> ProvisioningState 
+    {
+        get { Initialize(); return _provisioningState!; }
+    }
+    private BicepValue<StorageProvisioningState>? _provisioningState;
+
+    /// <summary>
     /// Id of the corresponding storage task.
     /// </summary>
     public BicepValue<ResourceIdentifier> TaskId 
@@ -70,11 +79,11 @@ public partial class StorageTaskAssignmentProperties : ProvisionableConstruct
     /// <summary>
     /// Represents the provisioning state of the storage task assignment.
     /// </summary>
-    public BicepValue<StorageProvisioningState> ProvisioningState 
+    public BicepValue<StorageTaskAssignmentProvisioningState> StorageTaskAssignmentProvisioningState 
     {
-        get { Initialize(); return _provisioningState!; }
+        get { Initialize(); return _storageTaskAssignmentProvisioningState!; }
     }
-    private BicepValue<StorageProvisioningState>? _provisioningState;
+    private BicepValue<StorageTaskAssignmentProvisioningState>? _storageTaskAssignmentProvisioningState;
 
     /// <summary>
     /// Run status of storage task assignment.
@@ -100,12 +109,13 @@ public partial class StorageTaskAssignmentProperties : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
+        _provisioningState = DefineProperty<StorageProvisioningState>("ProvisioningState", ["provisioningState"], isOutput: true);
         _taskId = DefineProperty<ResourceIdentifier>("TaskId", ["taskId"]);
         _isEnabled = DefineProperty<bool>("IsEnabled", ["enabled"]);
         _description = DefineProperty<string>("Description", ["description"]);
         _executionContext = DefineModelProperty<StorageTaskAssignmentExecutionContext>("ExecutionContext", ["executionContext"]);
         _reportPrefix = DefineProperty<string>("ReportPrefix", ["report", "prefix"]);
-        _provisioningState = DefineProperty<StorageProvisioningState>("ProvisioningState", ["provisioningState"], isOutput: true);
+        _storageTaskAssignmentProvisioningState = DefineProperty<StorageTaskAssignmentProvisioningState>("StorageTaskAssignmentProvisioningState", ["provisioningState"], isOutput: true);
         _runStatus = DefineModelProperty<StorageTaskReportProperties>("RunStatus", ["runStatus"]);
     }
 }

@@ -50,7 +50,7 @@ public partial class ContainerRegistryNetworkRuleSet : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _defaultAction = DefineProperty<ContainerRegistryNetworkRuleDefaultAction>("DefaultAction", ["DefaultAction"]);
-        _iPRules = DefineListProperty<ContainerRegistryIPRule>("IPRules", ["IPRules"]);
+        _defaultAction = DefineProperty<ContainerRegistryNetworkRuleDefaultAction>("DefaultAction", ["defaultAction"]);
+        _iPRules = DefineListProperty<ContainerRegistryIPRule>("IPRules", ["ipRules"]);
     }
 }

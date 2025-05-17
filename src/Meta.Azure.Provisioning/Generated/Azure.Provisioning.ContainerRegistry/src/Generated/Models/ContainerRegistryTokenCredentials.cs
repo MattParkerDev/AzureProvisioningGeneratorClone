@@ -51,7 +51,7 @@ public partial class ContainerRegistryTokenCredentials : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _certificates = DefineListProperty<ContainerRegistryTokenCertificate>("Certificates", ["Certificates"]);
-        _passwords = DefineListProperty<ContainerRegistryTokenPassword>("Passwords", ["Passwords"]);
+        _certificates = DefineListProperty<ContainerRegistryTokenCertificate>("Certificates", ["certificates"]);
+        _passwords = DefineListProperty<ContainerRegistryTokenPassword>("Passwords", ["passwords"]);
     }
 }

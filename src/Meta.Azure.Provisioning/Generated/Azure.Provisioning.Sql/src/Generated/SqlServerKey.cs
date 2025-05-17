@@ -45,7 +45,8 @@ public partial class SqlServerKey : ProvisionableResource
 
     /// <summary>
     /// The URI of the server key. If the ServerKeyType is AzureKeyVault, then
-    /// the URI is required.
+    /// the URI is required. The AKV URI is required to be in this format:
+    /// &apos;https://YourVaultName.vault.azure.net/keys/YourKeyName/YourKeyVersion&apos;.
     /// </summary>
     public BicepValue<Uri> Uri 
     {

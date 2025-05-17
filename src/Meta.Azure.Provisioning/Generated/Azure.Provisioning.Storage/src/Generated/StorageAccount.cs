@@ -545,6 +545,16 @@ public partial class StorageAccount : ProvisionableResource
     private BicepValue<StorageAccountStatus>? _statusOfSecondary;
 
     /// <summary>
+    /// Gets the status of the storage account at the time the operation was
+    /// called.
+    /// </summary>
+    public BicepValue<StorageAccountProvisioningState> StorageAccountProvisioningState 
+    {
+        get { Initialize(); return _storageAccountProvisioningState!; }
+    }
+    private BicepValue<StorageAccountProvisioningState>? _storageAccountProvisioningState;
+
+    /// <summary>
     /// This property is readOnly and is set by server during asynchronous
     /// storage account sku conversion operations.
     /// </summary>
@@ -631,6 +641,7 @@ public partial class StorageAccount : ProvisionableResource
         _secondaryLocation = DefineProperty<AzureLocation>("SecondaryLocation", ["properties", "secondaryLocation"], isOutput: true);
         _statusOfPrimary = DefineProperty<StorageAccountStatus>("StatusOfPrimary", ["properties", "statusOfPrimary"], isOutput: true);
         _statusOfSecondary = DefineProperty<StorageAccountStatus>("StatusOfSecondary", ["properties", "statusOfSecondary"], isOutput: true);
+        _storageAccountProvisioningState = DefineProperty<StorageAccountProvisioningState>("StorageAccountProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _storageAccountSkuConversionStatus = DefineModelProperty<StorageAccountSkuConversionStatus>("StorageAccountSkuConversionStatus", ["properties", "storageAccountSkuConversionStatus"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
     }

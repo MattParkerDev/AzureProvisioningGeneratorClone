@@ -69,7 +69,7 @@ public partial class DataMaskingPolicy : ProvisionableResource
     private BicepValue<ResourceIdentifier>? _id;
 
     /// <summary>
-    /// The kind of data masking policy. Metadata, used for Azure portal.
+    /// The kind of Data Masking Policy. Metadata, used for Azure portal.
     /// </summary>
     public BicepValue<string> Kind 
     {

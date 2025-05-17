@@ -63,24 +63,6 @@ public partial class PartnerNamespaceChannel : ProvisionableResource
     private BicepValue<string>? _messageForActivation;
 
     /// <summary>
-    /// This property should be populated when channelType is
-    /// PartnerDestination and represents information about the partner
-    /// destination resource corresponding to the channel.             Please
-    /// note Azure.ResourceManager.EventGrid.Models.PartnerDestinationInfo is
-    /// the base class. According to the scenario, a derived class of the base
-    /// class might need to be assigned here, or this property needs to be
-    /// casted to one of the possible derived classes.             The
-    /// available derived classes include
-    /// Azure.ResourceManager.EventGrid.Models.WebhookPartnerDestinationInfo.
-    /// </summary>
-    public PartnerDestinationInfo PartnerDestinationInfo 
-    {
-        get { Initialize(); return _partnerDestinationInfo!; }
-        set { Initialize(); AssignOrReplace(ref _partnerDestinationInfo, value); }
-    }
-    private PartnerDestinationInfo? _partnerDestinationInfo;
-
-    /// <summary>
     /// This property should be populated when channelType is PartnerTopic and
     /// represents information about the partner topic resource corresponding
     /// to the channel.
@@ -164,7 +146,6 @@ public partial class PartnerNamespaceChannel : ProvisionableResource
         _channelType = DefineProperty<PartnerNamespaceChannelType>("ChannelType", ["properties", "channelType"]);
         _expireOnIfNotActivated = DefineProperty<DateTimeOffset>("ExpireOnIfNotActivated", ["properties", "expirationTimeIfNotActivatedUtc"]);
         _messageForActivation = DefineProperty<string>("MessageForActivation", ["properties", "messageForActivation"]);
-        _partnerDestinationInfo = DefineModelProperty<PartnerDestinationInfo>("PartnerDestinationInfo", ["properties", "partnerDestinationInfo"]);
         _partnerTopicInfo = DefineModelProperty<PartnerTopicInfo>("PartnerTopicInfo", ["properties", "partnerTopicInfo"]);
         _provisioningState = DefineProperty<PartnerNamespaceChannelProvisioningState>("ProvisioningState", ["properties", "provisioningState"]);
         _readinessState = DefineProperty<PartnerTopicReadinessState>("ReadinessState", ["properties", "readinessState"]);

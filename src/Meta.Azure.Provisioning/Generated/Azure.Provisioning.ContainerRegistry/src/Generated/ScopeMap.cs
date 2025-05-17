@@ -117,7 +117,7 @@ public partial class ScopeMap : ProvisionableResource
     /// </param>
     /// <param name="resourceVersion">Version of the ScopeMap.</param>
     public ScopeMap(string bicepIdentifier, string? resourceVersion = default)
-        : base(bicepIdentifier, "Microsoft.ContainerRegistry/registries/scopeMaps", resourceVersion ?? "2023-07-01")
+        : base(bicepIdentifier, "Microsoft.ContainerRegistry/registries/scopeMaps", resourceVersion ?? "2025-04-01")
     {
     }
 
@@ -127,12 +127,12 @@ public partial class ScopeMap : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _actions = DefineListProperty<string>("Actions", ["Actions"]);
-        _description = DefineProperty<string>("Description", ["Description"]);
-        _createdOn = DefineProperty<DateTimeOffset>("CreatedOn", ["CreatedOn"], isOutput: true);
+        _actions = DefineListProperty<string>("Actions", ["properties", "actions"]);
+        _description = DefineProperty<string>("Description", ["properties", "description"]);
+        _createdOn = DefineProperty<DateTimeOffset>("CreatedOn", ["properties", "creationDate"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
-        _scopeMapType = DefineProperty<string>("ScopeMapType", ["ScopeMapType"], isOutput: true);
+        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
+        _scopeMapType = DefineProperty<string>("ScopeMapType", ["properties", "type"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<ContainerRegistryService>("Parent", ["parent"], isRequired: true);
     }
@@ -142,6 +142,11 @@ public partial class ScopeMap : ProvisionableResource
     /// </summary>
     public static class ResourceVersions
     {
+        /// <summary>
+        /// 2025-04-01.
+        /// </summary>
+        public static readonly string V2025_04_01 = "2025-04-01";
+
         /// <summary>
         /// 2023-07-01.
         /// </summary>

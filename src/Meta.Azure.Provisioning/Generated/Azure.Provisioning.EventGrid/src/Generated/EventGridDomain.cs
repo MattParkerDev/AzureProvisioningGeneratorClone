@@ -196,16 +196,6 @@ public partial class EventGridDomain : ProvisionableResource
     private BicepValue<EventGridPublicNetworkAccess>? _publicNetworkAccess;
 
     /// <summary>
-    /// The Sku name of the resource. The possible values are: Basic or Premium.
-    /// </summary>
-    public BicepValue<EventGridSku> SkuName 
-    {
-        get { Initialize(); return _skuName!; }
-        set { Initialize(); _skuName!.Assign(value); }
-    }
-    private BicepValue<EventGridSku>? _skuName;
-
-    /// <summary>
     /// Gets or sets the Tags.
     /// </summary>
     public BicepDictionary<string> Tags 
@@ -303,7 +293,6 @@ public partial class EventGridDomain : ProvisionableResource
         _isLocalAuthDisabled = DefineProperty<bool>("IsLocalAuthDisabled", ["properties", "disableLocalAuth"]);
         _minimumTlsVersionAllowed = DefineProperty<TlsVersion>("MinimumTlsVersionAllowed", ["properties", "minimumTlsVersionAllowed"]);
         _publicNetworkAccess = DefineProperty<EventGridPublicNetworkAccess>("PublicNetworkAccess", ["properties", "publicNetworkAccess"]);
-        _skuName = DefineProperty<EventGridSku>("SkuName", ["sku", "name"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
         _endpoint = DefineProperty<Uri>("Endpoint", ["properties", "endpoint"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);

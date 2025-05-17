@@ -128,7 +128,7 @@ public partial class AppServiceCertificate : ProvisionableResource
     /// </param>
     /// <param name="resourceVersion">Version of the AppServiceCertificate.</param>
     public AppServiceCertificate(string bicepIdentifier, string? resourceVersion = default)
-        : base(bicepIdentifier, "Microsoft.CertificateRegistration/certificateOrders/certificates", resourceVersion ?? "2024-04-01")
+        : base(bicepIdentifier, "Microsoft.CertificateRegistration/certificateOrders/certificates", resourceVersion ?? "2024-11-01")
     {
     }
 
@@ -154,6 +154,11 @@ public partial class AppServiceCertificate : ProvisionableResource
     /// </summary>
     public static class ResourceVersions
     {
+        /// <summary>
+        /// 2024-11-01.
+        /// </summary>
+        public static readonly string V2024_11_01 = "2024-11-01";
+
         /// <summary>
         /// 2024-04-01.
         /// </summary>

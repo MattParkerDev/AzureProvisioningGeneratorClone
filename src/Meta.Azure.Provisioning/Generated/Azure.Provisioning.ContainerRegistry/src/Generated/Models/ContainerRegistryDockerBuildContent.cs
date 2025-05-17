@@ -147,16 +147,16 @@ public partial class ContainerRegistryDockerBuildContent : ContainerRegistryRunC
     {
         base.DefineProvisionableProperties();
         DefineProperty<string>("type", ["type"], defaultValue: "DockerBuildRequest");
-        _imageNames = DefineListProperty<string>("ImageNames", ["ImageNames"]);
-        _isPushEnabled = DefineProperty<bool>("IsPushEnabled", ["IsPushEnabled"]);
-        _noCache = DefineProperty<bool>("NoCache", ["NoCache"]);
-        _dockerFilePath = DefineProperty<string>("DockerFilePath", ["DockerFilePath"]);
-        _target = DefineProperty<string>("Target", ["Target"]);
-        _arguments = DefineListProperty<ContainerRegistryRunArgument>("Arguments", ["Arguments"]);
-        _timeoutInSeconds = DefineProperty<int>("TimeoutInSeconds", ["TimeoutInSeconds"]);
-        _platform = DefineModelProperty<ContainerRegistryPlatformProperties>("Platform", ["Platform"]);
-        _agentCpu = DefineProperty<int>("AgentCpu", ["AgentCpu"]);
-        _sourceLocation = DefineProperty<string>("SourceLocation", ["SourceLocation"]);
-        _credentials = DefineModelProperty<ContainerRegistryCredentials>("Credentials", ["Credentials"]);
+        _imageNames = DefineListProperty<string>("ImageNames", ["imageNames"]);
+        _isPushEnabled = DefineProperty<bool>("IsPushEnabled", ["isPushEnabled"]);
+        _noCache = DefineProperty<bool>("NoCache", ["noCache"]);
+        _dockerFilePath = DefineProperty<string>("DockerFilePath", ["dockerFilePath"]);
+        _target = DefineProperty<string>("Target", ["target"]);
+        _arguments = DefineListProperty<ContainerRegistryRunArgument>("Arguments", ["arguments"]);
+        _timeoutInSeconds = DefineProperty<int>("TimeoutInSeconds", ["timeout"]);
+        _platform = DefineModelProperty<ContainerRegistryPlatformProperties>("Platform", ["platform"]);
+        _agentCpu = DefineProperty<int>("AgentCpu", ["agentConfiguration", "cpu"]);
+        _sourceLocation = DefineProperty<string>("SourceLocation", ["sourceLocation"]);
+        _credentials = DefineModelProperty<ContainerRegistryCredentials>("Credentials", ["credentials"]);
     }
 }

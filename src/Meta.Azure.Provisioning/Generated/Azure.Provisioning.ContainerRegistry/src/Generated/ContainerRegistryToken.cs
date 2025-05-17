@@ -117,7 +117,7 @@ public partial class ContainerRegistryToken : ProvisionableResource
     /// </param>
     /// <param name="resourceVersion">Version of the ContainerRegistryToken.</param>
     public ContainerRegistryToken(string bicepIdentifier, string? resourceVersion = default)
-        : base(bicepIdentifier, "Microsoft.ContainerRegistry/registries/tokens", resourceVersion ?? "2023-07-01")
+        : base(bicepIdentifier, "Microsoft.ContainerRegistry/registries/tokens", resourceVersion ?? "2025-04-01")
     {
     }
 
@@ -127,12 +127,12 @@ public partial class ContainerRegistryToken : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _credentials = DefineModelProperty<ContainerRegistryTokenCredentials>("Credentials", ["Credentials"]);
-        _scopeMapId = DefineProperty<ResourceIdentifier>("ScopeMapId", ["ScopeMapId"]);
-        _status = DefineProperty<ContainerRegistryTokenStatus>("Status", ["Status"]);
-        _createdOn = DefineProperty<DateTimeOffset>("CreatedOn", ["CreatedOn"], isOutput: true);
+        _credentials = DefineModelProperty<ContainerRegistryTokenCredentials>("Credentials", ["properties", "credentials"]);
+        _scopeMapId = DefineProperty<ResourceIdentifier>("ScopeMapId", ["properties", "scopeMapId"]);
+        _status = DefineProperty<ContainerRegistryTokenStatus>("Status", ["properties", "status"]);
+        _createdOn = DefineProperty<DateTimeOffset>("CreatedOn", ["properties", "creationDate"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<ContainerRegistryService>("Parent", ["parent"], isRequired: true);
     }
@@ -142,6 +142,11 @@ public partial class ContainerRegistryToken : ProvisionableResource
     /// </summary>
     public static class ResourceVersions
     {
+        /// <summary>
+        /// 2025-04-01.
+        /// </summary>
+        public static readonly string V2025_04_01 = "2025-04-01";
+
         /// <summary>
         /// 2023-07-01.
         /// </summary>

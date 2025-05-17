@@ -136,7 +136,7 @@ public partial class ContainerRegistryTaskRun : ProvisionableResource
     /// </param>
     /// <param name="resourceVersion">Version of the ContainerRegistryTaskRun.</param>
     public ContainerRegistryTaskRun(string bicepIdentifier, string? resourceVersion = default)
-        : base(bicepIdentifier, "Microsoft.ContainerRegistry/registries/taskRuns", resourceVersion ?? "2023-07-01")
+        : base(bicepIdentifier, "Microsoft.ContainerRegistry/registries/taskRuns", resourceVersion ?? "2025-04-01")
     {
     }
 
@@ -146,13 +146,13 @@ public partial class ContainerRegistryTaskRun : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _forceUpdateTag = DefineProperty<string>("ForceUpdateTag", ["ForceUpdateTag"]);
-        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["Identity"]);
+        _forceUpdateTag = DefineProperty<string>("ForceUpdateTag", ["properties", "forceUpdateTag"]);
+        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["identity"]);
         _location = DefineProperty<AzureLocation>("Location", ["location"]);
-        _runRequest = DefineModelProperty<ContainerRegistryRunContent>("RunRequest", ["RunRequest"]);
+        _runRequest = DefineModelProperty<ContainerRegistryRunContent>("RunRequest", ["properties", "runRequest"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
-        _runResult = DefineModelProperty<ContainerRegistryRunData>("RunResult", ["RunResult"], isOutput: true);
+        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
+        _runResult = DefineModelProperty<ContainerRegistryRunData>("RunResult", ["properties", "runResult"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<ContainerRegistryService>("Parent", ["parent"], isRequired: true);
     }
@@ -162,6 +162,11 @@ public partial class ContainerRegistryTaskRun : ProvisionableResource
     /// </summary>
     public static class ResourceVersions
     {
+        /// <summary>
+        /// 2025-04-01.
+        /// </summary>
+        public static readonly string V2025_04_01 = "2025-04-01";
+
         /// <summary>
         /// 2023-07-01.
         /// </summary>

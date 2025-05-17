@@ -27,6 +27,16 @@ public partial class ManagedInstanceLongTermRetentionPolicy : ProvisionableResou
     private BicepValue<string>? _name;
 
     /// <summary>
+    /// The BackupStorageAccessTier for the LTR backups.
+    /// </summary>
+    public BicepValue<SqlBackupStorageAccessTier> BackupStorageAccessTier 
+    {
+        get { Initialize(); return _backupStorageAccessTier!; }
+        set { Initialize(); _backupStorageAccessTier!.Assign(value); }
+    }
+    private BicepValue<SqlBackupStorageAccessTier>? _backupStorageAccessTier;
+
+    /// <summary>
     /// The monthly retention policy for an LTR backup in an ISO 8601 format.
     /// </summary>
     public BicepValue<string> MonthlyRetention 
@@ -116,6 +126,7 @@ public partial class ManagedInstanceLongTermRetentionPolicy : ProvisionableResou
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isOutput: true);
+        _backupStorageAccessTier = DefineProperty<SqlBackupStorageAccessTier>("BackupStorageAccessTier", ["properties", "backupStorageAccessTier"]);
         _monthlyRetention = DefineProperty<string>("MonthlyRetention", ["properties", "monthlyRetention"]);
         _weeklyRetention = DefineProperty<string>("WeeklyRetention", ["properties", "weeklyRetention"]);
         _weekOfYear = DefineProperty<int>("WeekOfYear", ["properties", "weekOfYear"]);

@@ -53,7 +53,7 @@ public partial class ContainerRegistrySecretObject : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _value = DefineProperty<string>("Value", ["Value"]);
-        _objectType = DefineProperty<ContainerRegistrySecretObjectType>("ObjectType", ["ObjectType"]);
+        _value = DefineProperty<string>("Value", ["value"]);
+        _objectType = DefineProperty<ContainerRegistrySecretObjectType>("ObjectType", ["type"]);
     }
 }

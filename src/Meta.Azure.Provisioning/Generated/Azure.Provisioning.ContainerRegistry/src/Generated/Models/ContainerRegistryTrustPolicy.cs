@@ -47,7 +47,7 @@ public partial class ContainerRegistryTrustPolicy : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _policyType = DefineProperty<ContainerRegistryTrustPolicyType>("PolicyType", ["PolicyType"]);
-        _status = DefineProperty<ContainerRegistryPolicyStatus>("Status", ["Status"]);
+        _policyType = DefineProperty<ContainerRegistryTrustPolicyType>("PolicyType", ["type"]);
+        _status = DefineProperty<ContainerRegistryPolicyStatus>("Status", ["status"]);
     }
 }

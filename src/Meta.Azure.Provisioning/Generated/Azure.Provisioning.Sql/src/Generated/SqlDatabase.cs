@@ -174,9 +174,10 @@ public partial class SqlDatabase : ProvisionableResource
     private BicepValue<FreeLimitExhaustionBehavior>? _freeLimitExhaustionBehavior;
 
     /// <summary>
-    /// The number of secondary replicas associated with the database that are
-    /// used to provide high availability. Not applicable to a Hyperscale
-    /// database within an elastic pool.
+    /// The number of secondary replicas associated with the Business Critical,
+    /// Premium, or Hyperscale edition database that are used to provide high
+    /// availability. Not applicable to a Hyperscale database within an
+    /// elastic pool.
     /// </summary>
     public BicepValue<int> HighAvailabilityReplicaCount 
     {

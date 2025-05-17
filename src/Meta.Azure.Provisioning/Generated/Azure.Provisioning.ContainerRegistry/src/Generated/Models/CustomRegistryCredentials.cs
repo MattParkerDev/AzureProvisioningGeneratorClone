@@ -68,8 +68,8 @@ public partial class CustomRegistryCredentials : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _userName = DefineModelProperty<ContainerRegistrySecretObject>("UserName", ["UserName"]);
-        _password = DefineModelProperty<ContainerRegistrySecretObject>("Password", ["Password"]);
-        _identity = DefineProperty<string>("Identity", ["Identity"]);
+        _userName = DefineModelProperty<ContainerRegistrySecretObject>("UserName", ["userName"]);
+        _password = DefineModelProperty<ContainerRegistrySecretObject>("Password", ["password"]);
+        _identity = DefineProperty<string>("Identity", ["identity"]);
     }
 }
