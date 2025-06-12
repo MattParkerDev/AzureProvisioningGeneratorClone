@@ -52,7 +52,7 @@ public partial class ContainerRegistryTaskRunContent : ContainerRegistryRunConte
     {
         base.DefineProvisionableProperties();
         DefineProperty<string>("type", ["type"], defaultValue: "TaskRunRequest");
-        _taskId = DefineProperty<ResourceIdentifier>("TaskId", ["taskId"]);
-        _overrideTaskStepProperties = DefineModelProperty<ContainerRegistryOverrideTaskStepProperties>("OverrideTaskStepProperties", ["overrideTaskStepProperties"]);
+        _taskId = DefineProperty<ResourceIdentifier>("TaskId", ["TaskId"]);
+        _overrideTaskStepProperties = DefineModelProperty<ContainerRegistryOverrideTaskStepProperties>("OverrideTaskStepProperties", ["OverrideTaskStepProperties"]);
     }
 }

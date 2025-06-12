@@ -116,13 +116,13 @@ public partial class ContainerRegistryEncodedTaskRunContent : ContainerRegistryR
     {
         base.DefineProvisionableProperties();
         DefineProperty<string>("type", ["type"], defaultValue: "EncodedTaskRunRequest");
-        _encodedTaskContent = DefineProperty<string>("EncodedTaskContent", ["encodedTaskContent"]);
-        _encodedValuesContent = DefineProperty<string>("EncodedValuesContent", ["encodedValuesContent"]);
-        _values = DefineListProperty<ContainerRegistryTaskOverridableValue>("Values", ["values"]);
-        _timeoutInSeconds = DefineProperty<int>("TimeoutInSeconds", ["timeout"]);
-        _platform = DefineModelProperty<ContainerRegistryPlatformProperties>("Platform", ["platform"]);
-        _agentCpu = DefineProperty<int>("AgentCpu", ["agentConfiguration", "cpu"]);
-        _sourceLocation = DefineProperty<string>("SourceLocation", ["sourceLocation"]);
-        _credentials = DefineModelProperty<ContainerRegistryCredentials>("Credentials", ["credentials"]);
+        _encodedTaskContent = DefineProperty<string>("EncodedTaskContent", ["EncodedTaskContent"]);
+        _encodedValuesContent = DefineProperty<string>("EncodedValuesContent", ["EncodedValuesContent"]);
+        _values = DefineListProperty<ContainerRegistryTaskOverridableValue>("Values", ["Values"]);
+        _timeoutInSeconds = DefineProperty<int>("TimeoutInSeconds", ["TimeoutInSeconds"]);
+        _platform = DefineModelProperty<ContainerRegistryPlatformProperties>("Platform", ["Platform"]);
+        _agentCpu = DefineProperty<int>("AgentCpu", ["AgentCpu"]);
+        _sourceLocation = DefineProperty<string>("SourceLocation", ["SourceLocation"]);
+        _credentials = DefineModelProperty<ContainerRegistryCredentials>("Credentials", ["Credentials"]);
     }
 }

@@ -90,9 +90,9 @@ public partial class ContainerRegistryPrivateEndpointConnectionData : Provisiona
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _privateEndpointId = DefineProperty<ResourceIdentifier>("PrivateEndpointId", ["properties", "privateEndpoint", "id"]);
-        _connectionState = DefineModelProperty<ContainerRegistryPrivateLinkServiceConnectionState>("ConnectionState", ["properties", "privateLinkServiceConnectionState"]);
-        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
+        _privateEndpointId = DefineProperty<ResourceIdentifier>("PrivateEndpointId", ["PrivateEndpointId"]);
+        _connectionState = DefineModelProperty<ContainerRegistryPrivateLinkServiceConnectionState>("ConnectionState", ["ConnectionState"]);
+        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
         _name = DefineProperty<string>("Name", ["name"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);

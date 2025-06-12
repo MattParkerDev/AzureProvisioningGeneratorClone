@@ -60,7 +60,7 @@ public partial class ContainerRegistryRunArgument : ProvisionableConstruct
     {
         base.DefineProvisionableProperties();
         _name = DefineProperty<string>("Name", ["name"]);
-        _value = DefineProperty<string>("Value", ["value"]);
-        _isSecret = DefineProperty<bool>("IsSecret", ["isSecret"]);
+        _value = DefineProperty<string>("Value", ["Value"]);
+        _isSecret = DefineProperty<bool>("IsSecret", ["IsSecret"]);
     }
 }

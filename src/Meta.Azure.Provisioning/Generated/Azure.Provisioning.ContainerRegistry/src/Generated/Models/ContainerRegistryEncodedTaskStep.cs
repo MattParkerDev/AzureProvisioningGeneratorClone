@@ -62,8 +62,8 @@ public partial class ContainerRegistryEncodedTaskStep : ContainerRegistryTaskSte
     {
         base.DefineProvisionableProperties();
         DefineProperty<string>("type", ["type"], defaultValue: "EncodedTask");
-        _encodedTaskContent = DefineProperty<string>("EncodedTaskContent", ["encodedTaskContent"]);
-        _encodedValuesContent = DefineProperty<string>("EncodedValuesContent", ["encodedValuesContent"]);
-        _values = DefineListProperty<ContainerRegistryTaskOverridableValue>("Values", ["values"]);
+        _encodedTaskContent = DefineProperty<string>("EncodedTaskContent", ["EncodedTaskContent"]);
+        _encodedValuesContent = DefineProperty<string>("EncodedValuesContent", ["EncodedValuesContent"]);
+        _values = DefineListProperty<ContainerRegistryTaskOverridableValue>("Values", ["Values"]);
     }
 }

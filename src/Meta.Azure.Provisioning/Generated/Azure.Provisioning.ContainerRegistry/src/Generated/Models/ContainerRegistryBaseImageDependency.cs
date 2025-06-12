@@ -74,10 +74,10 @@ public partial class ContainerRegistryBaseImageDependency : ProvisionableConstru
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _dependencyType = DefineProperty<ContainerRegistryBaseImageDependencyType>("DependencyType", ["type"], isOutput: true);
-        _registry = DefineProperty<string>("Registry", ["registry"], isOutput: true);
-        _repository = DefineProperty<string>("Repository", ["repository"], isOutput: true);
-        _tag = DefineProperty<string>("Tag", ["tag"], isOutput: true);
-        _digest = DefineProperty<string>("Digest", ["digest"], isOutput: true);
+        _dependencyType = DefineProperty<ContainerRegistryBaseImageDependencyType>("DependencyType", ["DependencyType"], isOutput: true);
+        _registry = DefineProperty<string>("Registry", ["Registry"], isOutput: true);
+        _repository = DefineProperty<string>("Repository", ["Repository"], isOutput: true);
+        _tag = DefineProperty<string>("Tag", ["Tag"], isOutput: true);
+        _digest = DefineProperty<string>("Digest", ["Digest"], isOutput: true);
     }
 }

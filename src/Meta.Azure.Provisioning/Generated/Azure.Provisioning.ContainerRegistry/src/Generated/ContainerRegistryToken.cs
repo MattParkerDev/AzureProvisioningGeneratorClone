@@ -127,12 +127,12 @@ public partial class ContainerRegistryToken : ProvisionableResource
     protected override void DefineProvisionableProperties()
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
-        _credentials = DefineModelProperty<ContainerRegistryTokenCredentials>("Credentials", ["properties", "credentials"]);
-        _scopeMapId = DefineProperty<ResourceIdentifier>("ScopeMapId", ["properties", "scopeMapId"]);
-        _status = DefineProperty<ContainerRegistryTokenStatus>("Status", ["properties", "status"]);
-        _createdOn = DefineProperty<DateTimeOffset>("CreatedOn", ["properties", "creationDate"], isOutput: true);
+        _credentials = DefineModelProperty<ContainerRegistryTokenCredentials>("Credentials", ["Credentials"]);
+        _scopeMapId = DefineProperty<ResourceIdentifier>("ScopeMapId", ["ScopeMapId"]);
+        _status = DefineProperty<ContainerRegistryTokenStatus>("Status", ["Status"]);
+        _createdOn = DefineProperty<DateTimeOffset>("CreatedOn", ["CreatedOn"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<ContainerRegistryService>("Parent", ["parent"], isRequired: true);
     }

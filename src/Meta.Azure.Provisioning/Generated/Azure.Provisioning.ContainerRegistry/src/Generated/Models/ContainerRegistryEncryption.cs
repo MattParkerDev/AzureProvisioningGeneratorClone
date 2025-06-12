@@ -49,7 +49,7 @@ public partial class ContainerRegistryEncryption : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _status = DefineProperty<ContainerRegistryEncryptionStatus>("Status", ["status"]);
-        _keyVaultProperties = DefineModelProperty<ContainerRegistryKeyVaultProperties>("KeyVaultProperties", ["keyVaultProperties"]);
+        _status = DefineProperty<ContainerRegistryEncryptionStatus>("Status", ["Status"]);
+        _keyVaultProperties = DefineModelProperty<ContainerRegistryKeyVaultProperties>("KeyVaultProperties", ["KeyVaultProperties"]);
     }
 }

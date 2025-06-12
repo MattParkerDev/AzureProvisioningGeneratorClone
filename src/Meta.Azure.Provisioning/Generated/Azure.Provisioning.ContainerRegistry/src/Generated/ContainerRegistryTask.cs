@@ -239,21 +239,21 @@ public partial class ContainerRegistryTask : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _agentCpu = DefineProperty<int>("AgentCpu", ["properties", "agentConfiguration", "cpu"]);
-        _agentPoolName = DefineProperty<string>("AgentPoolName", ["properties", "agentPoolName"]);
-        _credentials = DefineModelProperty<ContainerRegistryCredentials>("Credentials", ["properties", "credentials"]);
-        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["identity"]);
-        _isSystemTask = DefineProperty<bool>("IsSystemTask", ["properties", "isSystemTask"]);
-        _logTemplate = DefineProperty<string>("LogTemplate", ["properties", "logTemplate"]);
-        _platform = DefineModelProperty<ContainerRegistryPlatformProperties>("Platform", ["properties", "platform"]);
-        _status = DefineProperty<ContainerRegistryTaskStatus>("Status", ["properties", "status"]);
-        _step = DefineModelProperty<ContainerRegistryTaskStepProperties>("Step", ["properties", "step"]);
+        _agentCpu = DefineProperty<int>("AgentCpu", ["AgentCpu"]);
+        _agentPoolName = DefineProperty<string>("AgentPoolName", ["AgentPoolName"]);
+        _credentials = DefineModelProperty<ContainerRegistryCredentials>("Credentials", ["Credentials"]);
+        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["Identity"]);
+        _isSystemTask = DefineProperty<bool>("IsSystemTask", ["IsSystemTask"]);
+        _logTemplate = DefineProperty<string>("LogTemplate", ["LogTemplate"]);
+        _platform = DefineModelProperty<ContainerRegistryPlatformProperties>("Platform", ["Platform"]);
+        _status = DefineProperty<ContainerRegistryTaskStatus>("Status", ["Status"]);
+        _step = DefineModelProperty<ContainerRegistryTaskStepProperties>("Step", ["Step"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
-        _timeoutInSeconds = DefineProperty<int>("TimeoutInSeconds", ["properties", "timeout"]);
-        _trigger = DefineModelProperty<ContainerRegistryTriggerProperties>("Trigger", ["properties", "trigger"]);
-        _createdOn = DefineProperty<DateTimeOffset>("CreatedOn", ["properties", "creationDate"], isOutput: true);
+        _timeoutInSeconds = DefineProperty<int>("TimeoutInSeconds", ["TimeoutInSeconds"]);
+        _trigger = DefineModelProperty<ContainerRegistryTriggerProperties>("Trigger", ["Trigger"]);
+        _createdOn = DefineProperty<DateTimeOffset>("CreatedOn", ["CreatedOn"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<ContainerRegistryService>("Parent", ["parent"], isRequired: true);
     }

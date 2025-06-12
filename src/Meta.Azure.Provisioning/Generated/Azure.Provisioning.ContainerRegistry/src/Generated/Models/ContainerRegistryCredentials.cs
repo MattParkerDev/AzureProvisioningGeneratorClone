@@ -57,7 +57,7 @@ public partial class ContainerRegistryCredentials : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _sourceRegistryLoginMode = DefineProperty<SourceRegistryLoginMode>("SourceRegistryLoginMode", ["sourceRegistry", "loginMode"]);
-        _customRegistries = DefineDictionaryProperty<CustomRegistryCredentials>("CustomRegistries", ["customRegistries"]);
+        _sourceRegistryLoginMode = DefineProperty<SourceRegistryLoginMode>("SourceRegistryLoginMode", ["SourceRegistryLoginMode"]);
+        _customRegistries = DefineDictionaryProperty<CustomRegistryCredentials>("CustomRegistries", ["CustomRegistries"]);
     }
 }
