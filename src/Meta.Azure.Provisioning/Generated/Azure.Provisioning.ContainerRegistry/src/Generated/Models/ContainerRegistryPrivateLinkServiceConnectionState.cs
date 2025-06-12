@@ -61,8 +61,8 @@ public partial class ContainerRegistryPrivateLinkServiceConnectionState : Provis
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _status = DefineProperty<ContainerRegistryPrivateLinkServiceConnectionStatus>("Status", ["Status"]);
-        _description = DefineProperty<string>("Description", ["Description"]);
-        _actionsRequired = DefineProperty<ActionsRequiredForPrivateLinkServiceConsumer>("ActionsRequired", ["ActionsRequired"]);
+        _status = DefineProperty<ContainerRegistryPrivateLinkServiceConnectionStatus>("Status", ["status"]);
+        _description = DefineProperty<string>("Description", ["description"]);
+        _actionsRequired = DefineProperty<ActionsRequiredForPrivateLinkServiceConsumer>("ActionsRequired", ["actionsRequired"]);
     }
 }

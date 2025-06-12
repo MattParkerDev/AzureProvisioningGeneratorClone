@@ -69,9 +69,9 @@ public partial class SourceCodeRepoProperties : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _sourceControlType = DefineProperty<SourceControlType>("SourceControlType", ["SourceControlType"]);
-        _repositoryUri = DefineProperty<Uri>("RepositoryUri", ["RepositoryUri"]);
-        _branch = DefineProperty<string>("Branch", ["Branch"]);
-        _sourceControlAuthProperties = DefineModelProperty<SourceCodeRepoAuthInfo>("SourceControlAuthProperties", ["SourceControlAuthProperties"]);
+        _sourceControlType = DefineProperty<SourceControlType>("SourceControlType", ["sourceControlType"]);
+        _repositoryUri = DefineProperty<Uri>("RepositoryUri", ["repositoryUrl"]);
+        _branch = DefineProperty<string>("Branch", ["branch"]);
+        _sourceControlAuthProperties = DefineModelProperty<SourceCodeRepoAuthInfo>("SourceControlAuthProperties", ["sourceControlAuthProperties"]);
     }
 }

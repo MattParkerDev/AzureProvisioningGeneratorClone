@@ -59,8 +59,8 @@ public partial class ContainerRegistryRetentionPolicy : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _days = DefineProperty<int>("Days", ["Days"]);
-        _lastUpdatedOn = DefineProperty<DateTimeOffset>("LastUpdatedOn", ["LastUpdatedOn"], isOutput: true);
-        _status = DefineProperty<ContainerRegistryPolicyStatus>("Status", ["Status"]);
+        _days = DefineProperty<int>("Days", ["days"]);
+        _lastUpdatedOn = DefineProperty<DateTimeOffset>("LastUpdatedOn", ["lastUpdatedTime"], isOutput: true);
+        _status = DefineProperty<ContainerRegistryPolicyStatus>("Status", ["status"]);
     }
 }

@@ -208,6 +208,15 @@ public partial class ContainerApp : ProvisionableResource
     private BicepValue<ContainerAppProvisioningState>? _provisioningState;
 
     /// <summary>
+    /// Running status of the Container App.
+    /// </summary>
+    public BicepValue<ContainerAppRunningStatus> RunningStatus 
+    {
+        get { Initialize(); return _runningStatus!; }
+    }
+    private BicepValue<ContainerAppRunningStatus>? _runningStatus;
+
+    /// <summary>
     /// Gets the SystemData.
     /// </summary>
     public SystemData SystemData 
@@ -255,6 +264,7 @@ public partial class ContainerApp : ProvisionableResource
         _latestRevisionName = DefineProperty<string>("LatestRevisionName", ["properties", "latestRevisionName"], isOutput: true);
         _outboundIPAddressList = DefineListProperty<IPAddress>("OutboundIPAddressList", ["properties", "outboundIpAddresses"], isOutput: true);
         _provisioningState = DefineProperty<ContainerAppProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
+        _runningStatus = DefineProperty<ContainerAppRunningStatus>("RunningStatus", ["properties", "runningStatus"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
     }
 

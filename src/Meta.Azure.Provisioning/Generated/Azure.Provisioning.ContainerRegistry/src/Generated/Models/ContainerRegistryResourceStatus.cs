@@ -57,8 +57,8 @@ public partial class ContainerRegistryResourceStatus : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _displayStatus = DefineProperty<string>("DisplayStatus", ["DisplayStatus"], isOutput: true);
-        _message = DefineProperty<string>("Message", ["Message"], isOutput: true);
-        _timestamp = DefineProperty<DateTimeOffset>("Timestamp", ["Timestamp"], isOutput: true);
+        _displayStatus = DefineProperty<string>("DisplayStatus", ["displayStatus"], isOutput: true);
+        _message = DefineProperty<string>("Message", ["message"], isOutput: true);
+        _timestamp = DefineProperty<DateTimeOffset>("Timestamp", ["timestamp"], isOutput: true);
     }
 }

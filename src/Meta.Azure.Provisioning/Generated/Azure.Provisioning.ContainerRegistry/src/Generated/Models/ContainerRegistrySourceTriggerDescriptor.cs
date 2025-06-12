@@ -99,12 +99,12 @@ public partial class ContainerRegistrySourceTriggerDescriptor : ProvisionableCon
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _id = DefineProperty<Guid>("Id", ["Id"]);
-        _eventType = DefineProperty<string>("EventType", ["EventType"]);
-        _commitId = DefineProperty<string>("CommitId", ["CommitId"]);
-        _pullRequestId = DefineProperty<string>("PullRequestId", ["PullRequestId"]);
-        _repositoryUri = DefineProperty<Uri>("RepositoryUri", ["RepositoryUri"]);
-        _branchName = DefineProperty<string>("BranchName", ["BranchName"]);
-        _providerType = DefineProperty<string>("ProviderType", ["ProviderType"]);
+        _id = DefineProperty<Guid>("Id", ["id"]);
+        _eventType = DefineProperty<string>("EventType", ["eventType"]);
+        _commitId = DefineProperty<string>("CommitId", ["commitId"]);
+        _pullRequestId = DefineProperty<string>("PullRequestId", ["pullRequestId"]);
+        _repositoryUri = DefineProperty<Uri>("RepositoryUri", ["repositoryUrl"]);
+        _branchName = DefineProperty<string>("BranchName", ["branchName"]);
+        _providerType = DefineProperty<string>("ProviderType", ["providerType"]);
     }
 }

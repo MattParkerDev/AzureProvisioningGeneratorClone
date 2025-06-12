@@ -58,8 +58,8 @@ public partial class ContainerRegistryPlatformProperties : ProvisionableConstruc
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _oS = DefineProperty<ContainerRegistryOS>("OS", ["OS"]);
-        _architecture = DefineProperty<ContainerRegistryOSArchitecture>("Architecture", ["Architecture"]);
-        _variant = DefineProperty<ContainerRegistryCpuVariant>("Variant", ["Variant"]);
+        _oS = DefineProperty<ContainerRegistryOS>("OS", ["os"]);
+        _architecture = DefineProperty<ContainerRegistryOSArchitecture>("Architecture", ["architecture"]);
+        _variant = DefineProperty<ContainerRegistryCpuVariant>("Variant", ["variant"]);
     }
 }

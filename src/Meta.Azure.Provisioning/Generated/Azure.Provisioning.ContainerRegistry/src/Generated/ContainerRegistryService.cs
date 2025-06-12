@@ -83,6 +83,16 @@ public partial class ContainerRegistryService : ProvisionableResource
     private BicepValue<bool>? _isAdminUserEnabled;
 
     /// <summary>
+    /// Enables registry-wide pull from unauthenticated clients.
+    /// </summary>
+    public BicepValue<bool> IsAnonymousPullEnabled 
+    {
+        get { Initialize(); return _isAnonymousPullEnabled!; }
+        set { Initialize(); _isAnonymousPullEnabled!.Assign(value); }
+    }
+    private BicepValue<bool>? _isAnonymousPullEnabled;
+
+    /// <summary>
     /// Enable a single data endpoint per region for serving data.
     /// </summary>
     public BicepValue<bool> IsDataEndpointEnabled 
@@ -251,24 +261,25 @@ public partial class ContainerRegistryService : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _sku = DefineModelProperty<ContainerRegistrySku>("Sku", ["Sku"], isRequired: true);
-        _encryption = DefineModelProperty<ContainerRegistryEncryption>("Encryption", ["Encryption"]);
-        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["Identity"]);
-        _isAdminUserEnabled = DefineProperty<bool>("IsAdminUserEnabled", ["IsAdminUserEnabled"]);
-        _isDataEndpointEnabled = DefineProperty<bool>("IsDataEndpointEnabled", ["IsDataEndpointEnabled"]);
-        _networkRuleBypassOptions = DefineProperty<ContainerRegistryNetworkRuleBypassOption>("NetworkRuleBypassOptions", ["NetworkRuleBypassOptions"]);
-        _networkRuleSet = DefineModelProperty<ContainerRegistryNetworkRuleSet>("NetworkRuleSet", ["NetworkRuleSet"]);
-        _policies = DefineModelProperty<ContainerRegistryPolicies>("Policies", ["Policies"]);
-        _publicNetworkAccess = DefineProperty<ContainerRegistryPublicNetworkAccess>("PublicNetworkAccess", ["PublicNetworkAccess"]);
+        _sku = DefineModelProperty<ContainerRegistrySku>("Sku", ["sku"], isRequired: true);
+        _encryption = DefineModelProperty<ContainerRegistryEncryption>("Encryption", ["properties", "encryption"]);
+        _identity = DefineModelProperty<ManagedServiceIdentity>("Identity", ["identity"]);
+        _isAdminUserEnabled = DefineProperty<bool>("IsAdminUserEnabled", ["properties", "adminUserEnabled"]);
+        _isAnonymousPullEnabled = DefineProperty<bool>("IsAnonymousPullEnabled", ["properties", "anonymousPullEnabled"]);
+        _isDataEndpointEnabled = DefineProperty<bool>("IsDataEndpointEnabled", ["properties", "dataEndpointEnabled"]);
+        _networkRuleBypassOptions = DefineProperty<ContainerRegistryNetworkRuleBypassOption>("NetworkRuleBypassOptions", ["properties", "networkRuleBypassOptions"]);
+        _networkRuleSet = DefineModelProperty<ContainerRegistryNetworkRuleSet>("NetworkRuleSet", ["properties", "networkRuleSet"]);
+        _policies = DefineModelProperty<ContainerRegistryPolicies>("Policies", ["properties", "policies"]);
+        _publicNetworkAccess = DefineProperty<ContainerRegistryPublicNetworkAccess>("PublicNetworkAccess", ["properties", "publicNetworkAccess"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
-        _zoneRedundancy = DefineProperty<ContainerRegistryZoneRedundancy>("ZoneRedundancy", ["ZoneRedundancy"]);
-        _createdOn = DefineProperty<DateTimeOffset>("CreatedOn", ["CreatedOn"], isOutput: true);
-        _dataEndpointHostNames = DefineListProperty<string>("DataEndpointHostNames", ["DataEndpointHostNames"], isOutput: true);
+        _zoneRedundancy = DefineProperty<ContainerRegistryZoneRedundancy>("ZoneRedundancy", ["properties", "zoneRedundancy"]);
+        _createdOn = DefineProperty<DateTimeOffset>("CreatedOn", ["properties", "creationDate"], isOutput: true);
+        _dataEndpointHostNames = DefineListProperty<string>("DataEndpointHostNames", ["properties", "dataEndpointHostNames"], isOutput: true);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _loginServer = DefineProperty<string>("LoginServer", ["LoginServer"], isOutput: true);
-        _privateEndpointConnections = DefineListProperty<ContainerRegistryPrivateEndpointConnectionData>("PrivateEndpointConnections", ["PrivateEndpointConnections"], isOutput: true);
-        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
-        _status = DefineModelProperty<ContainerRegistryResourceStatus>("Status", ["Status"], isOutput: true);
+        _loginServer = DefineProperty<string>("LoginServer", ["properties", "loginServer"], isOutput: true);
+        _privateEndpointConnections = DefineListProperty<ContainerRegistryPrivateEndpointConnectionData>("PrivateEndpointConnections", ["properties", "privateEndpointConnections"], isOutput: true);
+        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
+        _status = DefineModelProperty<ContainerRegistryResourceStatus>("Status", ["properties", "status"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
     }
 

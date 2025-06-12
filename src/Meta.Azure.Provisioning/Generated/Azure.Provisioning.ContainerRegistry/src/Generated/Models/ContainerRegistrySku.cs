@@ -46,7 +46,7 @@ public partial class ContainerRegistrySku : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _name = DefineProperty<ContainerRegistrySkuName>("Name", ["Name"]);
-        _tier = DefineProperty<ContainerRegistrySkuTier>("Tier", ["Tier"], isOutput: true);
+        _name = DefineProperty<ContainerRegistrySkuName>("Name", ["name"]);
+        _tier = DefineProperty<ContainerRegistrySkuTier>("Tier", ["tier"], isOutput: true);
     }
 }

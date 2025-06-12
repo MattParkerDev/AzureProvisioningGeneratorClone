@@ -94,11 +94,11 @@ public partial class ContainerRegistryDockerBuildStep : ContainerRegistryTaskSte
     {
         base.DefineProvisionableProperties();
         DefineProperty<string>("type", ["type"], defaultValue: "Docker");
-        _imageNames = DefineListProperty<string>("ImageNames", ["ImageNames"]);
-        _isPushEnabled = DefineProperty<bool>("IsPushEnabled", ["IsPushEnabled"]);
-        _noCache = DefineProperty<bool>("NoCache", ["NoCache"]);
-        _dockerFilePath = DefineProperty<string>("DockerFilePath", ["DockerFilePath"]);
-        _target = DefineProperty<string>("Target", ["Target"]);
-        _arguments = DefineListProperty<ContainerRegistryRunArgument>("Arguments", ["Arguments"]);
+        _imageNames = DefineListProperty<string>("ImageNames", ["imageNames"]);
+        _isPushEnabled = DefineProperty<bool>("IsPushEnabled", ["isPushEnabled"]);
+        _noCache = DefineProperty<bool>("NoCache", ["noCache"]);
+        _dockerFilePath = DefineProperty<string>("DockerFilePath", ["dockerFilePath"]);
+        _target = DefineProperty<string>("Target", ["target"]);
+        _arguments = DefineListProperty<ContainerRegistryRunArgument>("Arguments", ["arguments"]);
     }
 }

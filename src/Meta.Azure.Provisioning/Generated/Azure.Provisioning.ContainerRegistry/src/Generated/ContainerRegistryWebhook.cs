@@ -164,14 +164,14 @@ public partial class ContainerRegistryWebhook : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _actions = DefineListProperty<ContainerRegistryWebhookAction>("Actions", ["Actions"]);
-        _customHeaders = DefineDictionaryProperty<string>("CustomHeaders", ["CustomHeaders"]);
-        _scope = DefineProperty<string>("Scope", ["Scope"]);
-        _serviceUri = DefineProperty<Uri>("ServiceUri", ["ServiceUri"]);
-        _status = DefineProperty<ContainerRegistryWebhookStatus>("Status", ["Status"]);
+        _actions = DefineListProperty<ContainerRegistryWebhookAction>("Actions", ["properties", "actions"]);
+        _customHeaders = DefineDictionaryProperty<string>("CustomHeaders", ["properties", "customHeaders"]);
+        _scope = DefineProperty<string>("Scope", ["properties", "scope"]);
+        _serviceUri = DefineProperty<Uri>("ServiceUri", ["properties", "serviceUri"]);
+        _status = DefineProperty<ContainerRegistryWebhookStatus>("Status", ["properties", "status"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
+        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<ContainerRegistryService>("Parent", ["parent"], isRequired: true);
     }

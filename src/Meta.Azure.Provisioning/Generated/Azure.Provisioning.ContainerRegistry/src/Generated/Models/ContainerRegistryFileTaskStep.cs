@@ -62,8 +62,8 @@ public partial class ContainerRegistryFileTaskStep : ContainerRegistryTaskStepPr
     {
         base.DefineProvisionableProperties();
         DefineProperty<string>("type", ["type"], defaultValue: "FileTask");
-        _taskFilePath = DefineProperty<string>("TaskFilePath", ["TaskFilePath"]);
-        _valuesFilePath = DefineProperty<string>("ValuesFilePath", ["ValuesFilePath"]);
-        _values = DefineListProperty<ContainerRegistryTaskOverridableValue>("Values", ["Values"]);
+        _taskFilePath = DefineProperty<string>("TaskFilePath", ["taskFilePath"]);
+        _valuesFilePath = DefineProperty<string>("ValuesFilePath", ["valuesFilePath"]);
+        _values = DefineListProperty<ContainerRegistryTaskOverridableValue>("Values", ["values"]);
     }
 }

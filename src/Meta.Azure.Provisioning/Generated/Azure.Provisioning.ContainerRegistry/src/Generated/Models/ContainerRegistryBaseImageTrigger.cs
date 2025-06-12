@@ -79,10 +79,10 @@ public partial class ContainerRegistryBaseImageTrigger : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _baseImageTriggerType = DefineProperty<ContainerRegistryBaseImageTriggerType>("BaseImageTriggerType", ["BaseImageTriggerType"]);
-        _updateTriggerEndpoint = DefineProperty<string>("UpdateTriggerEndpoint", ["UpdateTriggerEndpoint"]);
-        _updateTriggerPayloadType = DefineProperty<ContainerRegistryUpdateTriggerPayloadType>("UpdateTriggerPayloadType", ["UpdateTriggerPayloadType"]);
-        _status = DefineProperty<ContainerRegistryTriggerStatus>("Status", ["Status"]);
+        _baseImageTriggerType = DefineProperty<ContainerRegistryBaseImageTriggerType>("BaseImageTriggerType", ["baseImageTriggerType"]);
+        _updateTriggerEndpoint = DefineProperty<string>("UpdateTriggerEndpoint", ["updateTriggerEndpoint"]);
+        _updateTriggerPayloadType = DefineProperty<ContainerRegistryUpdateTriggerPayloadType>("UpdateTriggerPayloadType", ["updateTriggerPayloadType"]);
+        _status = DefineProperty<ContainerRegistryTriggerStatus>("Status", ["status"]);
         _name = DefineProperty<string>("Name", ["name"]);
     }
 }

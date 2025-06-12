@@ -93,11 +93,11 @@ public partial class ContainerRegistryOverrideTaskStepProperties : Provisionable
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _contextPath = DefineProperty<string>("ContextPath", ["ContextPath"]);
-        _file = DefineProperty<string>("File", ["File"]);
-        _arguments = DefineListProperty<ContainerRegistryRunArgument>("Arguments", ["Arguments"]);
-        _target = DefineProperty<string>("Target", ["Target"]);
-        _values = DefineListProperty<ContainerRegistryTaskOverridableValue>("Values", ["Values"]);
-        _updateTriggerToken = DefineProperty<string>("UpdateTriggerToken", ["UpdateTriggerToken"]);
+        _contextPath = DefineProperty<string>("ContextPath", ["contextPath"]);
+        _file = DefineProperty<string>("File", ["file"]);
+        _arguments = DefineListProperty<ContainerRegistryRunArgument>("Arguments", ["arguments"]);
+        _target = DefineProperty<string>("Target", ["target"]);
+        _values = DefineListProperty<ContainerRegistryTaskOverridableValue>("Values", ["values"]);
+        _updateTriggerToken = DefineProperty<string>("UpdateTriggerToken", ["updateTriggerToken"]);
     }
 }

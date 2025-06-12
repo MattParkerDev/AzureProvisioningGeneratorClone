@@ -70,9 +70,9 @@ public partial class ContainerRegistrySourceTrigger : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _sourceRepository = DefineModelProperty<SourceCodeRepoProperties>("SourceRepository", ["SourceRepository"]);
-        _sourceTriggerEvents = DefineListProperty<ContainerRegistrySourceTriggerEvent>("SourceTriggerEvents", ["SourceTriggerEvents"]);
-        _status = DefineProperty<ContainerRegistryTriggerStatus>("Status", ["Status"]);
+        _sourceRepository = DefineModelProperty<SourceCodeRepoProperties>("SourceRepository", ["sourceRepository"]);
+        _sourceTriggerEvents = DefineListProperty<ContainerRegistrySourceTriggerEvent>("SourceTriggerEvents", ["sourceTriggerEvents"]);
+        _status = DefineProperty<ContainerRegistryTriggerStatus>("Status", ["status"]);
         _name = DefineProperty<string>("Name", ["name"]);
     }
 }

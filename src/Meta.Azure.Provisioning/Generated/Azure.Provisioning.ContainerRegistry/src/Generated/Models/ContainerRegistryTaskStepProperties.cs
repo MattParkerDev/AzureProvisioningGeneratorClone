@@ -69,8 +69,8 @@ public partial class ContainerRegistryTaskStepProperties : ProvisionableConstruc
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _baseImageDependencies = DefineListProperty<ContainerRegistryBaseImageDependency>("BaseImageDependencies", ["BaseImageDependencies"], isOutput: true);
-        _contextPath = DefineProperty<string>("ContextPath", ["ContextPath"]);
-        _contextAccessToken = DefineProperty<string>("ContextAccessToken", ["ContextAccessToken"]);
+        _baseImageDependencies = DefineListProperty<ContainerRegistryBaseImageDependency>("BaseImageDependencies", ["baseImageDependencies"], isOutput: true);
+        _contextPath = DefineProperty<string>("ContextPath", ["contextPath"]);
+        _contextAccessToken = DefineProperty<string>("ContextAccessToken", ["contextAccessToken"]);
     }
 }

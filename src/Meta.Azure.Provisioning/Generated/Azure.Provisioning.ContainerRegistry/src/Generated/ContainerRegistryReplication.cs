@@ -142,12 +142,12 @@ public partial class ContainerRegistryReplication : ProvisionableResource
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _location = DefineProperty<AzureLocation>("Location", ["location"], isRequired: true);
-        _isRegionEndpointEnabled = DefineProperty<bool>("IsRegionEndpointEnabled", ["IsRegionEndpointEnabled"]);
+        _isRegionEndpointEnabled = DefineProperty<bool>("IsRegionEndpointEnabled", ["properties", "regionEndpointEnabled"]);
         _tags = DefineDictionaryProperty<string>("Tags", ["tags"]);
-        _zoneRedundancy = DefineProperty<ContainerRegistryZoneRedundancy>("ZoneRedundancy", ["ZoneRedundancy"]);
+        _zoneRedundancy = DefineProperty<ContainerRegistryZoneRedundancy>("ZoneRedundancy", ["properties", "zoneRedundancy"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
-        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["ProvisioningState"], isOutput: true);
-        _status = DefineModelProperty<ContainerRegistryResourceStatus>("Status", ["Status"], isOutput: true);
+        _provisioningState = DefineProperty<ContainerRegistryProvisioningState>("ProvisioningState", ["properties", "provisioningState"], isOutput: true);
+        _status = DefineModelProperty<ContainerRegistryResourceStatus>("Status", ["properties", "status"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<ContainerRegistryService>("Parent", ["parent"], isRequired: true);
     }

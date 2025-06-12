@@ -60,8 +60,8 @@ public partial class ContainerRegistryImageUpdateTrigger : ProvisionableConstruc
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _id = DefineProperty<Guid>("Id", ["Id"]);
-        _timestamp = DefineProperty<DateTimeOffset>("Timestamp", ["Timestamp"]);
-        _images = DefineListProperty<ContainerRegistryImageDescriptor>("Images", ["Images"]);
+        _id = DefineProperty<Guid>("Id", ["id"]);
+        _timestamp = DefineProperty<DateTimeOffset>("Timestamp", ["timestamp"]);
+        _images = DefineListProperty<ContainerRegistryImageDescriptor>("Images", ["images"]);
     }
 }

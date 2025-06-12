@@ -70,8 +70,8 @@ public partial class ContainerRegistryRunContent : ProvisionableConstruct
     protected override void DefineProvisionableProperties()
     {
         base.DefineProvisionableProperties();
-        _isArchiveEnabled = DefineProperty<bool>("IsArchiveEnabled", ["IsArchiveEnabled"]);
-        _agentPoolName = DefineProperty<string>("AgentPoolName", ["AgentPoolName"]);
-        _logTemplate = DefineProperty<string>("LogTemplate", ["LogTemplate"]);
+        _isArchiveEnabled = DefineProperty<bool>("IsArchiveEnabled", ["isArchiveEnabled"]);
+        _agentPoolName = DefineProperty<string>("AgentPoolName", ["agentPoolName"]);
+        _logTemplate = DefineProperty<string>("LogTemplate", ["logTemplate"]);
     }
 }

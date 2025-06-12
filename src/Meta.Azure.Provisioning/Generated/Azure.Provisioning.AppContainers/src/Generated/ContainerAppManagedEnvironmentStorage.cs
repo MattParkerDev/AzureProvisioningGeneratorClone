@@ -38,6 +38,16 @@ public partial class ContainerAppManagedEnvironmentStorage : ProvisionableResour
     private ContainerAppAzureFileProperties? _managedEnvironmentStorageAzureFile;
 
     /// <summary>
+    /// Storage properties.
+    /// </summary>
+    public ManagedEnvironmentStorageProperties Properties 
+    {
+        get { Initialize(); return _properties!; }
+        set { Initialize(); AssignOrReplace(ref _properties, value); }
+    }
+    private ManagedEnvironmentStorageProperties? _properties;
+
+    /// <summary>
     /// Gets the Id.
     /// </summary>
     public BicepValue<ResourceIdentifier> Id 
@@ -88,6 +98,7 @@ public partial class ContainerAppManagedEnvironmentStorage : ProvisionableResour
     {
         _name = DefineProperty<string>("Name", ["name"], isRequired: true);
         _managedEnvironmentStorageAzureFile = DefineModelProperty<ContainerAppAzureFileProperties>("ManagedEnvironmentStorageAzureFile", ["properties", "azureFile"]);
+        _properties = DefineModelProperty<ManagedEnvironmentStorageProperties>("Properties", ["properties"]);
         _id = DefineProperty<ResourceIdentifier>("Id", ["id"], isOutput: true);
         _systemData = DefineModelProperty<SystemData>("SystemData", ["systemData"], isOutput: true);
         _parent = DefineResource<ContainerAppManagedEnvironment>("Parent", ["parent"], isRequired: true);
